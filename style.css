@@ -1,0 +1,1235 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  --zeroBgColor: rgb(250,250,250);
+  --firstBgColor: rgb(240,240,240);
+  --blurBgColor: rgba(240,240,240,0.8);
+  --dropBlurBgColor: #4443;
+  --firstTxtColor: #111;
+  --secondTxtColor: #444;
+  --thirdTxtColor: #777;
+  --fourthTxtColor: #ddd;
+  --linkColor: #19d;
+  --orangeCard: rgb(230,80,20);
+  --yellowCard: rgb(220,170,0);
+  --purpleCard: rgb(90,80,170);
+  --blackCard: #111;
+  --orangeCardWithAlpha: rgba(230,80,20,0.15);
+  --yellowCardWithAlpha: rgba(220,170,0,0.15);
+  --purpleCardWithAlpha: rgba(90,80,170,0.15);
+  --blackCardWithAlpha: #2224;
+  height: 100%;
+  overflow-wrap: break-word;
+  background-color: var(--firstBgColor);
+  color: red;
+  text-align: center;
+  font-family: arial, helvetica, sans-serif;
+  transition-duration: 0.6s;
+}
+
+img, video {
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2.1em;
+  color: var(--firstTxtColor);
+  transition-duration: 0.6s;
+}
+
+#greeting h1 {
+  position: absolute;
+  top: max(calc(38% - 50px), 70px);
+  width: 100%;
+}
+
+h2 {
+  position: absolute;
+  left: 30px;
+  top: 20px;
+  color: var(--secondTxtColor);
+  font-size: 1.4em;
+  font-weight: normal;
+  transition-duration: 0.6s;
+  -webkit-user-select: none;
+  user-select: none;
+  text-align: left;
+}
+
+h2 strong {
+  font-weight: bold;
+  transition-duration: 0.6s;
+}
+
+h2 strong strong {
+  font-weight: lighter;
+  margin: 0 0 0 5px;
+  display: inline-block;
+  transition-duration: 0.6s;
+}
+
+h2 div.drop-down {
+  transition-duration: 0.6s;
+  text-align: center;
+}
+
+h2 div.drop-down div.menu, h2 div.drop-down div.triangle-outline {
+  transition-duration: 0.6s;
+  filter: drop-shadow(0 0 8px var(--dropBlurBgColor));
+}
+
+h2 div.drop-down div.triangle {
+  position: absolute;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 13.5px solid var(--zeroBgColor);
+  margin-left: -16px;
+  width: 0;
+  transition-duration: 0.6s;
+  z-index: 30;
+  top: 35px;
+  left: 50%;
+}
+
+h2 div.drop-down div.triangle-outline {
+  position: absolute;
+  left: 50%;
+  top: 33px;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 13.5px solid var(--fourthTxtColor);
+  margin-left: -16px;
+  width: 0;
+  transition-duration: 0.6s;
+}
+
+.scrollable {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+img, video, .unselectable {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+h2 div.drop-down div.menu {
+  margin: 0 auto;
+  width: 190px;
+  background-color: var(--zeroBgColor);
+  border: 1.5px solid var(--fourthTxtColor);
+  border-radius: 12px;
+  z-index: 21;
+  transition-duration: 0.6s;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 0;
+}
+
+h2 div.drop-down div.menu > div.scrollable {
+  max-height: calc(100vh - 100px);
+  min-height: 25px;
+}
+
+h2 div.drop-down div.menu > div.scrollable > div {
+  margin: 10px 0;
+  transition-duration: 0.6s;
+}
+
+h2 div.drop-down div.menu > div.scrollable > div:first-of-type {
+  margin-top: 6px;
+}
+
+h2 div.drop-down div.menu > div.scrollable > div:last-of-type {
+  margin-bottom: 6px;
+}
+
+h2 div.drop-down div.menu > div.scrollable > div > a {
+  display: block;
+  padding: 10px 0;
+  width: auto;
+  margin: 0 15px;
+  transition-duration: 0.6s;
+  border-radius: 8px;
+  font-size: 0.8em;
+  font-weight: lighter;
+}
+
+h2 strong.app, h2 a.app, h2 strong.app strong {
+  color: var(--orangeCard);
+}
+
+h2 strong.web, h2 a.web, h2 strong.web strong {
+  color: var(--yellowCard);
+}
+
+h2 strong.script, h2 a.script, h2 strong.script strong {
+  color: var(--purpleCard);
+}
+
+h2 strong.home, h2 a.home {
+  color: var(--firstTxtColor);
+}
+
+h2 strong.wild, h2 a.wild, h2 strong.wild strong {
+  color: var(--secondTxtColor);
+}
+
+h2 div.drop-down div.menu > div.scrollable > div > a.home {
+  font-weight: bold;
+}
+
+h2 > p {
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+h2 > p.app ~ div.drop-down > div.menu > div.scrollable > div.app > a.app {
+  background-color: var(--orangeCardWithAlpha);
+}
+
+h2 > p.web ~ div.drop-down > div.menu > div.scrollable > div.web > a.web {
+  background-color: var(--yellowCardWithAlpha);
+}
+
+h2 > p.script ~ div.drop-down > div.menu > div.scrollable > div.script > a.script {
+  background-color: var(--purpleCardWithAlpha);
+}
+
+div.bottom {
+  position: absolute;
+  top: max(100px, calc(45% - 2.5em));
+  min-height: calc(55% + 2.5em);
+  width: 100%;
+}
+
+h3 {
+  margin-top: calc(30vh - 30px);
+  position: absolute;
+  left: 25px;
+  bottom: 22px;
+  font-weight: normal;
+  font-size: 0.9em;
+  color: var(--thirdTxtColor);
+  transition-duration: 0.6s;
+}
+
+h3 br {
+  display: none;
+}
+
+h3 a {
+  color: var(--linkColor);
+  text-decoration: none;
+  transition-duration: 0.6s;
+}
+
+div.title {
+  position: fixed;
+  width: 100%;
+  height: calc(40px + 1.4em);
+  background-color: var(--blurBgColor);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 20;
+  transition-duration: 0.6s;
+}
+
+div.blank {
+  width: 100%;
+  height: max(calc(8vh + 30px), calc(30vh - 45px));
+}
+
+#card-container {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+#card-container .card {
+  -webkit-user-select: none;
+  user-select: none;
+  position: relative;
+  margin: 15px 12px;
+  width: 220px;
+  height: 160px;
+  text-align: left;
+  background-color: rgba(50,50,50,0.2);
+  border-radius: 18px;
+  transition-duration: 0.6s;
+  transition-property: color, background-color, transform, filter;
+}
+
+#card-container .card.app {
+  background-color: var(--orangeCard);
+}
+
+#card-container .card.web {
+  background-color: var(--yellowCard);
+}
+
+#card-container .card.script {
+  background-color: var(--purpleCard);
+}
+
+#card-container .card.wild {
+  background-color: var(--blackCard);
+}
+
+#card-container .card img {
+  width: 50px;
+  height: 50px;
+  margin-left: 22px;
+  margin-top: 22px;
+  object-fit: contain;
+}
+
+#card-container .card p:first-of-type {
+  position: absolute;
+  left: 20px;
+  bottom: 34px;
+  font-size: 1.2em;
+  color: #fff;
+  transition-duration: 0.6s;
+}
+
+#card-container .card p:last-of-type {
+  position: absolute;
+  left: 20px;
+  bottom: 15px;
+  font-size: 0.9em;
+  color: rgba(255,255,255,0.7);
+  transition-duration: 0.6s;
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.turned {
+  transform: rotate(0.25turn);
+}
+
+.displayNone {
+  display: none;
+}
+
+div.main-view {
+  position: absolute;
+  width: 100%;
+  top: 75px;
+  min-height: calc(100vh - 75px);
+  transition-duration: 0.6s;
+}
+
+div.main-view div.projects {
+  position: relative;
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: calc(100vh - 120px);
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin: auto;
+  transition-duration: 0.6s;
+}
+
+div.main-view div.projects .project-card {
+  position: relative;
+  overflow: hidden;
+  width: calc(50% - 4vw);
+  text-align: left;
+  margin: 3% 2vw;
+  margin-top: 0;
+  border-radius: 22px;
+  background: var(--dropBlurBgColor);
+  transition-duration: 0.6s;
+  transition-property: color, background-color, transform, filter, border-radius;
+  height: min-content;
+  cursor: pointer;
+}
+
+div.main-view div.projects .project-card .project-img-wrapper {
+  width: 100%;
+  height: 0;
+  padding-bottom: 60%;
+  overflow: hidden;
+  transition-duration: 0.6s;
+}
+
+div.main-view div.projects .project-card .project-img {
+  width: 100%;
+  height: 0;
+  padding-top: 60%;
+  background: transparent no-repeat center;
+  background-size: cover;
+  transition-duration: 0.6s;
+}
+
+div.main-view div.projects #metro-archive-2020.project-card .project-img {
+  background-image: url("assets/app/metro-archive-2020/image.png");
+}
+
+div.main-view div.projects #courses-2019.project-card .project-img {
+  background-image: url("assets/app/courses-2019/image.png");
+}
+
+div.main-view div.projects #placeholder-2018.project-card .project-img {
+  background-image: url("assets/web/my-metro-card-2020/image.png");
+}
+
+div.main-view div.projects #placeholder-2017.project-card .project-img {
+  background-image: url("assets/web/new-student-2020/image.png");
+}
+
+div.main-view div.projects .project-card h5 {
+  color: var(--firstTxtColor);
+  font-size: 1.5em;
+  margin-left: 22px;
+  margin-top: 10px;
+  transition-duration: 0.6s;
+}
+
+div.main-view div.projects .project-card h5 span {
+  white-space: nowrap;
+  color: var(--secondTxtColor);
+  font-size: 0.78em;
+  margin-left: 8px;
+  transition-duration: 0.6s;
+  transition-property: color;
+}
+
+div.main-view div.projects .project-card p {
+  margin-left: 22px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  transition-duration: 0.6s;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.main-view div.projects .project-card p span {
+  white-space: nowrap;
+  /* line-height: 32px; */
+  margin-bottom: 7px;
+  background-color: var(--fourthTxtColor);
+  color: white;
+  padding: 4px 6px;
+  margin-right: 9px;
+  border-radius: 4px;
+  transition-duration: 0.6s;
+}
+
+body.app div.main-view div.projects .project-card p span {
+  background-color: var(--orangeCard);
+}
+
+body.web div.main-view div.projects .project-card p span {
+  background-color: var(--yellowCard);
+}
+
+body.script div.main-view div.projects .project-card p span {
+  background-color: var(--purpleCard);
+}
+
+div.about-me {
+  position: relative;
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;;
+  min-height: calc(100vh - 170px);
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin: auto;
+  transition-duration: 0.6s;
+}
+
+div.about-me > b {
+  color: var(--secondTxtColor);
+  font-size: 1.3em;
+  line-height: 1.5em;
+  transition-duration: 0.6s;
+}
+
+div.about-me > div {
+  color: var(--thirdTxtColor);
+  font-size: 1.2em;
+  text-align: left;
+  margin: 20px 0;
+  line-height: 1.4em;
+  transition-duration: 0.6s;
+}
+
+div.about-me > div > p {
+  margin: 10px 0;
+}
+
+div.detail-blank {
+  height: 45px;
+}
+
+div.modal-view {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 40;
+  transition-duration: 0.6s;
+}
+
+div.modal-view div.mask {
+  width: 100%;
+  height: 100%;
+  background-color: #000b;
+  transition-duration: 0.6s;
+}
+
+div.modal-view div.modal-area {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  /* background-color: #fffb; */
+  transition-duration: 0.6s;
+}
+
+div.modal-view div.modal-area .modal-container {
+  position: relative;
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* flex-direction: row; */
+  min-height: 100vh;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transition-duration: 0.6s;
+  width: 60%;
+  margin: auto;
+}
+
+div.modal-view div.modal-area .modal-container .actual-modal {
+  overflow: hidden;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  width: 100%;
+  height: min-content;
+  background-color: var(--fourthTxtColor);
+  border-radius: 10px;
+  transition-duration: 0.6s;
+  text-align: left;
+}
+
+div.modal-view div.modal-area .modal-container .actual-modal .image-video-container {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 100%;
+  -webkit-mask-image: -webkit-radial-gradient(black, black);
+}
+
+div.modal-view div.modal-area .modal-container .actual-modal .image-video-container .cancel-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 1.3em;
+  font-weight: bold;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--blurBgColor);
+  color: var(--thirdTxtColor);
+  cursor: pointer;
+  transition-duration: 0.6s;
+}
+
+div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > p {
+  position: absolute;
+  left: 40%;
+  right: 40%;
+  /* display: inline-block; */
+  /* margin: auto; */
+  top: 40%;
+  bottom: 40%;
+  overflow: hidden;
+}
+
+div.modal-view div.modal-area .modal-container .actual-modal img, div.modal-view div.modal-area .modal-container .actual-modal video {
+  width: 100%;
+  overflow: hidden;
+  max-height: calc(70vh - 70px);
+  min-height: 27vh;
+  position: relative;
+  /* border-radius: 10px 10px 0 0; */
+}
+
+div.modal-view div.modal-area .modal-container .actual-modal iframe {
+  width: 100%;
+  overflow: hidden;
+  height: calc(80vh - 70px);
+  position: relative;
+  transition-duration: 0.6s;
+  /* border-radius: 10px 10px 0 0; */
+}
+
+div.modal-view div.modal-area .actual-modal h4 {
+  color: var(--firstTxtColor);
+  font-size: 2em;
+  margin-left: 22px;
+  margin-right: 22px;
+  margin-top: 10px;
+  transition-duration: 0.6s;
+}
+
+div.modal-view div.modal-area .actual-modal h4 span {
+  white-space: nowrap;
+  color: var(--secondTxtColor);
+  font-size: 0.82em;
+  margin-left: 8px;
+  transition-duration: 0.6s;
+  transition-property: color;
+}
+
+div.modal-view div.modal-area .actual-modal p:not(.tags):last-of-type {
+  margin-bottom: 20px;
+}
+
+div.modal-view div.modal-area .actual-modal p:not(.tags) {
+  margin-left: 22px;
+  margin-right: 22px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  transition-duration: 0.6s;
+  font-size: 1.1em;
+  color: var(--thirdTxtColor)
+}
+
+div.modal-view div.modal-area .actual-modal p:not(.tags) > a {
+  font-weight: bold;
+  /* transition-duration: 0.6s;
+  transition-property: color; */
+}
+
+div.modal-view div.modal-area .actual-modal p.tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 22px;
+  margin-top: 5px;
+  margin-bottom: 18px;
+  transition-duration: 0.6s;
+}
+
+div.modal-view div.modal-area .actual-modal p.tags span {
+  white-space: nowrap;
+  /* line-height: 35px; */
+  margin-bottom: 8px;
+  background-color: var(--fourthTxtColor);
+  color: white;
+  padding: 4px 7px;
+  margin-right: 10px;
+  border-radius: 4px;
+  transition-duration: 0.6s;
+  font-size: 1.1em;
+}
+
+body.app div.modal-view div.modal-area .actual-modal p:not(.tags) > a {
+  color: var(--orangeCard);
+}
+
+body.web div.modal-view div.modal-area .actual-modal p:not(.tags) > a {
+  color: var(--yellowCard);
+}
+
+body.script div.modal-view div.modal-area .actual-modal p:not(.tags) > a {
+  color: var(--purpleCard);
+}
+
+body.wild div.modal-view div.modal-area .actual-modal p:not(.tags) > a {
+  color: var(--dropBlurBgColor);
+}
+
+body.app div.modal-view div.modal-area .actual-modal p.tags span {
+  background-color: var(--orangeCard);
+}
+
+body.web div.modal-view div.modal-area .actual-modal p.tags span {
+  background-color: var(--yellowCard);
+}
+
+body.script div.modal-view div.modal-area .actual-modal p.tags span {
+  background-color: var(--purpleCard);
+}
+
+@media (hover: none) {
+  h2 > p.app ~ div.drop-down > div.menu > div.scrollable > div:not(.app).tapped > a, h2 > p.web ~ div.drop-down > div.menu > div.scrollable > div:not(.web).tapped > a, h2 > p.script ~ div.drop-down > div.menu > div.scrollable > div:not(.script).tapped > a, h2 > p.wild ~ div.drop-down > div.menu > div.scrollable > div.tapped > a {
+    background-color: var(--blurBgColor);
+  }
+
+  h2 > p.app ~ div.drop-down > div.menu > div.scrollable > div.app.tapped > a.app, h2 > p.web ~ div.drop-down > div.menu > div.scrollable > div.web.tapped > a.web, h2 > p.script ~ div.drop-down > div.menu > div.scrollable > div.script.tapped > a.script {
+    filter: brightness(0.8);
+  }
+
+  #card-container .card.tapped {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+  }
+
+  div.projects .project-card.tapped {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+  }
+
+  div.projects .project-card.tapped .project-img {
+    transform: scale(1.08);
+  }
+
+  h3 a.tapped {
+    filter: brightness(1.2);
+  }
+
+  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container .cancel-btn.tapped {
+    background-color: var(--firstBgColor);
+    color: var(--firstTxtColor);
+  }
+
+  div.modal-view div.modal-area .actual-modal p:not(.tags) > a.tapped {
+    filter: brightness(1.2);
+  }
+}
+
+@media (hover: hover) {
+  h2 > p.app ~ div.drop-down > div.menu > div.scrollable > div:not(.app):hover > a, h2 > p.web ~ div.drop-down > div.menu > div.scrollable > div:not(.web):hover > a, h2 > p.script ~ div.drop-down > div.menu > div.scrollable > div:not(.script):hover > a, h2 > p.wild ~ div.drop-down > div.menu > div.scrollable > div:hover > a {
+    background-color: var(--blurBgColor);
+  }
+
+  h2 > p.app ~ div.drop-down > div.menu > div.scrollable > div.app:hover > a.app, h2 > p.web ~ div.drop-down > div.menu > div.scrollable > div.web:hover > a.web, h2 > p.script ~ div.drop-down > div.menu > div.scrollable > div.script:hover > a.script {
+    filter: brightness(0.8);
+  }
+
+  #card-container .card:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+  }
+
+  div.projects .project-card:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+  }
+
+  div.projects .project-card:hover .project-img {
+    transform: scale(1.08);
+  }
+
+  h3 a:hover {
+    filter: brightness(1.2);
+  }
+
+  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container .cancel-btn:hover {
+    background-color: var(--firstBgColor);
+    color: var(--firstTxtColor);
+  }
+
+  div.modal-view div.modal-area .actual-modal p:not(.tags) > a:hover {
+    filter: brightness(1.2);
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  #greeting h1 {
+    top: max(70px, calc(38% - 100px));
+  }
+
+  div.bottom {
+    top: max(105px, calc(45% - 6em));
+    min-height: calc(55% + 6em);
+  }
+
+  div.blank {
+    height: calc(8vh + 30px);
+  }
+
+  #card-container {
+    margin: 0 auto;
+    width: 500px;
+  }
+
+  #card-container .card {
+    margin: 10px 12px;
+  }
+
+  div.main-view div.projects {
+    width: 95%;
+  }
+
+  div.modal-view div.modal-area .modal-container {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  #greeting h1 {
+    top: max(70px, calc(35% - 110px));
+    left: calc(50% - 250px);
+    width: 500px;
+  }
+
+  div.bottom {
+    top: max(150px, calc(41% - 3.8em));
+    min-height: calc(59% + 3.8em);
+  }
+
+  #card-container .card {
+    margin: 10px 12px;
+  }
+
+  div.main-view div.projects {
+    width: 70%;
+  }
+
+  div.main-view div.projects .project-card {
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 7%;
+    border-radius: 22px;
+  }
+
+  div.modal-view div.modal-area .modal-container {
+    width: 80%;
+  }
+
+  div.modal-view div.modal-area .actual-modal h4 {
+    font-size: 1.9em;
+    margin-top: 8px;
+  }
+
+  div.modal-view div.modal-area .actual-modal p:not(.tags) {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 1em;
+  }
+
+  div.modal-view div.modal-area .actual-modal p.tags {
+    margin-bottom: 16px;
+  }
+
+  div.modal-view div.modal-area .actual-modal p.tags span {
+    /* line-height: 33px; */
+    margin-bottom: 7px;
+    padding: 5px 6px;
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  div.center {
+    position: absolute;
+    width: 100%;
+    top: 80px;
+    height: auto;
+  }
+
+  div.blank {
+    height: 80px;
+  }
+
+  #greeting h1 {
+    left: max(70px, calc(50% - 150px));
+    width: 300px;
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  div.bottom {
+    position: relative;
+  }
+
+  #card-container {
+    margin: 0 auto;
+    width: 65%;
+  }
+
+  #card-container .card {
+    width: 100%;
+    margin: calc(5% - 3px) 12px;
+    height: 0;
+    padding-bottom: 55%;
+  }
+
+  h3 {
+    text-align: center;
+    left: 12px;
+    right: 12px;
+    margin: 0 auto;
+  }
+
+  div.main-view div.projects {
+    width: 90%;
+  }
+
+  div.modal-view div.modal-area .modal-container {
+    width: 86%;
+  }
+
+  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container .cancel-btn {
+    right: 12px;
+    top: 12px;
+    font-size: 1.2em;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  div.center {
+    top: 70px;
+  }
+
+  h1 {
+    font-size: 1.9em;
+  }
+
+  div.about-me > b {
+    font-size: 1.2em;
+  }
+
+  #greeting h1 {
+    top: max(70px, calc(18% + 10px));
+    left: calc(50% - 135px);
+    width: 270px;
+  }
+
+  h2 > span:first-of-type, h2 > p > span:first-of-type {
+    display: none;
+  }
+
+  h2 div.drop-down div.menu {
+    width: 160px;
+  }
+
+  h2 div.drop-down div.menu > div.scrollable > div:first-of-type {
+    margin-top: 4px;
+  }
+
+  h2 div.drop-down div.menu > div.scrollable > div:last-of-type {
+    margin-bottom: 4px;
+  }
+
+  h2 div.drop-down div.menu > div.scrollable > div {
+    margin: 8px 0;
+  }
+
+  h2 div.drop-down div.menu > div.scrollable > div > a {
+    font-size: 0.7em;
+    padding: 9px 0;
+    margin: 0 11px;
+  }
+
+  h3 span {
+    display: none;
+  }
+
+  h3 br {
+    display: block;
+  }
+
+  #card-container {
+    width: 85%;
+  }
+
+  #card-container .card {
+    margin: 3% 12px;
+  }
+
+  div.main-view div.projects {
+    min-height: calc(100vh - 170px);
+    width: 90%;
+  }
+
+  div.main-view div.projects .project-card {
+    margin-top: 1%;
+    margin-bottom: 6%;
+    border-radius: 20px;
+  }
+
+  div.main-view div.projects .project-card h5 {
+    font-size: 1.3em;
+    margin-left: 20px;
+    margin-top: 8px;
+  }
+
+  div.main-view div.projects .project-card h5 span {
+    margin-left: 7px;
+  }
+
+  div.main-view div.projects .project-card p {
+    margin-left: 20px;
+    /* margin-top: 1px; */
+    margin-bottom: 10px;
+  }
+
+  div.main-view div.projects .project-card p span {
+    /* line-height: 28px; */
+    margin-bottom: 5.5px;
+    padding: 3px 4px;
+    margin-right: 7px;
+    border-radius: 3px;
+    font-size: 0.8em;
+  }
+
+  div.detail-blank {
+    height: 65px;
+  }
+
+  div.modal-view div.modal-area .actual-modal h4 {
+    font-size: 1.8em;
+    margin-top: 8px;
+  }
+
+  div.modal-view div.modal-area .actual-modal p:not(.tags) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+  }
+
+  div.modal-view div.modal-area .actual-modal p.tags {
+    margin-bottom: 14px;
+  }
+
+  div.modal-view div.modal-area .actual-modal p.tags span {
+    /* line-height: 30px; */
+    margin-bottom: 6px;
+    padding: 4px 5px;
+    margin-right: 8px;
+    font-size: 0.9em;
+  }
+
+  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container .cancel-btn {
+    right: 10px;
+    top: 10px;
+    font-size: 1.1em;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  div.modal-view div.modal-area .modal-container .actual-modal iframe {
+    height: calc(70vh - 70px);
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  div.about-me > b {
+    font-size: 1.1em;
+  }
+
+  #greeting h1 {
+    left: 8%;
+    width: 84%;
+  }
+
+  h2 span {
+    display: none;
+  }
+
+  h2 div.drop-down div.menu {
+    width: 80px;
+  }
+
+  h2 div.drop-down div.menu > div.scrollable > div:first-of-type {
+    margin-top: 1.5px;
+  }
+
+  h2 div.drop-down div.menu > div.scrollable > div:last-of-type {
+    margin-bottom: 1.5px;
+  }
+
+  h2 div.drop-down div.menu > div.scrollable > div {
+    margin: 7px 0;
+  }
+
+  h2 div.drop-down div.menu > div.scrollable > div > a {
+    font-size: 0.65em;
+    padding: 8px 0;
+    margin: 0 8px;
+  }
+
+  #card-container {
+    width: 92%;
+  }
+
+  #card-container .card {
+    padding: 0;
+    height: 145px;
+    margin: 8px 12px;
+  }
+
+  #card-container .card p:first-of-type {
+    font-size: 1.1em;
+    bottom: 28px;
+  }
+
+  #card-container .card p:last-of-type {
+    font-size: 0.8em;
+    bottom: 12px;
+  }
+
+  #card-container .card img {
+    width: 45px;
+    height: 45px;
+  }
+
+  div.main-view div.projects .project-card {
+    border-radius: 15px;
+  }
+
+  div.main-view div.projects .project-card h5 {
+    font-size: 1.2em;
+    margin-left: 15px;
+    margin-top: 7px;
+  }
+
+  div.main-view div.projects .project-card h5 span {
+    margin-left: 6px;
+  }
+
+  div.main-view div.projects .project-card p {
+    margin-left: 15px;
+    margin-bottom: 7px;
+  }
+
+  div.main-view div.projects .project-card p span {
+    /* line-height: 24px; */
+    margin-bottom: 5px;
+    padding: 2.5px 3px;
+    margin-right: 6px;
+    font-size: 0.75em;
+  }
+
+  div.main-view div.projects {
+    min-height: calc(100vh - 190px);
+  }
+
+  div.detail-blank {
+    height: 80px;
+  }
+
+  div.modal-view div.modal-area .actual-modal h4 {
+    font-size: 1.6em;
+  }
+
+  div.modal-view div.modal-area .actual-modal p:not(.tags) {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 0.85em;
+  }
+
+  div.modal-view div.modal-area .actual-modal p.tags {
+    margin-bottom: 12px;
+  }
+
+  div.modal-view div.modal-area .actual-modal p.tags span {
+    /* line-height: 28px; */
+    margin-bottom: 5.5px;
+    margin-right: 7px;
+    font-size: 0.85em;
+  }
+
+  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container .cancel-btn {
+    right: 8px;
+    top: 8px;
+    font-size: 1.0em;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+  }
+
+  div.modal-view div.modal-area .modal-container .actual-modal iframe {
+    height: calc(60vh - 70px);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --zeroBgColor: rgb(12,12,12);
+    --firstBgColor: rgb(30,35,45);
+    --blurBgColor: rgba(30,35,45,0.8);
+    --dropBlurBgColor: #111c;
+    --firstTxtColor: rgb(240,240,240);
+    --secondTxtColor: #ccc;
+    --thirdTxtColor: #aaa;
+    --fourthTxtColor: #333;
+    --linkColor: #7ce;
+    --orangeCard: rgb(220,80,30);
+    --yellowCard: rgb(220,170,20);
+    --purpleCard: rgb(90,90,160);
+    --orangeCardWithAlpha: rgba(220,80,30,0.15);
+    --yellowCardWithAlpha: rgba(220,170,20,0.15);
+    --purpleCardWithAlpha: rgba(90,90,160,0.15);
+    --blackCardWithAlpha: #ddd4;
+  }
+
+  #card-container .card {
+    filter: brightness(0.9);
+  }
+
+  div.projects .project-card {
+    filter: brightness(0.9);
+  }
+
+  @media (hover: none) {
+    #card-container .card.tapped {
+      filter: brightness(1);
+    }
+
+    div.projects .project-card.tapped {
+      filter: brightness(1);
+    }
+  }
+
+  @media (hover: hover) {
+    #card-container .card:hover {
+      filter: brightness(1);
+    }
+
+    div.projects .project-card:hover {
+      filter: brightness(1);
+    }
+  }
+}
