@@ -546,6 +546,7 @@ div.modal-view div.modal-area .modal-container .actual-modal {
   border-radius: 10px;
   transition-duration: 0.6s;
   text-align: left;
+  position: relative;
 }
 
 div.modal-view div.modal-area .modal-container .actual-modal .image-video-container {
@@ -558,7 +559,7 @@ div.modal-view div.modal-area .modal-container .actual-modal .image-video-contai
   -webkit-mask-image: -webkit-radial-gradient(black, black);
 }
 
-div.modal-view div.modal-area .modal-container .actual-modal .image-video-container .cancel-btn {
+div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn {
   position: absolute;
   right: 15px;
   top: 15px;
@@ -720,7 +721,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     filter: brightness(1.2);
   }
 
-  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container .cancel-btn.tapped {
+  div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn.tapped {
     background-color: var(--firstBgColor);
     color: var(--firstTxtColor);
   }
@@ -757,7 +758,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     filter: brightness(1.2);
   }
 
-  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container .cancel-btn:hover {
+  div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn:hover {
     background-color: var(--firstBgColor);
     color: var(--firstTxtColor);
   }
@@ -903,7 +904,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     width: 86%;
   }
 
-  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container .cancel-btn {
+  div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn {
     right: 12px;
     top: 12px;
     font-size: 1.2em;
@@ -1037,7 +1038,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     font-size: 0.9em;
   }
 
-  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container .cancel-btn {
+  div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn {
     right: 10px;
     top: 10px;
     font-size: 1.1em;
@@ -1172,7 +1173,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     font-size: 0.85em;
   }
 
-  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container .cancel-btn {
+  div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn {
     right: 8px;
     top: 8px;
     font-size: 1.0em;
