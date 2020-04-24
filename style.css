@@ -308,6 +308,7 @@ div.blank {
 #card-container .card p:first-of-type {
   position: absolute;
   left: 20px;
+  min-width: calc(100% - 40px);
   bottom: 34px;
   font-size: 1.2em;
   color: #fff;
@@ -317,6 +318,7 @@ div.blank {
 #card-container .card p:last-of-type {
   position: absolute;
   left: 20px;
+  min-width: calc(100% - 40px);
   bottom: 15px;
   font-size: 0.9em;
   color: rgba(255,255,255,0.7);
