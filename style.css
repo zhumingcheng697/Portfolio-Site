@@ -60,7 +60,6 @@ h1 {
 h2 {
   position: absolute;
   left: calc(30px + var(--inset-left));
-  left: 30px;
   top: 20px;
   color: var(--secondTxtColor);
   font-size: 1.4em;
