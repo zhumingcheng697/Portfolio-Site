@@ -545,13 +545,12 @@ div.modal-view div.modal-area .modal-container {
 }
 
 div.modal-view div.modal-area .modal-container .actual-modal {
-  overflow: hidden;
   margin-top: 70px;
   margin-bottom: 70px;
   width: 100%;
   height: min-content;
   background-color: var(--fourthTxtColor);
-  border-radius: 10px;
+  border-radius: 12px 12px 10px 10px;
   transition-duration: 0.6s;
   text-align: left;
   position: relative;
@@ -726,6 +725,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   h3 a.tapped {
+    text-decoration: underline;
     filter: brightness(1.2);
   }
 
@@ -735,7 +735,8 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.modal-view div.modal-area .actual-modal p:not(.tags) > a.tapped {
-    filter: brightness(1.2);
+    text-decoration: underline;
+    filter: brightness(1.15);
   }
 }
 
@@ -763,6 +764,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   h3 a:hover {
+    text-decoration: underline;
     filter: brightness(1.2);
   }
 
@@ -772,7 +774,8 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.modal-view div.modal-area .actual-modal p:not(.tags) > a:hover {
-    filter: brightness(1.2);
+    text-decoration: underline;
+    filter: brightness(1.15);
   }
 }
 
