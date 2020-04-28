@@ -15,13 +15,13 @@ function randomizeCard() {
     document.querySelectorAll("#card-container a.card.wild").forEach(element => {
       switch (Math.floor(Math.random() * 4)) {
         case 0:
-          element.setAttribute("href", "app/index.html");
+          element.setAttribute("href", `app/index.html?n=${Math.floor(Math.random() * 2 + 1)}`);
           break;
         case 1:
-          element.setAttribute("href", "web/index.html");
+          element.setAttribute("href", `web/index.html?n=${Math.floor(Math.random() * 3 + 1)}`);
           break;
         case 2:
-          element.setAttribute("href", "script/index.html");
+          element.setAttribute("href", `script/index.html?n=${Math.floor(Math.random() * 4 + 1)}`);
           break;
         default:
           element.setAttribute("href", "me/index.html");
