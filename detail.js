@@ -94,11 +94,11 @@ function hideDropDown() {
 
 function showModal(cardId) {
   document.querySelector("div.modal-view").classList.remove("hide");
-  // document.querySelector(`div.modal-view div.modal-area.${cardId}`).classList.remove("hide");
-  // document.querySelectorAll(`div.modal-view div.modal-area.${cardId} video`).forEach(e => {
-  //   e.play();
-  //   e.currentTime = 0;
-  // });
+  document.querySelector(`div.modal-view div.modal-area.${cardId}`).classList.remove("hide");
+  document.querySelectorAll(`div.modal-view div.modal-area.${cardId} video`).forEach(e => {
+    e.play();
+    e.currentTime = 0;
+  });
 
   for (id of modalTimeoutIds) {
     clearTimeout(id);
@@ -109,25 +109,25 @@ function showModal(cardId) {
 
 function hideModals() {
   document.querySelector("div.modal-view").classList.add("hide");
-  // document.querySelectorAll("div.modal-view div.modal-area").forEach(e => {
-  //   e.classList.add("hide");
-  // });
-  //
-  // document.querySelectorAll(`div.modal-view video`).forEach(e => {
-  //   e.pause();
-  // });
-  //
-  // document.querySelectorAll("div.modal-view div.modal-area .scrollable").forEach(e => {
-  //   modalTimeoutIds.push(setTimeout(() => {
-  //     e.scrollTop = 0;
-  //   }, 600));
-  // });
-  //
-  // document.querySelectorAll("div.modal-view div.modal-area .scrollable .image-video-container iframe").forEach(e => {
-  //   modalTimeoutIds.push(setTimeout(() => {
-  //     e.setAttribute("src", e.getAttribute("src") + "?");
-  //   }, 600));
-  // });
+  document.querySelectorAll("div.modal-view div.modal-area").forEach(e => {
+    e.classList.add("hide");
+  });
+
+  document.querySelectorAll(`div.modal-view video`).forEach(e => {
+    e.pause();
+  });
+
+  document.querySelectorAll("div.modal-view div.modal-area .scrollable").forEach(e => {
+    modalTimeoutIds.push(setTimeout(() => {
+      e.scrollTop = 0;
+    }, 600));
+  });
+
+  document.querySelectorAll("div.modal-view div.modal-area .scrollable .image-video-container iframe").forEach(e => {
+    modalTimeoutIds.push(setTimeout(() => {
+      e.setAttribute("src", e.getAttribute("src") + "?");
+    }, 600));
+  });
 
   if (window.location.search && window.location.search.match(/n=([0-9]+)$/)) {
     history.pushState(null, null, window.location.href.replace(/\?n=([0-9]+)$/, ""));
