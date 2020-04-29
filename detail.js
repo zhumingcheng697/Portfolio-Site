@@ -93,8 +93,8 @@ function hideDropDown() {
 }
 
 function showModal(cardId) {
-  document.querySelector(`div.modal-view div.modal-area.${cardId}`).classList.remove("hide");
   document.querySelector("div.modal-view").classList.remove("hide");
+  document.querySelector(`div.modal-view div.modal-area.${cardId}`).classList.remove("hide");
   document.querySelectorAll(`div.modal-view div.modal-area.${cardId} video`).forEach(e => {
     e.play();
     e.currentTime = 0;
