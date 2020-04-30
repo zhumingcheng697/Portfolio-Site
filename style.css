@@ -284,7 +284,8 @@ div.blank {
   background-color: rgba(50,50,50,0.2);
   border-radius: 18px;
   transition-duration: 0.6s;
-  transition-property: color, background-color, transform, filter;
+  box-shadow: 0 0 12px 0 var(--dropBlurBgColor);
+  transition-property: color, background-color, transform, filter, box-shadow;
 }
 
 #card-container .card.app {
@@ -348,8 +349,8 @@ div.blank {
 div.main-view {
   position: absolute;
   width: 100%;
-  top: 75px;
-  min-height: calc(100vh - 75px);
+  top: 80px;
+  min-height: calc(100vh - 80px);
   transition-duration: 0.6s;
 }
 
@@ -377,7 +378,8 @@ div.main-view div.projects .project-card {
   border-radius: 22px;
   background: var(--dropBlurBgColor);
   transition-duration: 0.6s;
-  transition-property: color, background-color, transform, filter, border-radius;
+  box-shadow: 0 0 10px 0 var(--dropBlurBgColor);
+  transition-property: color, background-color, transform, filter, border-radius, box-shadow;
   height: min-content;
   cursor: pointer;
 }
