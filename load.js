@@ -20,11 +20,23 @@ if (projectsDiv && modalDiv) {
     }
   }
 
-  if (window.location.search && window.location.search === "?wild") {
-    let projectCards = document.querySelectorAll(`div.main-view div.projects .project-card`);
-    setTimeout(() => {
-      showModal(projectCards[Math.floor(Math.random() * Math.floor(projectCards.length))].id);
-    }, 400);
+  if (window.location.search) {
+    let chosenId;
+    if (window.location.search === "?wild") {
+      let projectCards = document.querySelectorAll(`div.main-view div.projects .project-card`);
+      if (projectCards) {
+        chosenId = projectCards[Math.floor(Math.random() * Math.floor(projectCards.length))].id;
+      }
+    } else {
+      let chosenCard = document.querySelector(`#${window.location.search.replace("?", "")}`);
+      if (chosenCard && chosenCard.id) {
+        chosenId = chosenCard.id
+      }
+    }
+
+    if (chosenId) {
+      setTimeout(() => {showModal(chosenId)}, 450);
+    }
   }
 }
 
@@ -84,9 +96,7 @@ function createProjectCard(project) {
   projectCardDiv.appendChild(pDiv);
   projectsDiv.appendChild(projectCardDiv);
 
-  setTimeout(function () {
-    projectCardDiv.classList.remove("hide");
-  }, 150);
+  setTimeout(() => {projectCardDiv.classList.remove("hide")}, 150);
 }
 
 function createProjectModal(project) {

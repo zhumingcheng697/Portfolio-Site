@@ -77,9 +77,7 @@ function showDropDown() {
 function hideDropDown() {
   document.querySelector("h2 div.drop-down").classList.add("hide");
   document.querySelector("h2 strong strong").classList.remove("turned");
-  dropDownTimeoutIds.push(setTimeout(function () {
-    document.querySelector("h2 div.drop-down").classList.add("displayNone");
-  }, 600));
+  dropDownTimeoutIds.push(setTimeout(() => {document.querySelector("h2 div.drop-down").classList.add("displayNone")}, 600));
 }
 
 function showModal(cardId) {
@@ -90,6 +88,12 @@ function showModal(cardId) {
     e.currentTime = 0;
   });
 
+  if (!window.location.search) {
+    history.pushState(null, null, `${window.location.href}?${cardId}`);
+  } else if (window.location.search !== `?${cardId}`) {
+    history.pushState(null, null, window.location.href.replace(window.location.search, `?${cardId}`));
+  }
+
   for (id of modalTimeoutIds) {
     clearTimeout(id);
   }
@@ -99,28 +103,19 @@ function showModal(cardId) {
 
 function hideModals() {
   document.querySelector("div.modal-view").classList.add("hide");
-  document.querySelectorAll("div.modal-view div.modal-area").forEach(e => {
-    e.classList.add("hide");
-  });
-
-  document.querySelectorAll(`div.modal-view video`).forEach(e => {
-    e.pause();
-  });
+  document.querySelectorAll("div.modal-view div.modal-area").forEach(e => {e.classList.add("hide")});
+  document.querySelectorAll(`div.modal-view video`).forEach(e => {e.pause()});
 
   document.querySelectorAll("div.modal-view div.modal-area .scrollable").forEach(e => {
-    modalTimeoutIds.push(setTimeout(() => {
-      e.scrollTop = 0;
-    }, 600));
+    modalTimeoutIds.push(setTimeout(() => {e.scrollTop = 0}, 600));
   });
 
   document.querySelectorAll("div.modal-view div.modal-area .scrollable .image-video-container iframe").forEach(e => {
-    modalTimeoutIds.push(setTimeout(() => {
-      e.setAttribute("src", e.getAttribute("src") + "?");
-    }, 600));
+    modalTimeoutIds.push(setTimeout(() => {e.setAttribute("src", e.getAttribute("src") + "?")}, 600));
   });
 
-  if (window.location.search && window.location.search === "?wild") {
-    history.pushState(null, null, window.location.href.replace("?wild", ""));
+  if (window.location.search) {
+    history.pushState(null, null, window.location.href.replace(window.location.search, ""));
   }
 }
 
@@ -130,13 +125,9 @@ document.querySelector("h2").addEventListener("mouseenter", () => {
   }
 });
 
-document.querySelector("h2 > p").addEventListener("mouseenter", () => {
-  showDropDown();
-});
+document.querySelector("h2 > p").addEventListener("mouseenter", showDropDown);
 
-document.querySelector("h2").addEventListener("mouseleave", () => {
-  hideDropDown();
-});
+document.querySelector("h2").addEventListener("mouseleave", hideDropDown);
 
 document.querySelector("h2 > p").addEventListener("click", () => {
   if (window.getComputedStyle(document.querySelector("h2 div.drop-down")).getPropertyValue("opacity") > 0) {
@@ -147,15 +138,11 @@ document.querySelector("h2 > p").addEventListener("click", () => {
 });
 
 document.querySelectorAll("div.main-view div.projects .project-card").forEach(element => {
-  element.addEventListener("click", () => {
-    showModal(element.id);
-  });
+  element.addEventListener("click", () => {showModal(element.id)});
 });
 
 document.querySelectorAll("div.modal-view div.modal-area .cancel-btn").forEach(element => {
-  element.addEventListener("click", () => {
-    hideModals();
-  });
+  element.addEventListener("click", hideModals);
 });
 
 document.addEventListener("click", click => {
