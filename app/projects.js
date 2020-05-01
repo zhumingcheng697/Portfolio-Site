@@ -1,4 +1,4 @@
-let appProjects = [
+const appProjects = [
   {
     title: "Metro ARchive",
     year: "2020",
