@@ -2,23 +2,21 @@ let projectsDiv = document.querySelector("div.main-view div.projects");
 let modalDiv = document.querySelector("div.modal-view");
 
 if (projectsDiv && modalDiv) {
+  let projects;
+
   if (document.body.classList.contains("app") && typeof appProjects !== "undefined") {
-    sortProjects(appProjects);
-    for (appProject of appProjects) {
-      createProjectCard(appProject);
-      createProjectModal(appProject);
-    }
+    projects = appProjects;
   } else if (document.body.classList.contains("web") && typeof webProjects !== "undefined") {
-    sortProjects(webProjects);
-    for (webProject of webProjects) {
-      createProjectCard(webProject);
-      createProjectModal(webProject);
-    }
+    projects = webProjects;
   } else if (document.body.classList.contains("script") && typeof scriptProjects !== "undefined") {
-    sortProjects(scriptProjects);
-    for (scriptProject of scriptProjects) {
-      createProjectCard(scriptProject);
-      createProjectModal(scriptProject);
+    projects = scriptProjects;
+  }
+
+  if (projects) {
+    sortProjects(projects);
+    for (project of projects) {
+      createProjectCard(projects);
+      createProjectModal(projects);
     }
   }
 
