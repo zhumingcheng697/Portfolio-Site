@@ -130,7 +130,7 @@ document.querySelector("h2 > p").addEventListener("mouseenter", showDropDown);
 document.querySelector("h2").addEventListener("mouseleave", hideDropDown);
 
 document.querySelector("h2 > p").addEventListener("click", () => {
-  if (window.getComputedStyle(document.querySelector("h2 div.drop-down")).getPropertyValue("opacity") > 0) {
+  if (!document.querySelector("h2 div.drop-down").classList.contains("hide")) {
     hideDropDown();
   } else {
     showDropDown();
