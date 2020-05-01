@@ -7,7 +7,7 @@ if (window.location.search && window.location.search.match(/n=([0-9]+)$/)) {
   if (card && card.id) {
     setTimeout(() => {
       showModal(card.id);
-    }, 40);
+    }, 80);
   }
 }
 

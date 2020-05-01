@@ -379,7 +379,7 @@ div.main-view div.projects .project-card {
   background: var(--dropBlurBgColor);
   transition-duration: 0.6s;
   box-shadow: 0 0 10px 0 var(--dropBlurBgColor);
-  transition-property: color, background-color, transform, filter, border-radius, box-shadow;
+  transition-property: color, background-color, transform, filter, border-radius, box-shadow, opacity;
   height: min-content;
   cursor: pointer;
 }
