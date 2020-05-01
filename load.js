@@ -110,7 +110,7 @@ function createProjectModal(project) {
 
   switch (project.detailViewType) {
     case "video":
-      actualModalDiv.innerHTML += `<div class="image-video-container unselectable"><video playsinline preload="none" src="${project.videoUrl}" muted loop poster="${project.bgImg}"><img src="${project.bgImg}"></video></div>`;
+      actualModalDiv.innerHTML += `<div class="image-video-container unselectable"><video playsinline preload="metadata" src="${project.videoUrl}" muted loop><img src="${project.bgImg}"></video></div>`;
       break;
     case "image":
       actualModalDiv.innerHTML += `<div class="image-video-container unselectable"><img src="${project.bgImg}"></div>`;
