@@ -15,8 +15,8 @@ if (projectsDiv && modalDiv) {
   if (projects) {
     sortProjects(projects);
     for (project of projects) {
-      createProjectCard(projects);
-      createProjectModal(projects);
+      createProjectCard(project);
+      createProjectModal(project);
     }
   }
 
