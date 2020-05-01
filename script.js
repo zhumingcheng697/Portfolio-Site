@@ -3,9 +3,9 @@ isInDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 document.body.style.setProperty('--full-height', `${window.innerHeight}px`);
 
 if (!document.body.classList.contains("app") && !document.body.classList.contains("web") && !document.body.classList.contains("wild")) {
-  document.querySelector("#card-container a.card.app p:last-of-type").innerHTML = typeof webProjects !== "undefined" ? `${appProjects.length} Projects` : "???";
+  document.querySelector("#card-container a.card.app p:last-of-type").innerHTML = typeof appProjects !== "undefined" ? `${appProjects.length} Projects` : "???";
   document.querySelector("#card-container a.card.web p:last-of-type").innerHTML = typeof webProjects !== "undefined" ? `${webProjects.length} Projects` : "???";
-  document.querySelector("#card-container a.card.script p:last-of-type").innerHTML = typeof webProjects !== "undefined" ? `${scriptProjects.length} Projects` : "???";
+  document.querySelector("#card-container a.card.script p:last-of-type").innerHTML = typeof scriptProjects !== "undefined" ? `${scriptProjects.length} Projects` : "???";
 
   setTimeout(() => {
     document.querySelector("#card-container").classList.remove("hide");
