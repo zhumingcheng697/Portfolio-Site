@@ -359,7 +359,7 @@ div.main-view div.projects {
   width: 85%;
   display: flex;
   flex-wrap: wrap;
-  min-height: calc(100vh - 120px);
+  min-height: calc(100vh - 130px);
   justify-content: space-between;
   align-content: center;
   align-items: center;
@@ -379,7 +379,7 @@ div.main-view div.projects .project-card {
   background: var(--dropBlurBgColor);
   transition-duration: 0.6s;
   box-shadow: 0 0 10px 0 var(--dropBlurBgColor);
-  transition-property: color, background-color, transform, filter, border-radius, box-shadow, opacity;
+  transition-property: color, background-color, transform, filter, border-radius, box-shadow, opacity, visibility;
   height: min-content;
   cursor: pointer;
 }
@@ -472,8 +472,8 @@ div.about-me {
   width: 70%;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;;
-  min-height: calc(100vh - 170px);
+  flex-direction: column;
+  min-height: calc(100vh - 180px);
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -876,7 +876,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.blank {
-    height: calc(80px + var(--inset-bottom));
+    height: calc(90px + var(--inset-bottom));
   }
 
   #greeting h1 {
@@ -989,7 +989,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.main-view div.projects {
-    min-height: calc(100vh - 170px);
+    min-height: calc(100vh - 180px);
     width: 90%;
   }
 
@@ -1152,17 +1152,17 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   div.main-view div.projects .project-card p span {
     /* line-height: 24px; */
     margin-bottom: 5px;
-    padding: 2.5px 3px;
+    padding: 2.5px 4px;
     margin-right: 6px;
     font-size: 0.75em;
   }
 
   div.main-view div.projects {
-    min-height: calc(100vh - 190px);
+    min-height: calc(100vh - 200px);
   }
 
   div.detail-blank {
-    height: calc(80px + var(--inset-bottom));
+    height: calc(90px + var(--inset-bottom));
   }
 
   div.modal-view div.modal-area .actual-modal h4 {
