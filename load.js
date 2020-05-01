@@ -2,19 +2,19 @@ let projectsDiv = document.querySelector("div.main-view div.projects");
 let modalDiv = document.querySelector("div.modal-view");
 
 if (projectsDiv && modalDiv) {
-  if (document.body.classList.contains("app") && appProjects) {
+  if (document.body.classList.contains("app") && typeof appProjects != "undefined") {
     sortProjects(appProjects);
     for (appProject of appProjects) {
       createProjectCard(appProject);
       createProjectModal(appProject);
     }
-  } else if (document.body.classList.contains("web") && webProjects) {
+  } else if (document.body.classList.contains("web") && typeof webProjects != "undefined") {
     sortProjects(webProjects);
     for (webProject of webProjects) {
       createProjectCard(webProject);
       createProjectModal(webProject);
     }
-  } else if (document.body.classList.contains("script") && scriptProjects) {
+  } else if (document.body.classList.contains("script") && typeof scriptProjects != "undefined") {
     sortProjects(scriptProjects);
     for (scriptProject of scriptProjects) {
       createProjectCard(scriptProject);
@@ -75,15 +75,7 @@ function createProjectCard(project) {
   projectCardDiv.classList.add("hide");
   projectCardDiv.id = project.identifier;
 
-  let projectImgWrapperDiv = document.createElement("div");
-  projectImgWrapperDiv.classList.add("project-img-wrapper");
-
-  let projectImgDiv = document.createElement("div");
-  projectImgDiv.classList.add("project-img");
-  projectImgDiv.style.backgroundImage = `url("${project.bgImg}")`;
-  projectImgWrapperDiv.appendChild(projectImgDiv);
-  projectCardDiv.appendChild(projectImgWrapperDiv);
-
+  projectCardDiv.innerHTML += `<div class="project-img-wrapper"><div class="project-img" style="background-image: url('${project.bgImg}');"></div></div>`;
   projectCardDiv.innerHTML += `<h5>${project.title}<span>(${project.year})</span></h5>`
 
   let pDiv = document.createElement("p");
@@ -118,28 +110,19 @@ function createProjectModal(project) {
   actualModalDiv.classList.add("actual-modal");
   modalContainerDiv.appendChild(actualModalDiv);
 
-  let imageVideoContainerDiv = document.createElement("div");
-  imageVideoContainerDiv.classList.add("image-video-container");
-  imageVideoContainerDiv.classList.add("unselectable");
-  actualModalDiv.appendChild(imageVideoContainerDiv);
-
   switch (project.detailViewType) {
     case "video":
-      imageVideoContainerDiv.innerHTML += `<video playsinline src="${project.videoUrl}" muted loop poster="${project.bgImg}"><img src="${project.bgImg}"></video>`;
+      actualModalDiv.innerHTML += `<div class="image-video-container unselectable"><video playsinline src="${project.videoUrl}" muted loop poster="${project.bgImg}"><img src="${project.bgImg}"></video></div>`;
       break;
     case "image":
-      imageVideoContainerDiv.innerHTML += `<img src="${project.bgImg}">`;
+      actualModalDiv.innerHTML += `<div class="image-video-container unselectable"><img src="${project.bgImg}"></div>`;
       break;
     case "iframe":
-      imageVideoContainerDiv.innerHTML += `<iframe frameborder="0" src="${project.iframeUrl}"><img src="${project.bgImg}"></iframe>`;
-      break;
-    default:
+      actualModalDiv.innerHTML += `<div class="image-video-container unselectable"><iframe frameborder="0" src="${project.iframeUrl}"></iframe></div>`;
       break;
   }
 
-  let h4Div = document.createElement("h4");
-  h4Div.innerHTML = `${project.title}<span>(${project.year})</span>`;
-  actualModalDiv.appendChild(h4Div);
+  actualModalDiv.innerHTML += `<h4>${project.title}<span>(${project.year})</span></h4>`;
 
   let pDiv = document.createElement("p");
   pDiv.classList.add("tags");
