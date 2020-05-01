@@ -21,6 +21,13 @@ if (projectsDiv && modalDiv) {
       createProjectModal(scriptProject);
     }
   }
+
+  if (window.location.search && window.location.search === "?wild") {
+    let projectCards = document.querySelectorAll(`div.main-view div.projects .project-card`);
+    setTimeout(() => {
+      showModal(projectCards[Math.floor(Math.random() * Math.floor(projectCards.length))].id);
+    }, 400);
+  }
 }
 
 function sortProjects(projects) {
@@ -89,7 +96,7 @@ function createProjectCard(project) {
 
   setTimeout(function () {
     projectCardDiv.classList.remove("hide");
-  }, 40);
+  }, 150);
 }
 
 function createProjectModal(project) {

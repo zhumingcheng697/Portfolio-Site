@@ -10,6 +10,7 @@ html {
 }
 
 body {
+  --full-height: 100vh;
   --inset-left: env(safe-area-inset-left, 0);
   --inset-top: env(safe-area-inset-top, 0);
   --inset-bottom: env(safe-area-inset-bottom, 0);
@@ -51,7 +52,7 @@ h1 {
   font-size: 2.1em;
   color: var(--firstTxtColor);
   transition-duration: 0.6s;
-  transition-property: color, font-size;
+  transition-property: color, font-size, opacity, visibility;
 }
 
 #greeting h1 {
@@ -150,7 +151,7 @@ h2 div.drop-down div.menu {
 }
 
 h2 div.drop-down div.menu > div.scrollable {
-  max-height: calc(100vh - 100px);
+  max-height: calc(var(--full-height) - 100px);
   min-height: 25px;
 }
 
@@ -271,6 +272,8 @@ div.blank {
   flex-wrap: wrap;
   justify-content: center;
   box-sizing: border-box;
+  transition-duration: 0.6s;
+  transition-property: opacity, visibility;
 }
 
 #card-container .card {
@@ -350,7 +353,7 @@ div.main-view {
   position: absolute;
   width: 100%;
   top: 80px;
-  min-height: calc(100vh - 80px);
+  min-height: calc(var(--full-height) - 80px);
   transition-duration: 0.6s;
 }
 
@@ -359,7 +362,7 @@ div.main-view div.projects {
   width: 85%;
   display: flex;
   flex-wrap: wrap;
-  min-height: calc(100vh - 130px);
+  min-height: calc(var(--full-height) - 130px);
   justify-content: space-between;
   align-content: center;
   align-items: center;
@@ -473,7 +476,7 @@ div.about-me {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  min-height: calc(100vh - 180px);
+  min-height: calc(var(--full-height) - 180px);
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -536,7 +539,7 @@ div.modal-view div.modal-area .modal-container {
   display: flex;
   /* flex-wrap: wrap; */
   /* flex-direction: row; */
-  min-height: 100vh;
+  min-height: var(--full-height);
   align-items: center;
   align-content: center;
   justify-content: center;
@@ -989,7 +992,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.main-view div.projects {
-    min-height: calc(100vh - 180px);
+    min-height: calc(var(--full-height) - 180px);
     width: 90%;
   }
 
@@ -1158,7 +1161,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.main-view div.projects {
-    min-height: calc(100vh - 200px);
+    min-height: calc(var(--full-height) - 200px);
   }
 
   div.detail-blank {

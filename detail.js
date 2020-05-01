@@ -1,16 +1,6 @@
 let dropDownTimeoutIds = [];
 let modalTimeoutIds = [];
 
-if (window.location.search && window.location.search.match(/n=([0-9]+)$/)) {
-  let n = window.location.search.match(/n=([0-9]+)$/)[1];
-  let card = document.querySelector(`div.main-view div.projects .project-card:nth-of-type(${n})`);
-  if (card && card.id) {
-    setTimeout(() => {
-      showModal(card.id);
-    }, 80);
-  }
-}
-
 randomizeDropDown();
 
 function randomizeDropDown() {
@@ -18,10 +8,10 @@ function randomizeDropDown() {
     document.querySelectorAll("h2 div.drop-down div.menu > div.scrollable > div.wild > a.wild").forEach(element => {
       switch (Math.floor(Math.random() * 3)) {
         case 0:
-          element.setAttribute("href", `../web/index.html?n=${Math.floor(Math.random() * 3 + 1)}`);
+          element.setAttribute("href", "../web/index.html?wild");
           break;
         case 1:
-          element.setAttribute("href", `../script/index.html?n=${Math.floor(Math.random() * 4 + 1)}`);
+          element.setAttribute("href", "../script/index.html?wild");
           break;
         default:
           element.setAttribute("href", "../me/index.html");
@@ -31,10 +21,10 @@ function randomizeDropDown() {
     document.querySelectorAll("h2 div.drop-down div.menu > div.scrollable > div.wild > a.wild").forEach(element => {
       switch (Math.floor(Math.random() * 3)) {
         case 0:
-          element.setAttribute("href", `../app/index.html?n=${Math.floor(Math.random() * 2 + 1)}`);
+          element.setAttribute("href", "../app/index.html?wild");
           break;
         case 1:
-          element.setAttribute("href", `../script/index.html?n=${Math.floor(Math.random() * 4 + 1)}`);
+          element.setAttribute("href", "../script/index.html?wild");
           break;
         default:
           element.setAttribute("href", "../me/index.html");
@@ -44,10 +34,10 @@ function randomizeDropDown() {
     document.querySelectorAll("h2 div.drop-down div.menu > div.scrollable > div.wild > a.wild").forEach(element => {
       switch (Math.floor(Math.random() * 3)) {
         case 0:
-          element.setAttribute("href", `../app/index.html?n=${Math.floor(Math.random() * 2 + 1)}`);
+          element.setAttribute("href", "../app/index.html?wild");
           break;
         case 1:
-          element.setAttribute("href", `../web/index.html?n=${Math.floor(Math.random() * 3 + 1)}`);
+          element.setAttribute("href", "../web/index.html?wild");
           break;
         default:
           element.setAttribute("href", "../me/index.html");
@@ -57,13 +47,13 @@ function randomizeDropDown() {
     document.querySelectorAll("h2 div.drop-down div.menu > div.scrollable > div.wild > a.wild").forEach(element => {
       switch (Math.floor(Math.random() * 3)) {
         case 0:
-          element.setAttribute("href", `../app/index.html?n=${Math.floor(Math.random() * 2 + 1)}`);
+          element.setAttribute("href", "../app/index.html?wild");
           break;
         case 1:
-          element.setAttribute("href", `../web/index.html?n=${Math.floor(Math.random() * 3 + 1)}`);
+          element.setAttribute("href", "../web/index.html?wild");
           break;
         default:
-          element.setAttribute("href", `../script/index.html?n=${Math.floor(Math.random() * 4 + 1)}`);
+          element.setAttribute("href", "../script/index.html?wild");
       }
     });
   }
@@ -94,11 +84,11 @@ function hideDropDown() {
 
 function showModal(cardId) {
   document.querySelector("div.modal-view").classList.remove("hide");
-  // document.querySelector(`div.modal-view div.modal-area.${cardId}`).classList.remove("hide");
-  // document.querySelectorAll(`div.modal-view div.modal-area.${cardId} video`).forEach(e => {
-  //   e.play();
-  //   e.currentTime = 0;
-  // });
+  document.querySelector(`div.modal-view div.modal-area.${cardId}`).classList.remove("hide");
+  document.querySelectorAll(`div.modal-view div.modal-area.${cardId} video`).forEach(e => {
+    e.play();
+    e.currentTime = 0;
+  });
 
   for (id of modalTimeoutIds) {
     clearTimeout(id);
@@ -109,28 +99,28 @@ function showModal(cardId) {
 
 function hideModals() {
   document.querySelector("div.modal-view").classList.add("hide");
-  // document.querySelectorAll("div.modal-view div.modal-area").forEach(e => {
-  //   e.classList.add("hide");
-  // });
-  //
-  // document.querySelectorAll(`div.modal-view video`).forEach(e => {
-  //   e.pause();
-  // });
-  //
-  // document.querySelectorAll("div.modal-view div.modal-area .scrollable").forEach(e => {
-  //   modalTimeoutIds.push(setTimeout(() => {
-  //     e.scrollTop = 0;
-  //   }, 600));
-  // });
-  //
-  // document.querySelectorAll("div.modal-view div.modal-area .scrollable .image-video-container iframe").forEach(e => {
-  //   modalTimeoutIds.push(setTimeout(() => {
-  //     e.setAttribute("src", e.getAttribute("src") + "?");
-  //   }, 600));
-  // });
+  document.querySelectorAll("div.modal-view div.modal-area").forEach(e => {
+    e.classList.add("hide");
+  });
 
-  if (window.location.search && window.location.search.match(/n=([0-9]+)$/)) {
-    history.pushState(null, null, window.location.href.replace(/\?n=([0-9]+)$/, ""));
+  document.querySelectorAll(`div.modal-view video`).forEach(e => {
+    e.pause();
+  });
+
+  document.querySelectorAll("div.modal-view div.modal-area .scrollable").forEach(e => {
+    modalTimeoutIds.push(setTimeout(() => {
+      e.scrollTop = 0;
+    }, 600));
+  });
+
+  document.querySelectorAll("div.modal-view div.modal-area .scrollable .image-video-container iframe").forEach(e => {
+    modalTimeoutIds.push(setTimeout(() => {
+      e.setAttribute("src", e.getAttribute("src") + "?");
+    }, 600));
+  });
+
+  if (window.location.search && window.location.search === "?wild") {
+    history.pushState(null, null, window.location.href.replace("?wild", ""));
   }
 }
 
