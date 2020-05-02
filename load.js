@@ -100,49 +100,35 @@ function createProjectCard(project) {
 }
 
 function createProjectModal(project) {
-  let modalAreaDiv = document.createElement("div");
-  modalAreaDiv.classList.add("modal-area");
-  modalAreaDiv.classList.add(project.identifier);
-  modalAreaDiv.classList.add("hide");
-  modalDiv.appendChild(modalAreaDiv);
-
-  let scrollableDiv = document.createElement("div");
-  scrollableDiv.classList.add("scrollable");
-  modalAreaDiv.appendChild(scrollableDiv);
-
-  let modalContainerDiv = document.createElement("div");
-  modalContainerDiv.classList.add("modal-container");
-  scrollableDiv.appendChild(modalContainerDiv);
-
-  let actualModalDiv = document.createElement("div");
-  actualModalDiv.classList.add("actual-modal");
-  modalContainerDiv.appendChild(actualModalDiv);
+  let modalHTML = `<div class="modal-area ${project.identifier} hide"><div class="scrollable"><div class="modal-container"><div class="actual-modal">`;
 
   switch (project.detailViewType) {
     case "video":
-      actualModalDiv.innerHTML += `<div class="image-video-container unselectable"><video playsinline preload="metadata" src="${project.videoUrl}" muted loop><img src="${project.bgImg}"></video></div>`;
+      modalHTML += `<div class="image-video-container unselectable"><video playsinline preload="metadata" src="${project.videoUrl}" muted loop><img src="${project.bgImg}"></video></div>`;
       break;
     case "image":
-      actualModalDiv.innerHTML += `<div class="image-video-container unselectable"><img src="${project.bgImg}"></div>`;
+      modalHTML += `<div class="image-video-container unselectable"><img src="${project.bgImg}"></div>`;
       break;
     case "iframe":
-      actualModalDiv.innerHTML += `<div class="image-video-container unselectable"><iframe frameborder="0" src="${project.iframeUrl}"></iframe></div>`;
+      modalHTML += `<div class="image-video-container unselectable"><iframe frameborder="0" src="${project.iframeUrl}"></iframe></div>`;
       break;
   }
 
-  actualModalDiv.innerHTML += `<h4>${project.title}<span>(${project.year})</span></h4>`;
+  modalHTML += `<h4>${project.title}<span>(${project.year})</span></h4>`;
 
-  let pDiv = document.createElement("p");
-  pDiv.classList.add("tags");
+  modalHTML += `<p class="tags">`
   for (tag of project.tags) {
-    pDiv.innerHTML += `<span>${tag}</span>`;
+    modalHTML += `<span>${tag}</span>`;
   }
-
-  actualModalDiv.appendChild(pDiv);
+  modalHTML += `</p>`;
 
   for (line of project.descriptions) {
-    actualModalDiv.innerHTML += `<p>${line}</p>`
+    modalHTML += `<p>${line}</p>`
   }
 
-  actualModalDiv.innerHTML += `<div class="cancel-btn" class="unselectable hide">&#x2715;</div>`;
+  modalHTML += `<div class="cancel-btn" class="unselectable hide">&#x2715;</div>`;
+
+  modalHTML += `</div></div></div></div>`;
+
+  modalDiv.innerHTML += modalHTML;
 }
