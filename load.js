@@ -29,7 +29,7 @@ if (projectsDiv && modalDiv) {
       }
     } else {
       let chosenCard = document.querySelector(`#${window.location.search.replace("?", "")}`);
-      if (chosenCard && chosenCard.id) {
+      if (chosenCard) {
         chosenId = chosenCard.id
       }
     }

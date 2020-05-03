@@ -162,3 +162,14 @@ document.addEventListener('keydown', key => {
     }
   }
 });
+
+window.onpopstate = () => {
+  if (!window.location.search) {
+    hideModals();
+  } else {
+    let pCard = document.querySelector(`#${window.location.search.replace("?", "")}`);
+    if (pCard) {
+      showModal(pCard.id);
+    }
+  }
+};
