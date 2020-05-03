@@ -15,7 +15,7 @@ if (!document.body.classList.contains("app") && !document.body.classList.contain
 }
 
 if (document.body.classList.contains("wild") && document.querySelector("div.about-me")) {
-  setTimeout(() => {document.querySelector("div.about-me").classList.remove("hide")}, 150);
+  setTimeout(() => {document.querySelector(".about-me").classList.remove("hide")}, 150);
 }
 
 storeWidthHeight();
@@ -67,7 +67,7 @@ function randomizeCard() {
   }
 }
 
-document.querySelectorAll("#card-container .card, h2 > p ~ div.drop-down > div.menu > div.scrollable > div, .cancel-btn, div.modal-view div.modal-area .actual-modal p:not(.tags) > a, h3 a, div.projects .project-card").forEach(element => {
+document.querySelectorAll("#card-container .card, h2 > p ~ .drop-down > .menu > div.scrollable > div, .cancel-btn, .modal-view .modal-area .actual-modal p:not(.tags) > a, h3 a, .projects .project-card").forEach(element => {
   element.addEventListener("touchstart", () => {element.classList.add("tapped")});
 });
 
@@ -76,7 +76,7 @@ document.querySelectorAll("#card-container .card").forEach(element => {
 });
 
 document.addEventListener("touchend", touchend => {
-  document.querySelectorAll("#card-container .card, h2 > p ~ div.drop-down > div.menu > div.scrollable > div, .cancel-btn, div.modal-view div.modal-area .actual-modal p:not(.tags) > a, h3 a, div.projects .project-card").forEach(element => {element.classList.remove("tapped")});
+  document.querySelectorAll("#card-container .card, h2 > p ~ .drop-down > .menu > div.scrollable > div, .cancel-btn, .modal-view .modal-area .actual-modal p:not(.tags) > a, h3 a, .projects .project-card").forEach(element => {element.classList.remove("tapped")});
 });
 
 window.matchMedia("(prefers-color-scheme: dark)").addListener(match => {

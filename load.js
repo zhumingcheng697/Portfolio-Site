@@ -1,5 +1,5 @@
-let projectsDiv = document.querySelector("div.main-view div.projects");
-let modalDiv = document.querySelector("div.modal-view");
+let projectsDiv = document.querySelector(".main-view .projects");
+let modalDiv = document.querySelector(".modal-view");
 
 if (projectsDiv && modalDiv) {
   let projects;
@@ -23,7 +23,7 @@ if (projectsDiv && modalDiv) {
   if (window.location.search) {
     let chosenId;
     if (window.location.search === "?wild") {
-      let projectCards = document.querySelectorAll(`div.main-view div.projects .project-card`);
+      let projectCards = document.querySelectorAll(`.main-view .projects .project-card`);
       if (projectCards) {
         chosenId = projectCards[Math.floor(Math.random() * Math.floor(projectCards.length))].id;
       }
