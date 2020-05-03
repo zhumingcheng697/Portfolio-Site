@@ -110,7 +110,7 @@ function hideModals() {
     modalTimeoutIds.push(setTimeout(() => {e.scrollTop = 0}, 600));
   });
 
-  document.querySelectorAll("div.modal-view div.modal-area .scrollable .image-video-container:not(.openprocessing) iframe").forEach(e => {
+  document.querySelectorAll("div.modal-view div.modal-area .scrollable .image-video-container iframe:not([src^=\"https://www.openprocessing.org/sketch/\"])").forEach(e => {
     modalTimeoutIds.push(setTimeout(() => {e.setAttribute("src", e.getAttribute("src") + "?")}, 600));
   });
 
