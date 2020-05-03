@@ -1,5 +1,5 @@
 let isInDarkMode;
-let resizeIndex = 35;
+let resizeIndex = 45;
 let resizeIntervalId;
 isInDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
@@ -25,7 +25,7 @@ randomizeCard();
 function resizeLoop() {
   clearInterval(resizeIntervalId);
   storeWidthHeight();
-  resizeIndex = 35;
+  resizeIndex = 45;
   resizeIntervalId = setInterval(() => {
     if (resizeIndex >= 0) {
       storeWidthHeight();
@@ -33,7 +33,7 @@ function resizeLoop() {
     } else {
       clearInterval(resizeIntervalId);
     }
-  }, 20);
+  }, 15);
 }
 
 function storeWidthHeight() {
