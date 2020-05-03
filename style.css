@@ -11,6 +11,7 @@ html {
 
 body {
   --full-height: 100vh;
+  --modal-width: 60vw;
   --inset-left: env(safe-area-inset-left, 0);
   --inset-top: env(safe-area-inset-top, 0);
   --inset-bottom: env(safe-area-inset-bottom, 0);
@@ -571,6 +572,10 @@ div.modal-view div.modal-area .modal-container .actual-modal .image-video-contai
   -webkit-mask-image: -webkit-radial-gradient(black, black);
 }
 
+div.modal-view div.modal-area .modal-container .actual-modal .image-video-container.openprocessing {
+  height: calc(550px * var(--modal-width) / 1000);
+}
+
 div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn {
   position: absolute;
   right: 15px;
@@ -615,7 +620,17 @@ div.modal-view div.modal-area .modal-container .actual-modal iframe {
   height: calc(80vh - 70px);
   position: relative;
   transition-duration: 0.6s;
-  /* border-radius: 10px 10px 0 0; */
+}
+
+div.modal-view div.modal-area .modal-container .actual-modal .openprocessing iframe {
+  height: 600px;
+  width: 1000px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  transform-origin: top left;
+  transition: none;
+  transform: scale(calc(var(--modal-width) / 1000)) translate(0, -50px);
 }
 
 div.modal-view div.modal-area .actual-modal h4 {

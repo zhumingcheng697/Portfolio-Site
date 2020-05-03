@@ -110,7 +110,7 @@ function createProjectModal(project) {
       modalHTML += `<div class="image-video-container unselectable"><img src="${project.bgImg}"></div>`;
       break;
     case "iframe":
-      modalHTML += `<div class="image-video-container unselectable"><iframe frameborder="0" src="${project.iframeUrl}"></iframe></div>`;
+      modalHTML += `<div class="image-video-container unselectable ${project.iframeUrl.includes("openprocessing") ? "openprocessing" : ""}"><iframe frameborder="0" src="${project.iframeUrl}"></iframe></div>`;
       break;
   }
 

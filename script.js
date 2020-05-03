@@ -1,6 +1,7 @@
 let isInDarkMode;
+let resizeIndex = 35;
+let resizeIntervalId;
 isInDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-document.body.style.setProperty('--full-height', `${window.innerHeight}px`);
 
 if (!document.body.classList.contains("app") && !document.body.classList.contains("web") && !document.body.classList.contains("script") && !document.body.classList.contains("wild")) {
   document.querySelector("#card-container a.card.app p:last-of-type").innerHTML = typeof appProjects !== "undefined" ? `${appProjects.length} Projects` : "???";
@@ -17,8 +18,30 @@ if (document.body.classList.contains("wild") && document.querySelector("div.abou
   setTimeout(() => {document.querySelector("div.about-me").classList.remove("hide")}, 150);
 }
 
+storeWidthHeight();
 switchFavicons();
 randomizeCard();
+
+function resizeLoop() {
+  clearInterval(resizeIntervalId);
+  storeWidthHeight();
+  resizeIndex = 35;
+  resizeIntervalId = setInterval(() => {
+    if (resizeIndex >= 0) {
+      storeWidthHeight();
+      resizeIndex--;
+    } else {
+      clearInterval(resizeIntervalId);
+    }
+  }, 20);
+}
+
+function storeWidthHeight() {
+  document.body.style.setProperty('--full-height', `${window.innerHeight}px`);
+  if (document.querySelector(".modal-container")) {
+    document.body.style.setProperty('--modal-width', `${document.querySelector(".modal-container").clientWidth}`);
+  }
+}
 
 function switchFavicons() {
   document.querySelectorAll("link[rel=\"icon\"], link[rel=\"apple-touch-icon\"]").forEach(element => {element.setAttribute("href", element.getAttribute("href").replace(/(dark|light)/gi, isInDarkMode ? "dark" : "light"))});
@@ -61,4 +84,4 @@ window.matchMedia("(prefers-color-scheme: dark)").addListener(match => {
   switchFavicons();
 });
 
-window.addEventListener("resize", () => {document.body.style.setProperty('--full-height', `${window.innerHeight}px`)});
+window.addEventListener("resize", resizeLoop);
