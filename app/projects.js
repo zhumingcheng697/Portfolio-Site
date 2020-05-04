@@ -5,9 +5,9 @@ const appProjects = [
     identifier: "metro-archive-2020",
     tags: ["ARKit", "iOS", "Xcode"],
     priority: 5,
-    bgImg: "../assets/app/metro-archive-2020/image.png",
+    bgImg: "metro-archive-2020/image.png",
     detailViewType: "video",
-    videoUrl: "../assets/app/metro-archive-2020/video.mp4",
+    videoUrl: "metro-archive-2020/video.mp4",
     descriptions: [
       'Metro ARchive is an Augmented Reality app Sammy and I developed in the first half of 2020 in collaboration with the <a target="_blank" href="https://rd.nytimes.com/">New York Times R&amp;D Team</a> and the <a target="_blank" href="https://www.nycmedialab.org/recent-projects/the-new-york-times-spatial-computing-for-news-challenge">NYC Media Lab</a>.',
       'It is my first time working with Augmented Reality or any types of 3D in a mobile app, and it&rsquo;s also my first time using the traditional View Controllers and View Delegates (as compared to SwiftUI) to build mobile iOS apps.',
@@ -20,9 +20,9 @@ const appProjects = [
     year: "2019",
     identifier: "courses-2019",
     tags: ["SwiftUI", "iOS", "Xcode"],
-    bgImg: "../assets/app/courses-2019/image.png",
+    bgImg: "courses-2019/image.png",
     detailViewType: "video",
-    videoUrl: "../assets/app/courses-2019/video.mp4",
+    videoUrl: "courses-2019/video.mp4",
     descriptions: [
       'Courses App is a simple iOS app I developed last year that can store and display the detailed information of all the courses a student is currently taking or plans to take in the future.',
       'It is build with <a target="_blank" href="https://developer.apple.com/xcode/swiftui/">SwiftUI</a>, a new framework Apple announced last June at WWDC 2019 that can help developers build apps much faster and easier for all Apple platforms including iOS, macOS and watchOS.',
