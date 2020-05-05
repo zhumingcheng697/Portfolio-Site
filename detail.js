@@ -119,13 +119,14 @@ function hideModals() {
   }
 }
 
-document.querySelector("h2").addEventListener("mouseenter", () => {
-  if (window.getComputedStyle(document.querySelector("h2 .drop-down")).getPropertyValue("opacity") > 0) {
-    showDropDown();
-  }
-});
-
-document.querySelector("h2 > p").addEventListener("mouseenter", showDropDown);
+if (window.matchMedia("(hover: hover)").matches) {
+  document.querySelector("h2").addEventListener("mouseenter", () => {
+    if (window.getComputedStyle(document.querySelector("h2 .drop-down")).getPropertyValue("opacity") > 0) {
+      showDropDown();
+    }
+  });
+  document.querySelector("h2 > p").addEventListener("mouseenter", showDropDown);
+}
 
 document.querySelector("h2").addEventListener("mouseleave", hideDropDown);
 
