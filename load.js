@@ -42,26 +42,8 @@ if (projectsDiv && modalDiv) {
 
 function sortProjects(projects) {
   projects.sort((a, b) => {
-    if (a.priority && b.priority) {
-      if (a.priority !== b.priority) {
-        return b.priority - a.priority;
-      } else {
-        if (a.year !== b.year) {
-          return parseInt(b.year) - parseInt(a.year);
-        } else {
-          if (a.title < b.title) {
-            return -1;
-          } else if (a.title > b.title) {
-            return 1;
-          } else {
-            return 0;
-          }
-        }
-      }
-    } else if (a.priority && !b.priority) {
-      return -1;
-    } else if (!a.priority && b.priority) {
-      return 1;
+    if ((a.priority || 0) !== (b.priority || 0)) {
+      return (b.priority || 0) - (a.priority || 0);
     } else {
       if (a.year !== b.year) {
         return parseInt(b.year) - parseInt(a.year);
