@@ -91,7 +91,7 @@ function showModal(cardId) {
   if (!window.location.search) {
     history.pushState(null, null, `${window.location.href}?${cardId}`);
   } else if (window.location.search !== `?${cardId}`) {
-    history.pushState(null, null, window.location.href.replace(window.location.search, `?${cardId}`));
+    history.replaceState(null, null, window.location.href.replace(window.location.search, `?${cardId}`));
   }
 
   for (id of modalTimeoutIds) {
