@@ -608,7 +608,7 @@ div.modal-view div.modal-area .modal-container .actual-modal .image-video-contai
 div.modal-view div.modal-area .modal-container .actual-modal img, div.modal-view div.modal-area .modal-container .actual-modal video {
   width: 100%;
   overflow: hidden;
-  max-height: calc(100vh - 70px - 10em);
+  max-height: calc(var(--full-height) - 70px - 10em);
   min-height: 27vh;
   position: relative;
   /* border-radius: 10px 10px 0 0; */
@@ -617,7 +617,7 @@ div.modal-view div.modal-area .modal-container .actual-modal img, div.modal-view
 div.modal-view div.modal-area .modal-container .actual-modal iframe {
   width: 100%;
   overflow: hidden;
-  height: calc(100vh - 70px - 10em);
+  height: calc(var(--full-height) - 70px - 10em);
   position: relative;
   transition-duration: 0.6s;
 }
