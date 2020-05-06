@@ -427,6 +427,7 @@ div.main-view div.projects .project-card h5 {
   margin-left: 22px;
   margin-top: 10px;
   transition-duration: 0.6s;
+  line-height: 1em;
 }
 
 div.main-view div.projects .project-card h5 span {
@@ -644,6 +645,7 @@ div.modal-view div.modal-area .actual-modal h4 {
   margin-right: 22px;
   margin-top: 10px;
   transition-duration: 0.6s;
+  line-height: 1em;
 }
 
 div.modal-view div.modal-area .actual-modal h4 span {
@@ -725,11 +727,6 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   background-color: var(--purpleCard);
 }
 
-
-
-
-
-
 .arrows {
   position: absolute;
   top: 0;
@@ -751,11 +748,6 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   z-index: 20;
   cursor: pointer;
 }
-
-
-
-
-
 
 @media (hover: none) {
   h2 > p.app ~ div.drop-down > div.menu > div.scrollable > div:not(.app).tapped > a, h2 > p.web ~ div.drop-down > div.menu > div.scrollable > div:not(.web).tapped > a, h2 > p.script ~ div.drop-down > div.menu > div.scrollable > div:not(.script).tapped > a, h2 > p.wild ~ div.drop-down > div.menu > div.scrollable > div.tapped > a {
