@@ -203,6 +203,10 @@ document.addEventListener('keydown', key => {
   if (key.keyCode === 27) {
     if (document.querySelector(".modal-view") && !document.querySelector(".modal-view").classList.contains("hide")) {
       hideModals();
+      document.querySelectorAll(".cancel-btn").forEach(e => {
+        e.classList.add("tapped");
+        setTimeout(() => {e.classList.remove("tapped")}, 180);
+      });
     }
   } else if (document.querySelector(".modal-view") && !document.querySelector(".modal-view").classList.contains("hide") && document.querySelector(".arrows > span.left") && document.querySelector(".arrows > span.right") && window.location.search && document.querySelector(`#${window.location.search.replace("?", "")}`)) {
     if (key.keyCode === 37) {

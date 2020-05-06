@@ -788,7 +788,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   .arrows > span.tapped {
-    color: #fffd;
+    color: #fffe;
   }
 }
 
@@ -825,17 +825,22 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     color: var(--firstTxtColor);
   }
 
+  div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn.tapped {
+    background-color: var(--firstBgColor);
+    color: var(--firstTxtColor);
+  }
+
   div.modal-view div.modal-area .actual-modal p:not(.tags) > a:hover {
     text-decoration: underline;
     filter: brightness(1.15);
   }
 
   .arrows > span:hover {
-    color: #fffd;
+    color: #fffe;
   }
 
   .arrows > span.tapped {
-    color: #fffd;
+    color: #fffe;
   }
 }
 
