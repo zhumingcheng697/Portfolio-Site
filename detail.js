@@ -80,8 +80,11 @@ function hideDropDown() {
   dropDownTimeoutIds.push(setTimeout(() => {document.querySelector("h2 .drop-down").classList.add("displayNone")}, 600));
 }
 
-function showModal(cardId) {
-  document.querySelector(".modal-view").classList.remove("hide");
+function showModal(cardId, switching = false) {
+  if (!switching) {
+    document.querySelector(".modal-view").classList.remove("hide");
+  }
+
   document.querySelector(`.modal-view .modal-area.${cardId}`).classList.remove("hide");
   document.querySelectorAll(`.modal-view .modal-area.${cardId} video`).forEach(e => {
     e.play();
@@ -101,20 +104,22 @@ function showModal(cardId) {
   modalTimeoutIds = [];
 }
 
-function hideModals() {
-  document.querySelector(".modal-view").classList.add("hide");
+function hideModals(switching = false) {
+  if (!switching) {
+    document.querySelector(".modal-view").classList.add("hide");
+    document.querySelectorAll(".modal-view .modal-area .scrollable").forEach(e => {
+      modalTimeoutIds.push(setTimeout(() => {e.scrollTop = 0}, 600));
+    });
+
+    document.querySelectorAll(".modal-view .modal-area .scrollable .image-video-container iframe:not([src^=\"https://www.openprocessing.org/sketch/\"])").forEach(e => {
+      modalTimeoutIds.push(setTimeout(() => {e.setAttribute("src", e.getAttribute("src") + "?")}, 600));
+    });
+  }
+
   document.querySelectorAll(".modal-view .modal-area").forEach(e => {e.classList.add("hide")});
   document.querySelectorAll(`.modal-view video`).forEach(e => {e.pause()});
 
-  document.querySelectorAll(".modal-view .modal-area .scrollable").forEach(e => {
-    modalTimeoutIds.push(setTimeout(() => {e.scrollTop = 0}, 600));
-  });
-
-  document.querySelectorAll(".modal-view .modal-area .scrollable .image-video-container iframe:not([src^=\"https://www.openprocessing.org/sketch/\"])").forEach(e => {
-    modalTimeoutIds.push(setTimeout(() => {e.setAttribute("src", e.getAttribute("src") + "?")}, 600));
-  });
-
-  if (window.location.search) {
+  if (window.location.search && !switching) {
     history.pushState(null, null, window.location.href.replace(window.location.search, ""));
   }
 }
@@ -160,6 +165,35 @@ document.addEventListener('keydown', key => {
   if (key.keyCode === 27) {
     if (document.querySelector(".modal-view") && !document.querySelector(".modal-view").classList.contains("hide")) {
       hideModals();
+    }
+  } else if (document.querySelector(".modal-view") && !document.querySelector(".modal-view").classList.contains("hide") && window.location.search && document.querySelector(`#${window.location.search.replace("?", "")}`)) {
+    if (document.body.classList.contains("app") && typeof appProjects !== "undefined") {
+      let i = appProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
+      if (key.keyCode === 37 && i !== -1) {
+        hideModals(true);
+        showModal(appProjects[i === 0 ? (appProjects.length - 1) : (i - 1)].identifier, true);
+      } else if (key.keyCode === 39 && i !== -1) {
+        hideModals(true);
+        showModal(appProjects[(i === appProjects.length - 1) ? 0 : (i + 1)].identifier, true);
+      }
+    } else if (document.body.classList.contains("web") && typeof webProjects !== "undefined") {
+      let i = webProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
+      if (key.keyCode === 37 && i !== -1) {
+        hideModals(true);
+        showModal(webProjects[i === 0 ? (webProjects.length - 1) : (i - 1)].identifier, true);
+      } else if (key.keyCode === 39 && i !== -1) {
+        hideModals(true);
+        showModal(webProjects[(i === webProjects.length - 1) ? 0 : (i + 1)].identifier, true);
+      }
+    } else if (document.body.classList.contains("script") && typeof scriptProjects !== "undefined") {
+      let i = scriptProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
+      if (key.keyCode === 37 && i !== -1) {
+        hideModals(true);
+        showModal(scriptProjects[i === 0 ? (scriptProjects.length - 1) : (i - 1)].identifier, true);
+      } else if (key.keyCode === 39 && i !== -1) {
+        hideModals(true);
+        showModal(scriptProjects[(i === scriptProjects.length - 1) ? 0 : (i + 1)].identifier, true);
+      }
     }
   }
 });
