@@ -148,7 +148,7 @@ document.querySelectorAll(".main-view .projects .project-card").forEach(element 
 });
 
 document.querySelectorAll(".modal-view .modal-area .cancel-btn").forEach(element => {
-  element.addEventListener("click", hideModals);
+  element.addEventListener("click", () => hideModals());
 });
 
 document.addEventListener("click", click => {
