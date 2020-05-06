@@ -647,7 +647,7 @@ div.modal-view div.modal-area .actual-modal h4 {
 }
 
 div.modal-view div.modal-area .actual-modal h4 span {
-  white-space: nowrap;
+  display: inline-block;
   color: var(--secondTxtColor);
   font-size: 0.82em;
   margin-left: 8px;
