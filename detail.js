@@ -3,46 +3,30 @@ let modalTimeoutIds = [];
 
 randomizeDropDown();
 
-function goLeft() {
+function changeProject(direction) {
+  let projects;
   if (document.body.classList.contains("app") && typeof appProjects !== "undefined") {
-    let i = appProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
-    if (i !== -1) {
-      hideModals(true);
-      showModal(appProjects[i === 0 ? (appProjects.length - 1) : (i - 1)].identifier, true);
-    }
+    projects = appProjects;
   } else if (document.body.classList.contains("web") && typeof webProjects !== "undefined") {
-    let i = webProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
-    if (i !== -1) {
-      hideModals(true);
-      showModal(webProjects[i === 0 ? (webProjects.length - 1) : (i - 1)].identifier, true);
-    }
+    projects = webProjects;
   } else if (document.body.classList.contains("script") && typeof scriptProjects !== "undefined") {
-    let i = scriptProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
-    if (i !== -1) {
-      hideModals(true);
-      showModal(scriptProjects[i === 0 ? (scriptProjects.length - 1) : (i - 1)].identifier, true);
-    }
+    projects = scriptProjects;
   }
-}
 
-function goRight() {
-  if (document.body.classList.contains("app") && typeof appProjects !== "undefined") {
-    let i = appProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
+  if (projects) {
+    let i = projects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
     if (i !== -1) {
-      hideModals(true);
-      showModal(appProjects[(i === appProjects.length - 1) ? 0 : (i + 1)].identifier, true);
-    }
-  } else if (document.body.classList.contains("web") && typeof webProjects !== "undefined") {
-    let i = webProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
-    if (i !== -1) {
-      hideModals(true);
-      showModal(webProjects[(i === webProjects.length - 1) ? 0 : (i + 1)].identifier, true);
-    }
-  } else if (document.body.classList.contains("script") && typeof scriptProjects !== "undefined") {
-    let i = scriptProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
-    if (i !== -1) {
-      hideModals(true);
-      showModal(scriptProjects[(i === scriptProjects.length - 1) ? 0 : (i + 1)].identifier, true);
+      let id;
+      if (direction === -1) {
+        id = projects[i === 0 ? (projects.length - 1) : (i - 1)].identifier;
+      } else if (direction === 1) {
+        id = projects[(i === projects.length - 1) ? 0 : (i + 1)].identifier;
+      }
+
+      if (id) {
+        hideModals(id);
+        showModal(id, true);
+      }
     }
   }
 }
@@ -148,22 +132,28 @@ function showModal(cardId, switching = false) {
   modalTimeoutIds = [];
 }
 
-function hideModals(switching = false) {
-  if (!switching) {
-    document.querySelector(".modal-view").classList.add("hide");
-    document.querySelectorAll(".modal-view .modal-area .scrollable").forEach(e => {
+function hideModals(nextId = "") {
+  function resetModals() {
+    document.querySelectorAll(`.modal-view .modal-area${nextId === "" ? `` : `:not(.${nextId})`} .scrollable`).forEach(e => {
       modalTimeoutIds.push(setTimeout(() => {e.scrollTop = 0}, 600));
     });
 
-    document.querySelectorAll(".modal-view .modal-area .scrollable .image-video-container iframe:not([src^=\"https://www.openprocessing.org/sketch/\"])").forEach(e => {
+    document.querySelectorAll(`.modal-view .modal-area${nextId === "" ? `` : `:not(.${nextId})`} .scrollable .image-video-container iframe:not([src^="https://www.openprocessing.org/sketch/"])`).forEach(e => {
       modalTimeoutIds.push(setTimeout(() => {e.setAttribute("src", e.getAttribute("src") + "?")}, 600));
     });
+  }
+
+  if (nextId === "") {
+    document.querySelector(".modal-view").classList.add("hide");
+    resetModals()
+  } else {
+    setTimeout(resetModals, 10);
   }
 
   document.querySelectorAll(".modal-view .modal-area").forEach(e => {e.classList.add("hide")});
   document.querySelectorAll(`.modal-view video`).forEach(e => {e.pause()});
 
-  if (window.location.search && !switching) {
+  if (window.location.search && nextId === "") {
     history.pushState(null, null, window.location.href.replace(window.location.search, ""));
   }
 }
@@ -202,9 +192,9 @@ document.addEventListener("click", click => {
     if (clicked.classList.contains("scrollable") || clicked.classList.contains("modal-container") || clicked.classList.contains("mask")) {
       hideModals();
     } else if (clicked.classList.contains("left")) {
-      goLeft();
+      changeProject(-1);
     } else if (clicked.classList.contains("right")) {
-      goRight();
+      changeProject(1);
     }
   }
 });
@@ -216,11 +206,11 @@ document.addEventListener('keydown', key => {
     }
   } else if (document.querySelector(".modal-view") && !document.querySelector(".modal-view").classList.contains("hide") && document.querySelector(".arrows > span.left") && document.querySelector(".arrows > span.right") && window.location.search && document.querySelector(`#${window.location.search.replace("?", "")}`)) {
     if (key.keyCode === 37) {
-      goLeft();
+      changeProject(-1);
       document.querySelector(".arrows > span.left").classList.add("tapped");
       setTimeout(() => {document.querySelector(".arrows > span.left").classList.remove("tapped")}, 180);
     } else if (key.keyCode === 39) {
-      goRight();
+      changeProject(1);
       document.querySelector(".arrows > span.right").classList.add("tapped");
       setTimeout(() => {document.querySelector(".arrows > span.right").classList.remove("tapped")}, 180);
     }
