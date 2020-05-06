@@ -1,6 +1,7 @@
 let isInDarkMode;
 let resizeIndex = 45;
 let resizeIntervalId;
+let tappableElements = document.querySelectorAll("#card-container .card, h2 > p ~ .drop-down > .menu > div.scrollable > div, .cancel-btn, .modal-view .modal-area .actual-modal p:not(.tags) > a, h3 a, .projects .project-card");
 isInDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 if (!document.body.classList.contains("app") && !document.body.classList.contains("web") && !document.body.classList.contains("script") && !document.body.classList.contains("wild")) {
@@ -67,8 +68,11 @@ function randomizeCard() {
   }
 }
 
-document.querySelectorAll("#card-container .card, h2 > p ~ .drop-down > .menu > div.scrollable > div, .cancel-btn, .modal-view .modal-area .actual-modal p:not(.tags) > a, h3 a, .projects .project-card").forEach(element => {
-  element.addEventListener("touchstart", () => {element.classList.add("tapped")});
+tappableElements.forEach(element => {
+  element.addEventListener("touchstart", () => {
+    tappableElements.forEach(e => {e.classList.remove("tapped")});
+    element.classList.add("tapped");
+  });
 });
 
 document.querySelectorAll("#card-container .card").forEach(element => {
@@ -76,7 +80,7 @@ document.querySelectorAll("#card-container .card").forEach(element => {
 });
 
 document.addEventListener("touchend", touchend => {
-  document.querySelectorAll("#card-container .card, h2 > p ~ .drop-down > .menu > div.scrollable > div, .cancel-btn, .modal-view .modal-area .actual-modal p:not(.tags) > a, h3 a, .projects .project-card").forEach(element => {element.classList.remove("tapped")});
+  tappableElements.forEach(element => {element.classList.remove("tapped")});
 });
 
 window.matchMedia("(prefers-color-scheme: dark)").addListener(match => {
