@@ -3,6 +3,50 @@ let modalTimeoutIds = [];
 
 randomizeDropDown();
 
+function goLeft() {
+  if (document.body.classList.contains("app") && typeof appProjects !== "undefined") {
+    let i = appProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
+    if (i !== -1) {
+      hideModals(true);
+      showModal(appProjects[i === 0 ? (appProjects.length - 1) : (i - 1)].identifier, true);
+    }
+  } else if (document.body.classList.contains("web") && typeof webProjects !== "undefined") {
+    let i = webProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
+    if (i !== -1) {
+      hideModals(true);
+      showModal(webProjects[i === 0 ? (webProjects.length - 1) : (i - 1)].identifier, true);
+    }
+  } else if (document.body.classList.contains("script") && typeof scriptProjects !== "undefined") {
+    let i = scriptProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
+    if (i !== -1) {
+      hideModals(true);
+      showModal(scriptProjects[i === 0 ? (scriptProjects.length - 1) : (i - 1)].identifier, true);
+    }
+  }
+}
+
+function goRight() {
+  if (document.body.classList.contains("app") && typeof appProjects !== "undefined") {
+    let i = appProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
+    if (i !== -1) {
+      hideModals(true);
+      showModal(appProjects[(i === appProjects.length - 1) ? 0 : (i + 1)].identifier, true);
+    }
+  } else if (document.body.classList.contains("web") && typeof webProjects !== "undefined") {
+    let i = webProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
+    if (i !== -1) {
+      hideModals(true);
+      showModal(webProjects[(i === webProjects.length - 1) ? 0 : (i + 1)].identifier, true);
+    }
+  } else if (document.body.classList.contains("script") && typeof scriptProjects !== "undefined") {
+    let i = scriptProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
+    if (i !== -1) {
+      hideModals(true);
+      showModal(scriptProjects[(i === scriptProjects.length - 1) ? 0 : (i + 1)].identifier, true);
+    }
+  }
+}
+
 function randomizeDropDown() {
   if (document.body.classList.contains("app")) {
     document.querySelectorAll("h2 .drop-down .menu > div.scrollable > div.wild > a.wild").forEach(element => {
@@ -157,6 +201,10 @@ document.addEventListener("click", click => {
   if (document.querySelector(".modal-view") && !document.querySelector(".modal-view").classList.contains("hide")) {
     if (clicked.classList.contains("scrollable") || clicked.classList.contains("modal-container") || clicked.classList.contains("mask")) {
       hideModals();
+    } else if (clicked.classList.contains("left")) {
+      goLeft();
+    } else if (clicked.classList.contains("right")) {
+      goRight();
     }
   }
 });
@@ -166,34 +214,15 @@ document.addEventListener('keydown', key => {
     if (document.querySelector(".modal-view") && !document.querySelector(".modal-view").classList.contains("hide")) {
       hideModals();
     }
-  } else if (document.querySelector(".modal-view") && !document.querySelector(".modal-view").classList.contains("hide") && window.location.search && document.querySelector(`#${window.location.search.replace("?", "")}`)) {
-    if (document.body.classList.contains("app") && typeof appProjects !== "undefined") {
-      let i = appProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
-      if (key.keyCode === 37 && i !== -1) {
-        hideModals(true);
-        showModal(appProjects[i === 0 ? (appProjects.length - 1) : (i - 1)].identifier, true);
-      } else if (key.keyCode === 39 && i !== -1) {
-        hideModals(true);
-        showModal(appProjects[(i === appProjects.length - 1) ? 0 : (i + 1)].identifier, true);
-      }
-    } else if (document.body.classList.contains("web") && typeof webProjects !== "undefined") {
-      let i = webProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
-      if (key.keyCode === 37 && i !== -1) {
-        hideModals(true);
-        showModal(webProjects[i === 0 ? (webProjects.length - 1) : (i - 1)].identifier, true);
-      } else if (key.keyCode === 39 && i !== -1) {
-        hideModals(true);
-        showModal(webProjects[(i === webProjects.length - 1) ? 0 : (i + 1)].identifier, true);
-      }
-    } else if (document.body.classList.contains("script") && typeof scriptProjects !== "undefined") {
-      let i = scriptProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
-      if (key.keyCode === 37 && i !== -1) {
-        hideModals(true);
-        showModal(scriptProjects[i === 0 ? (scriptProjects.length - 1) : (i - 1)].identifier, true);
-      } else if (key.keyCode === 39 && i !== -1) {
-        hideModals(true);
-        showModal(scriptProjects[(i === scriptProjects.length - 1) ? 0 : (i + 1)].identifier, true);
-      }
+  } else if (document.querySelector(".modal-view") && !document.querySelector(".modal-view").classList.contains("hide") && document.querySelector(".arrows > span.left") && document.querySelector(".arrows > span.right") && window.location.search && document.querySelector(`#${window.location.search.replace("?", "")}`)) {
+    if (key.keyCode === 37) {
+      goLeft();
+      document.querySelector(".arrows > span.left").classList.add("tapped");
+      setTimeout(() => {document.querySelector(".arrows > span.left").classList.remove("tapped")}, 180);
+    } else if (key.keyCode === 39) {
+      goRight();
+      document.querySelector(".arrows > span.right").classList.add("tapped");
+      setTimeout(() => {document.querySelector(".arrows > span.right").classList.remove("tapped")}, 180);
     }
   }
 });

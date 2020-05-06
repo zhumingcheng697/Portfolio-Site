@@ -430,7 +430,7 @@ div.main-view div.projects .project-card h5 {
 }
 
 div.main-view div.projects .project-card h5 span {
-  white-space: nowrap;
+  display: inline-block;
   color: var(--secondTxtColor);
   font-size: 0.78em;
   margin-left: 8px;
@@ -590,7 +590,7 @@ div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn {
   background-color: var(--blurBgColor);
   color: var(--thirdTxtColor);
   cursor: pointer;
-  transition-duration: 0.6s;
+  /* transition-duration: 0.6s; */
   z-index: 50;
 }
 
@@ -725,6 +725,38 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   background-color: var(--purpleCard);
 }
 
+
+
+
+
+
+.arrows {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 12%;
+  right: 12%;
+  /* background: #0f02; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition-duration: 0.6s;
+}
+
+.arrows > span {
+  color: #fffb;
+  font-size: 5em;
+  padding: 1%;
+  padding-bottom: 0.2em;
+  z-index: 20;
+  cursor: pointer;
+}
+
+
+
+
+
+
 @media (hover: none) {
   h2 > p.app ~ div.drop-down > div.menu > div.scrollable > div:not(.app).tapped > a, h2 > p.web ~ div.drop-down > div.menu > div.scrollable > div:not(.web).tapped > a, h2 > p.script ~ div.drop-down > div.menu > div.scrollable > div:not(.script).tapped > a, h2 > p.wild ~ div.drop-down > div.menu > div.scrollable > div.tapped > a {
     background-color: var(--blurBgColor);
@@ -761,6 +793,10 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   div.modal-view div.modal-area .actual-modal p:not(.tags) > a.tapped {
     text-decoration: underline;
     filter: brightness(1.15);
+  }
+
+  .arrows > span.tapped {
+    color: #fffd;
   }
 }
 
@@ -801,6 +837,14 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     text-decoration: underline;
     filter: brightness(1.15);
   }
+
+  .arrows > span:hover {
+    color: #fffd;
+  }
+
+  .arrows > span.tapped {
+    color: #fffd;
+  }
 }
 
 @media only screen and (max-width: 1050px) {
@@ -832,6 +876,15 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
 
   div.modal-view div.modal-area .modal-container {
     width: 70%;
+  }
+
+  .arrows {
+    left: 8%;
+    right: 8%;
+  }
+
+  .arrows > span {
+    font-size: 4.5em;
   }
 }
 
@@ -886,6 +939,15 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     margin-bottom: 7px;
     padding: 5px 6px;
     font-size: 1em;
+  }
+
+  .arrows {
+    left: 3%;
+    right: 3%;
+  }
+
+  .arrows > span {
+    font-size: 3.5em;
   }
 }
 
@@ -946,6 +1008,15 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     width: 32px;
     height: 32px;
     line-height: 32px;
+  }
+
+  .arrows {
+    left: 1%;
+    right: 1%;
+  }
+
+  .arrows > span {
+    font-size: 3em;
   }
 }
 
@@ -1085,6 +1156,10 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   div.modal-view div.modal-area .modal-container .actual-modal iframe {
     height: calc(70vh - 70px);
   }
+
+  .arrows > span {
+    font-size: 2.5em;
+  }
 }
 
 @media only screen and (max-width: 300px) {
@@ -1219,6 +1294,25 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
 
   div.modal-view div.modal-area .modal-container .actual-modal iframe {
     height: calc(60vh - 70px);
+  }
+
+  .arrows {
+    left: 0.5%;
+    right: 0.5%;
+  }
+
+  .arrows > span {
+    font-size: 2em;
+  }
+
+  .arrows > span:first-of-type {
+    padding-left: 0.5%;
+    padding-right: 2%;
+  }
+
+  .arrows > span:last-of-type {
+    padding-left: 2%;
+    padding-right: 0.5%;
   }
 }
 

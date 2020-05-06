@@ -1,7 +1,7 @@
 let isInDarkMode;
 let resizeIndex = 45;
 let resizeIntervalId;
-let tappableElements = document.querySelectorAll("#card-container .card, h2 > p ~ .drop-down > .menu > div.scrollable > div, .cancel-btn, .modal-view .modal-area .actual-modal p:not(.tags) > a, h3 a, .projects .project-card");
+let tappableElements = document.querySelectorAll("#card-container .card, h2 > p ~ .drop-down > .menu > div.scrollable > div, .cancel-btn, .modal-view .modal-area .actual-modal p:not(.tags) > a, h3 a, .projects .project-card, .arrows > span");
 isInDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 if (!document.body.classList.contains("app") && !document.body.classList.contains("web") && !document.body.classList.contains("script") && !document.body.classList.contains("wild")) {
