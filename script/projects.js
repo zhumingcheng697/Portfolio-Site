@@ -28,6 +28,7 @@ const scriptProjects = [
     year: "2019",
     identifier: "id-number-checker-2019",
     tags: ["Swift Playground", "Regex"],
+    priority: -1,
     bgImg: "id-number-checker-2019/image.png",
     detailViewType: "video",
     videoUrl: "id-number-checker-2019/video.mp4",
