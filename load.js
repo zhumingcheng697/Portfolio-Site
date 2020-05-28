@@ -86,10 +86,10 @@ function createProjectModal(project) {
 
   switch (project.detailViewType) {
     case "video":
-      modalHTML += `<div class="image-video-container unselectable"><video playsinline preload="metadata" src="${project.videoUrl}" muted loop><img src="${project.bgImg}"></video></div>`;
+      modalHTML += `<div class="image-video-container unselectable"><video playsinline preload="metadata" src="${project.videoUrl}" muted loop><img alt="${project.title}" src="${project.bgImg}"></video></div>`;
       break;
     case "image":
-      modalHTML += `<div class="image-video-container unselectable"><img src="${project.bgImg}"></div>`;
+      modalHTML += `<div class="image-video-container unselectable"><img alt="${project.title}" src="${project.imageUrl}"></div>`;
       break;
     case "iframe":
       modalHTML += `<div class="image-video-container unselectable"><iframe frameborder="0" src="${project.iframeUrl}"></iframe></div>`;
@@ -108,7 +108,7 @@ function createProjectModal(project) {
     modalHTML += `<p>${line}</p>`
   }
 
-  modalHTML += `<div class="cancel-btn" class="unselectable hide">&#x2715;</div>`;
+  modalHTML += `<div class="cancel-btn unselectable hide">&#x2715;</div>`;
 
   modalHTML += `</div></div></div></div>`;
 
