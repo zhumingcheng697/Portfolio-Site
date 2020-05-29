@@ -14,7 +14,7 @@ if (projectsDiv && modalDiv) {
 
   if (projects) {
     sortProjects(projects);
-    for (project of projects) {
+    for (const project of projects) {
       createProjectCard(project);
       createProjectModal(project);
     }
@@ -71,7 +71,7 @@ function createProjectCard(project) {
   projectCardDiv.innerHTML += `<h5>${project.title}<span>(${project.year})</span></h5>`
 
   let pDiv = document.createElement("p");
-  for (tag of project.tags) {
+  for (const tag of project.tags) {
     pDiv.innerHTML += `<span>${tag}</span>`;
   }
 
@@ -99,12 +99,12 @@ function createProjectModal(project) {
   modalHTML += `<h4>${project.title}<span>(${project.year})</span></h4>`;
 
   modalHTML += `<p class="tags">`
-  for (tag of project.tags) {
+  for (const tag of project.tags) {
     modalHTML += `<span>${tag}</span>`;
   }
   modalHTML += `</p>`;
 
-  for (line of project.descriptions) {
+  for (const line of project.descriptions) {
     modalHTML += `<p>${line}</p>`
   }
 

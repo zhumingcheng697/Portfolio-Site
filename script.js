@@ -79,7 +79,7 @@ document.querySelectorAll("#card-container .card").forEach(element => {
   element.addEventListener("mouseenter", randomizeCard);
 });
 
-document.addEventListener("touchend", touchend => {
+document.addEventListener("touchend", () => {
   tappableElements.forEach(element => {element.classList.remove("tapped")});
 });
 

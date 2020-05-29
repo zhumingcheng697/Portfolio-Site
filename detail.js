@@ -88,7 +88,7 @@ function randomizeDropDown() {
 }
 
 function showDropDown() {
-  for (id of dropDownTimeoutIds) {
+  for (const id of dropDownTimeoutIds) {
     clearTimeout(id);
   }
 
@@ -125,7 +125,7 @@ function showModal(cardId, switching = false) {
     history.replaceState(null, null, window.location.href.replace(window.location.search, `?${cardId}`));
   }
 
-  for (id of modalTimeoutIds) {
+  for (const id of modalTimeoutIds) {
     clearTimeout(id);
   }
 
