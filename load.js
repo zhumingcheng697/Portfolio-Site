@@ -108,7 +108,7 @@ function createProjectModal(project) {
     modalHTML += `<p>${line}</p>`
   }
 
-  modalHTML += `<div class="cancel-btn unselectable hide">&#x2715;</div>`;
+  modalHTML += `<div class="cancel-btn unselectable">&#x2715;</div>`;
 
   modalHTML += `</div></div></div></div>`;
 

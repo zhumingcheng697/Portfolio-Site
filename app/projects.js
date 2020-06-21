@@ -26,9 +26,9 @@ const appProjects = [
     imageUrl: "guess-the-number-2020/hero.png",
     descriptions: [
       'GuessTheNumber is a currently standalone watchOS app that allows the user to guess numbers with the &ldquo;AI&rdquo; in the app, or randomize a number, color, or boolean value.',
-      'The app takes advantage of the latest technologies including SwiftUI, SF Symbols, watchOS complications, and Siri watch face shortcut donation.',
-      'GuessTheNumber has also been localized for English, Simplified Chinese, Traditional Chinese, Russian, and Japanese.',
-      'It is available for download on the <a target="_blank" href="https://apps.apple.com/app/guessthenumber-by-mccoy-zhu/id1513747066">App Store</a> and the source code is available on <a target="_blank" href="https://github.com/zhumingcheng697/GuessTheNumber">GitHub</a> as well.'
+      'The app takes advantage of the latest technologies including SwiftUI, SF Symbols, haptic feedbacks, watchOS complications, and Siri watch face shortcut donation.',
+      'GuessTheNumber has also been localized for English, Simplified Chinese, Traditional Chinese, Japanese, and Russian.',
+      'It is available for download on the <a target="_blank" href="https://apps.apple.com/app/id1513747066">App Store</a> and the source code is available on <a target="_blank" href="https://github.com/zhumingcheng697/GuessTheNumber">GitHub</a> as well.'
     ]
   },
   {
