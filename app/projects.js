@@ -9,7 +9,7 @@ const appProjects = [
     detailViewType: "video",
     videoUrl: "metro-archive-2020/video.mp4",
     descriptions: [
-      'Metro ARchive is an Augmented Reality app Sammy and I developed in the first half of 2020 in collaboration with the <a target="_blank" href="https://rd.nytimes.com/">New York Times R&amp;D Team</a> and the <a target="_blank" href="https://www.nycmedialab.org/recent-projects/the-new-york-times-spatial-computing-for-news-challenge">NYC Media Lab</a>.',
+      'Metro ARchive is an Augmented Reality app Sammy and I developed in the first half of 2020 in collaboration with the <a target="_blank" href="https://rd.nytimes.com/projects/working-with-universities-to-experiment-with-spatial-computing">New York Times R&amp;D Team</a> and the <a target="_blank" href="https://www.nycmedialab.org/recent-projects/the-new-york-times-spatial-computing-for-news-challenge">NYC Media Lab</a>.',
       'It is my first time working with Augmented Reality or any types of 3D in a mobile app, and it&rsquo;s also my first time using the traditional View Controllers and View Delegates (as compared to SwiftUI) to build mobile iOS apps.',
       'We even enrolled into the paid Apple Developer Program, just so that we can publish it onto <a target="_blank" href="https://testflight.apple.com/join/PCuRPU3x">TestFlight</a> and let people can test it out on their iOS devices.',
       'If you are interested, be sure to go to our <a target="_blank" href="https://bit.ly/metro-archive-info">website</a> and follow the <a target="_blank" href="https://bit.ly/metro-archive">instructions</a> to install it onto your own device, or check out the <a target="_blank" href="https://github.com/zhumingcheng697/Metro-ARchive">GitHub repo</a> to see how it works.'
