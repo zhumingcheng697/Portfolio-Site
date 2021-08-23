@@ -33,6 +33,7 @@ body {
   --purpleCardWithAlpha: rgba(90,80,170,0.15);
   --blackCardWithAlpha: #2224;
   --bannerBgColor: #ff5;
+  --bannerHeight: 35px;
   height: 100%;
   overflow-wrap: break-word;
   background-color: var(--firstBgColor);
@@ -64,10 +65,11 @@ h1 {
 }
 
 .notice-banner {
-  height: 30px;
+  height: var(--bannerHeight);
   display: flex;
   background: var(--bannerBgColor);
   transition-property: background-color;
+  overflow: hidden;
 }
 
 .notice-banner > p {
@@ -87,7 +89,7 @@ h1 {
 h2 {
   position: absolute;
   left: calc(30px + var(--inset-left));
-  top: calc(50px + var(--inset-top));
+  top: calc(20px + var(--inset-top) + var(--bannerHeight));
   color: var(--secondTxtColor);
   font-size: 1.4em;
   font-weight: normal;
@@ -275,7 +277,7 @@ h3 a {
 div.title {
   position: fixed;
   width: 100%;
-  height: calc(70px + 1.4em);
+  height: calc(40px + 1.4em + var(--bannerHeight));
   background-color: var(--blurBgColor);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -375,7 +377,7 @@ div.blank {
 div.main-view {
   position: absolute;
   width: 100%;
-  top: 110px;
+  top: calc(var(--bannerHeight) + 80px);
   min-height: calc(var(--full-height) - 80px);
   transition-duration: 0.6s;
 }
