@@ -51,7 +51,7 @@ function switchFavicons() {
 function randomizeCard() {
   if (!document.body.classList.contains("app") && !document.body.classList.contains("web") && !document.body.classList.contains("script") && !document.body.classList.contains("wild")) {
     document.querySelectorAll("#card-container a.card.wild").forEach(element => {
-      switch (Math.floor(Math.random() * 4)) {
+      switch (Math.floor(Math.random() * 3)) {
         case 0:
           element.setAttribute("href", "app/index.html?wild");
           break;
@@ -60,9 +60,6 @@ function randomizeCard() {
           break;
         case 2:
           element.setAttribute("href", "script/index.html?wild");
-          break;
-        default:
-          element.setAttribute("href", "me/index.html");
       }
     });
   }
