@@ -88,12 +88,11 @@ function createProjectModal(project) {
     case "video":
       modalHTML += `<div class="image-video-container unselectable"><video playsinline preload="metadata" src="${project.videoUrl}" muted loop><img alt="${project.title}" src="${project.bgImg}"></video></div>`;
       break;
-    case "image":
-      modalHTML += `<div class="image-video-container unselectable"><img alt="${project.title}" src="${project.imageUrl}"></div>`;
-      break;
     case "iframe":
       modalHTML += `<div class="image-video-container unselectable"><iframe frameborder="0" src="${project.iframeUrl}"></iframe></div>`;
       break;
+    default:
+      modalHTML += `<div class="image-video-container unselectable"><img alt="${project.title}" src="${project.imageUrl ? project.imageUrl : project.bgImg}"></div>`;
   }
 
   modalHTML += `<h4>${project.title}<span>(${project.year})</span></h4>`;
