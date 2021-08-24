@@ -72,5 +72,43 @@ const scriptProjects = [
     descriptions: [
       'This is a single <a target="_blank" href="https://www.icloud.com/shortcuts/4ba8c8ef9a484cc180f7eeaa4d3c831d">Siri Shortcut</a> that has a wide range of features related to calculating date and time.'
     ]
+  },
+  {
+    title: "BackstopJS Test",
+    year: "2020",
+    identifier: "backstopjs-test-2020",
+    tags: ["Node.js", "QA", "Regression Testing", "Headless Browser", "CLI", "AWS S3"],
+    priority: 4,
+    bgImg: "backstopjs-test-2020/image.png",
+    detailViewType: "image",
+    imageUrl: "backstopjs-test-2020/image.png",
+    descriptions: [
+      'This is a Node.js <a target="_blank" href="https://github.com/zhumingcheng697/BackstopJS-Test">script</a> that automates <a target="_blank" href="https://github.com/garris/BackstopJS">BackstopJS</a> (or, technically, <a target="_blank" href="https://github.com/zhumingcheng697/Backstop-Playwright">Backstop-Playwright</a>) tests in Chromium, Firefox, or WebKit environment, and deploys failed reports onto S3 buckets.'
+    ]
+  },
+  {
+    title: "NYU Dining Test",
+    year: "2020",
+    identifier: "nyu-dining-test-2020",
+    tags: ["Node.js", "QA", "CLI", "AWS S3", "Email Automation"],
+    priority: 2,
+    bgImg: "nyu-dining-test-2020/image.png",
+    detailViewType: "image",
+    imageUrl: "nyu-dining-test-2020/image.png",
+    descriptions: [
+      'This is a Node.js <a target="_blank" href="https://github.com/zhumingcheng697/NYU-Dining-Test">script</a> that automatically fetches NYU dining location and menu data, parses and validates it, and emails the users should errors occur.'
+    ]
+  },
+  {
+    title: "NYU Grade Checker",
+    year: "2021",
+    identifier: "nyu-grade-checker-2021",
+    tags: ["Node.js", "Headless Browser", "Web Scraping"],
+    bgImg: "nyu-grade-checker-2021/image.png",
+    detailViewType: "image",
+    imageUrl: "nyu-grade-checker-2021/image.png",
+    descriptions: [
+      'This is a Node.js <a target="_blank" href="https://github.com/zhumingcheng697/NYU-Grade-Checker">script</a> that automatically checks users&rsquo; grades on <a target="_blank" href="https://m.albert.nyu.edu/app/dashboard/grades">NYU Albert Mobile</a>.'
+    ]
   }
 ];
