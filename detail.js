@@ -34,41 +34,32 @@ function changeProject(direction) {
 function randomizeDropDown() {
   if (document.body.classList.contains("app")) {
     document.querySelectorAll("h2 .drop-down .menu > div.scrollable > div.wild > a.wild").forEach(element => {
-      switch (Math.floor(Math.random() * 3)) {
+      switch (Math.floor(Math.random() * 2)) {
         case 0:
           element.setAttribute("href", "../web/index.html?wild");
           break;
         case 1:
           element.setAttribute("href", "../script/index.html?wild");
-          break;
-        default:
-          element.setAttribute("href", "../me/index.html");
       }
     });
   } else if (document.body.classList.contains("web")) {
     document.querySelectorAll("h2 .drop-down .menu > div.scrollable > div.wild > a.wild").forEach(element => {
-      switch (Math.floor(Math.random() * 3)) {
+      switch (Math.floor(Math.random() * 2)) {
         case 0:
           element.setAttribute("href", "../app/index.html?wild")
           break;
         case 1:
           element.setAttribute("href", "../script/index.html?wild");
-          break;
-        default:
-          element.setAttribute("href", "../me/index.html");
       }
     });
   } else if (document.body.classList.contains("script")) {
     document.querySelectorAll("h2 .drop-down .menu > div.scrollable > div.wild > a.wild").forEach(element => {
-      switch (Math.floor(Math.random() * 3)) {
+      switch (Math.floor(Math.random() * 2)) {
         case 0:
           element.setAttribute("href", "../app/index.html?wild");
           break;
         case 1:
           element.setAttribute("href", "../web/index.html?wild");
-          break;
-        default:
-          element.setAttribute("href", "../me/index.html");
       }
     });
   } else if (document.body.classList.contains("wild")) {
