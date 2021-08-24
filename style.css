@@ -33,7 +33,7 @@ body {
   --purpleCardWithAlpha: rgba(90,80,170,0.15);
   --blackCardWithAlpha: #2224;
   --bannerBgColor: #ff5;
-  --bannerHeight: 35px;
+  --bannerHeight: 0px;
   height: 100%;
   overflow-wrap: break-word;
   background-color: var(--firstBgColor);

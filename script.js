@@ -72,7 +72,7 @@ tappableElements.forEach(element => {
   });
 });
 
-document.querySelectorAll("#card-container .card").forEach(element => {
+document.querySelectorAll("#card-container .card.wild").forEach(element => {
   element.addEventListener("mouseenter", randomizeCard);
 });
 
