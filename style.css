@@ -961,7 +961,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   div.center {
     position: absolute;
     width: 100%;
-    top: 80px;
+    top: calc(80px + var(--bannerHeight));
     height: auto;
   }
 
@@ -1028,7 +1028,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
 
 @media only screen and (max-width: 425px) {
   div.center {
-    top: 70px;
+    top: calc(70px + var(--bannerHeight));
   }
 
   h1 {
