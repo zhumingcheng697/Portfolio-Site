@@ -707,19 +707,19 @@ div.modal-view div.modal-area .actual-modal p.tags span {
   font-size: 1.1em;
 }
 
-body.app div.modal-view div.modal-area .actual-modal p:not(.tags) > a {
+body.app div.modal-view div.modal-area .actual-modal p:not(.tags) a {
   color: var(--orangeCard);
 }
 
-body.web div.modal-view div.modal-area .actual-modal p:not(.tags) > a {
+body.web div.modal-view div.modal-area .actual-modal p:not(.tags) a {
   color: var(--yellowCard);
 }
 
-body.script div.modal-view div.modal-area .actual-modal p:not(.tags) > a {
+body.script div.modal-view div.modal-area .actual-modal p:not(.tags) a {
   color: var(--purpleCard);
 }
 
-body.wild div.modal-view div.modal-area .actual-modal p:not(.tags) > a {
+body.wild div.modal-view div.modal-area .actual-modal p:not(.tags) a {
   color: var(--dropBlurBgColor);
 }
 
