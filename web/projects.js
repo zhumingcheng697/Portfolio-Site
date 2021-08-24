@@ -77,5 +77,18 @@ const webProjects = [
       'This website is the <a target="_blank" href="https://github.com/zhumingcheng697/dynamic-web-final">final project</a> for my <i>Dynamic Web Applications</i> class, and it allows students to review class information and ratings.',
       '<i>Unfortunately, the <a target="_blank" href="https://stark-basin-35300.herokuapp.com/">backend</a> may take quite a long time to start up due to free-tier hosting.</i>'
     ]
+  },
+  {
+    title: "NYU Dining Vue",
+    year: "2021",
+    identifier: "nyu-dining-vue-2021",
+    tags: ["HTML", "CSS", "JavaScript", "Vue.js", "REST API"],
+    priority: 4.5,
+    bgImg: "nyu-dining-vue-2021/image.png",
+    detailViewType: "iframe",
+    iframeUrl: "https://zhumingcheng697.github.io/NYU-Dining-Vue/",
+    descriptions: [
+      'This website displays schedules and menus of all NYU dining locations for students.'
+    ]
   }
 ];
