@@ -631,7 +631,7 @@ div.modal-view div.modal-area .modal-container .actual-modal iframe {
   transition-duration: 0.6s;
 }
 
-div.modal-view div.modal-area .modal-container .actual-modal iframe[src^="https://www.openprocessing.org/sketch/"] {
+div.modal-view div.modal-area .modal-container .actual-modal iframe[src*="openprocessing.org/sketch/"] {
   top: 0;
   left: 0;
   position: absolute;
@@ -640,7 +640,7 @@ div.modal-view div.modal-area .modal-container .actual-modal iframe[src^="https:
   transform: translate(0, -50px);
 }
 
-div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal iframe[src^="https://www.openprocessing.org/sketch/"] {
+div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal iframe[src*="openprocessing.org/sketch/"] {
   height: 600px;
   width: 1000px;
   transform: scale(calc(var(--modal-width) / 1000)) translate(0, -50px);

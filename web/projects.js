@@ -19,7 +19,7 @@ const webProjects = [
     priority: 3,
     bgImg: "toolbox-2019/image.png",
     detailViewType: "iframe",
-    iframeUrl: "https://openprocessing.org/sketch/794151/embed/",
+    iframeUrl: "https://www.openprocessing.org/sketch/794151/",
     descriptions: [
       'This is the final project for my <i>Creative Coding</i> class and I built it using JavaScript and p5.js only. I localized it for three languages, optimzied it for light and dark modes, and made it accessible to keyboard users.'
     ]
