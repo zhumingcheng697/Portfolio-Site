@@ -19,7 +19,7 @@ const webProjects = [
     priority: 3,
     bgImg: "toolbox-2019/image.png",
     detailViewType: "iframe",
-    iframeUrl: "https://www.openprocessing.org/sketch/794151",
+    iframeUrl: "https://openprocessing.org/sketch/794151/embed/",
     descriptions: [
       'This is the final project for my <i>Creative Coding</i> class and I built it using JavaScript and p5.js only. I localized it for three languages, optimzied it for light and dark modes, and made it accessible to keyboard users.'
     ]
@@ -89,6 +89,19 @@ const webProjects = [
     iframeUrl: "https://zhumingcheng697.github.io/NYU-Dining-Vue/",
     descriptions: [
       'This website displays schedules and menus of all NYU dining locations for students.'
+    ]
+  },
+  {
+    title: "OurScheduler",
+    year: "2021",
+    identifier: "our-scheduler-2021",
+    tags: ["HTML", "CSS", "JavaScript", "Node.js", "Vue.js", "Express.js", "d3.js", "REST API", "Web Scraping", "MongoDB"],
+    priority: 5,
+    bgImg: "our-scheduler-2021/image.png",
+    detailViewType: "iframe",
+    iframeUrl: "https://ourscheduler.netlify.app/",
+    descriptions: [
+      'OurScheduler is a powerful, open-source customizable course scheduler for all college students built during <a target="_blank" href="https://pennapps-xxii.devpost.com">PennApps XXII</a> and was awarded the Best Education Hack and ranked Top 9.'
     ]
   }
 ];
