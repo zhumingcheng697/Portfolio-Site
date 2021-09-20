@@ -101,7 +101,7 @@ const webProjects = [
     detailViewType: "iframe",
     iframeUrl: "https://ourscheduler.netlify.app/",
     descriptions: [
-      'OurScheduler is a powerful, open-source customizable course scheduler for all college students built during <a target="_blank" href="https://pennapps-xxii.devpost.com">PennApps XXII</a> and was awarded the Best Education Hack and ranked Top 9.'
+      'OurScheduler is a powerful course scheduler for all college students built during <a target="_blank" href="https://pennapps-xxii.devpost.com">PennApps XXII</a> and was awarded the Best Education Hack and ranked Top 9.'
     ]
   }
 ];
