@@ -53,7 +53,6 @@ const scriptProjects = [
     year: "2019",
     identifier: "exif-viewer-2019",
     tags: ["Siri Shortcuts", "EXIF"],
-    priority: 2,
     bgImg: "exif-viewer-2019/image.png",
     detailViewType: "video",
     videoUrl: "exif-viewer-2019/video.mp4",
@@ -103,6 +102,25 @@ const scriptProjects = [
     bgImg: "nyu-grade-checker-2021/image.png",
     descriptions: [
       'This is a Node.js <a target="_blank" href="https://github.com/zhumingcheng697/NYU-Grade-Checker">script</a> that automatically checks users&rsquo; grades on <a target="_blank" href="https://m.albert.nyu.edu/app/dashboard/grades">NYU Albert Mobile</a>.'
+    ]
+  },
+  {
+    title: "NYU Housing Sublet Mailer",
+    year: "2021",
+    identifier: "nyu-housing-sublet-mailer-2021",
+    tags: ["PHP", "AWS Lambda", "AWS API Gateway", "Email Automation"],
+    priority: 2,
+    descriptions: [
+      'This is a PHP <a target="_blank" href="https://github.com/zhumingcheng697/Housing-Group-Functions">script</a> that forwards sublet information submitted through Qualtrics forms to subscribers of the NYU Housing Sublet Mailing List.</a>.'
+    ]
+  },
+  {
+    title: "Backstop-Playwright",
+    year: "2020",
+    identifier: "backstop-playwright-2020",
+    tags: ["Node.js", "QA", "Regression Testing", "Headless Browser"],
+    descriptions: [
+      'This is a <a target="_blank" href="https://github.com/zhumingcheng697/Backstop-Playwright">fork</a> of the original <a target="_blank" href="https://github.com/garris/BackstopJS">BackstopJS</a> and uses <a target="_blank" href="https://github.com/Microsoft/playwright">Playwright</a> instead of <a target="_blank" href="https://github.com/puppeteer/puppeteer">Puppeteer</a> as its engine to support cross-browser testing.'
     ]
   }
 ];

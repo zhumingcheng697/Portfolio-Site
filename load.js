@@ -15,6 +15,9 @@ if (projectsDiv && modalDiv) {
     if (projects) {
         sortProjects(projects);
         for (const project of projects) {
+            if (!project.bgImg) {
+                project.bgImg = project.identifier + "/image.png";
+            }
             createProjectCard(project);
             createProjectModal(project);
         }
