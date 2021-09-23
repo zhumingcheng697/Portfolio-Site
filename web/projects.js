@@ -72,7 +72,7 @@ const webProjects = [
     priority: 5,
     bgImg: "rate-my-classes-2020/image.png",
     detailViewType: "iframe",
-    iframeUrl: "https://unruffled-bose-857315.netlify.app/",
+    iframeUrl: "https://rate-my-classes.netlify.app/",
     descriptions: [
       'This website is the <a target="_blank" href="https://github.com/zhumingcheng697/dynamic-web-final">final project</a> for my <i>Dynamic Web Applications</i> class, and it allows students to review class information and ratings.',
       '<i>Unfortunately, the <a target="_blank" href="https://stark-basin-35300.herokuapp.com/">backend</a> may take quite a long time to start up due to free-tier hosting.</i>'
