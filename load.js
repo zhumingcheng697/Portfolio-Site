@@ -25,7 +25,7 @@ if (projectsDiv && modalDiv) {
 
     if (window.location.search) {
         let chosenId;
-        if (window.location.search === "?wild") {
+        if (window.location.search.includes("?wild")) {
             let projectCards = document.querySelectorAll(`.main-view .projects .project-card`);
             if (projectCards) {
                 chosenId = projectCards[Math.floor(Math.random() * Math.floor(projectCards.length))].id;

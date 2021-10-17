@@ -1,6 +1,8 @@
 html {
   margin: 0;
   padding: 0;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
 }
 
 *, *:before, *:after {
@@ -37,10 +39,11 @@ body {
   height: 100%;
   overflow-wrap: break-word;
   background-color: var(--firstBgColor);
-  color: red;
+  /*color: red;*/
   text-align: center;
   font-family: arial, helvetica, sans-serif;
   transition-duration: 0.6s;
+  transition-property: background-color;
 }
 
 img, video {
@@ -55,13 +58,26 @@ h1 {
   font-size: 2.1em;
   color: var(--firstTxtColor);
   transition-duration: 0.6s;
-  transition-property: color, font-size, opacity, visibility;
+  transition-property: color, opacity, visibility;
 }
 
-#greeting h1 {
+#greeting {
   position: absolute;
-  top: max(calc(38% - 50px), 70px);
+  top: max(calc(38% - 80px), 70px);
   width: 100%;
+  transition-duration: 0.6s;
+  transition-property: color, opacity, visibility;
+}
+
+#greeting > * {
+  margin: 20px auto;
+}
+
+#greeting > p {
+  font-size: 1.2em;
+  color: var(--secondTxtColor);
+  transition-duration: 0.6s;
+  transition-property: color, opacity, visibility;
 }
 
 .notice-banner {
@@ -86,7 +102,7 @@ h1 {
   margin-left: 2px;
 }
 
-h2 {
+header {
   position: absolute;
   left: calc(30px + var(--inset-left));
   top: calc(20px + var(--inset-top) + var(--bannerHeight));
@@ -94,35 +110,38 @@ h2 {
   font-size: 1.4em;
   font-weight: normal;
   transition-duration: 0.6s;
-  transition-property: font-size, color, text-align;
+  transition-property: color, text-align;
   -webkit-user-select: none;
   user-select: none;
   text-align: left;
 }
 
-h2 strong {
+header strong {
   font-weight: bold;
   transition-duration: 0.6s;
+  transition-property: color;
 }
 
-h2 strong strong {
+header strong strong {
   font-weight: lighter;
   margin: 0 0 0 5px;
   display: inline-block;
   transition-duration: 0.6s;
+  transition-property: transform, color;
 }
 
-h2 div.drop-down {
+header div.drop-down {
   transition-duration: 0.6s;
+  transition-property: visibility, opacity;
   text-align: center;
 }
 
-h2 div.drop-down div.menu, h2 div.drop-down div.triangle-outline {
+header div.drop-down div.menu, header div.drop-down div.triangle-outline {
   transition-duration: 0.6s;
   filter: drop-shadow(0 0 8px var(--dropBlurBgColor));
 }
 
-h2 div.drop-down div.triangle {
+header div.drop-down div.triangle {
   position: absolute;
   border-left: 16px solid transparent;
   border-right: 16px solid transparent;
@@ -135,7 +154,7 @@ h2 div.drop-down div.triangle {
   left: 50%;
 }
 
-h2 div.drop-down div.triangle-outline {
+header div.drop-down div.triangle-outline {
   position: absolute;
   left: 50%;
   top: 33px;
@@ -161,7 +180,7 @@ img, video, .unselectable {
   -webkit-user-select: none;
 }
 
-h2 div.drop-down div.menu {
+header div.drop-down div.menu {
   margin: 0 auto;
   width: 190px;
   background-color: var(--zeroBgColor);
@@ -175,25 +194,25 @@ h2 div.drop-down div.menu {
   padding: 6px 0;
 }
 
-h2 div.drop-down div.menu > div.scrollable {
+header div.drop-down div.menu > div.scrollable {
   max-height: calc(var(--full-height) - 100px);
   min-height: 25px;
 }
 
-h2 div.drop-down div.menu > div.scrollable > div {
+header div.drop-down div.menu > div.scrollable > div {
   margin: 10px 0;
   transition-duration: 0.6s;
 }
 
-h2 div.drop-down div.menu > div.scrollable > div:first-of-type {
+header div.drop-down div.menu > div.scrollable > div:first-of-type {
   margin-top: 6px;
 }
 
-h2 div.drop-down div.menu > div.scrollable > div:last-of-type {
+header div.drop-down div.menu > div.scrollable > div:last-of-type {
   margin-bottom: 6px;
 }
 
-h2 div.drop-down div.menu > div.scrollable > div > a {
+header div.drop-down div.menu > div.scrollable > div > a {
   display: block;
   padding: 10px 0;
   width: auto;
@@ -204,55 +223,60 @@ h2 div.drop-down div.menu > div.scrollable > div > a {
   font-weight: lighter;
 }
 
-h2 strong.app, h2 a.app, h2 strong.app strong {
+header strong.app, header a.app, header strong.app strong {
   color: var(--orangeCard);
 }
 
-h2 strong.web, h2 a.web, h2 strong.web strong {
+header strong.web, header a.web, header strong.web strong {
   color: var(--yellowCard);
 }
 
-h2 strong.script, h2 a.script, h2 strong.script strong {
+header strong.script, header a.script, header strong.script strong {
   color: var(--purpleCard);
 }
 
-h2 strong.home, h2 a.home {
+header strong.home, header a.home {
   color: var(--firstTxtColor);
 }
 
-h2 strong.wild, h2 a.wild, h2 strong.wild strong {
+header strong.wild, header a.wild, header strong.wild strong {
   color: var(--secondTxtColor);
 }
 
-h2 div.drop-down div.menu > div.scrollable > div > a.home {
+header div.drop-down div.menu > div.scrollable > div > a.home {
   font-weight: bold;
 }
 
-h2 > p {
+header > p {
   white-space: nowrap;
   cursor: pointer;
 }
 
-h2 > p.app ~ div.drop-down > div.menu > div.scrollable > div.app > a.app {
+header > p.app ~ div.drop-down > div.menu > div.scrollable > div.app > a.app {
   background-color: var(--orangeCardWithAlpha);
 }
 
-h2 > p.web ~ div.drop-down > div.menu > div.scrollable > div.web > a.web {
+header > p.web ~ div.drop-down > div.menu > div.scrollable > div.web > a.web {
   background-color: var(--yellowCardWithAlpha);
 }
 
-h2 > p.script ~ div.drop-down > div.menu > div.scrollable > div.script > a.script {
+header > p.script ~ div.drop-down > div.menu > div.scrollable > div.script > a.script {
   background-color: var(--purpleCardWithAlpha);
 }
 
+header > p.wild ~ div.drop-down > div.menu > div.scrollable > div.me > a.wild {
+  background-color: var(--blurBgColor);
+}
+
+
 div.bottom {
   position: absolute;
-  top: max(100px, calc(45% - 2.5em));
-  min-height: calc(55% + 2.5em);
+  top: max(180px, calc(42% + 1em));
+  min-height: calc(58% - 1em);
   width: 100%;
 }
 
-h3 {
+footer {
   margin-top: calc(30vh - 30px);
   position: absolute;
   left: calc(25px + var(--inset-left));
@@ -261,17 +285,18 @@ h3 {
   font-size: 0.9em;
   color: var(--thirdTxtColor);
   transition-duration: 0.6s;
-  transition-property: color, font-size;
+  transition-property: color;
 }
 
-h3 br {
+footer br {
   display: none;
 }
 
-h3 a {
+footer a, #greeting p a {
   color: var(--linkColor);
   text-decoration: none;
   transition-duration: 0.6s;
+  transition-property: color;
 }
 
 div.title {
@@ -347,7 +372,6 @@ div.blank {
   bottom: 34px;
   font-size: 1.2em;
   color: #fff;
-  transition-duration: 0.6s;
 }
 
 #card-container .card p:last-of-type {
@@ -357,7 +381,6 @@ div.blank {
   bottom: 15px;
   font-size: 0.9em;
   color: rgba(255,255,255,0.7);
-  transition-duration: 0.6s;
 }
 
 .hide {
@@ -448,9 +471,7 @@ div.main-view div.projects .project-card h5 span {
 }
 
 div.main-view div.projects .project-card p {
-  margin-left: 22px;
-  margin-top: 6px;
-  margin-bottom: 12px;
+  margin: 6px 13px 12px 22px;
   transition-duration: 0.6s;
   display: flex;
   flex-wrap: wrap;
@@ -493,6 +514,7 @@ div.about-me {
   box-sizing: border-box;
   margin: auto;
   transition-duration: 0.6s;
+  transition-property: color, opacity, visibility;
 }
 
 div.about-me > b {
@@ -500,6 +522,7 @@ div.about-me > b {
   font-size: 1.3em;
   line-height: 1.5em;
   transition-duration: 0.6s;
+  transition-property: color;
 }
 
 div.about-me > div {
@@ -509,6 +532,7 @@ div.about-me > div {
   margin: 20px 0;
   line-height: 1.4em;
   transition-duration: 0.6s;
+  transition-property: color;
 }
 
 div.about-me > div > p {
@@ -555,7 +579,8 @@ div.modal-view div.modal-area .modal-container {
   justify-content: center;
   box-sizing: border-box;
   transition-duration: 0.6s;
-  width: 60%;
+  width: 85%;
+  max-width: 960px;
   margin: auto;
 }
 
@@ -688,9 +713,7 @@ div.modal-view div.modal-area .actual-modal p:not(.tags) > a {
 div.modal-view div.modal-area .actual-modal p.tags {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 22px;
-  margin-top: 5px;
-  margin-bottom: 18px;
+  margin: 5px 12px 18px 22px;
   transition-duration: 0.6s;
 }
 
@@ -739,8 +762,8 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 12%;
-  right: 12%;
+  left: max(2%, 48% - 545px);
+  right: max(2%, 48% - 545px);
   /* background: #0f02; */
   display: flex;
   justify-content: space-between;
@@ -759,11 +782,11 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
 }
 
 @media (hover: none) {
-  h2 > p.app ~ div.drop-down > div.menu > div.scrollable > div:not(.app).tapped > a, h2 > p.web ~ div.drop-down > div.menu > div.scrollable > div:not(.web).tapped > a, h2 > p.script ~ div.drop-down > div.menu > div.scrollable > div:not(.script).tapped > a, h2 > p.wild ~ div.drop-down > div.menu > div.scrollable > div.tapped > a {
+  header > p.app ~ div.drop-down > div.menu > div.scrollable > div:not(.app).tapped > a, header > p.web ~ div.drop-down > div.menu > div.scrollable > div:not(.web).tapped > a, header > p.script ~ div.drop-down > div.menu > div.scrollable > div:not(.script).tapped > a, header > p.wild ~ div.drop-down > div.menu > div.scrollable > div.tapped > a {
     background-color: var(--blurBgColor);
   }
 
-  h2 > p.app ~ div.drop-down > div.menu > div.scrollable > div.app.tapped > a.app, h2 > p.web ~ div.drop-down > div.menu > div.scrollable > div.web.tapped > a.web, h2 > p.script ~ div.drop-down > div.menu > div.scrollable > div.script.tapped > a.script {
+  header > p.app ~ div.drop-down > div.menu > div.scrollable > div.app.tapped > a.app, header > p.web ~ div.drop-down > div.menu > div.scrollable > div.web.tapped > a.web, header > p.script ~ div.drop-down > div.menu > div.scrollable > div.script.tapped > a.script {
     filter: brightness(0.8);
   }
 
@@ -781,7 +804,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     transform: scale(1.08);
   }
 
-  h3 a.tapped {
+  footer a.tapped, #greeting p a.tapped {
     text-decoration: underline;
     filter: brightness(1.2);
   }
@@ -802,11 +825,11 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
 }
 
 @media (hover: hover) {
-  h2 > p.app ~ div.drop-down > div.menu > div.scrollable > div:not(.app):hover > a, h2 > p.web ~ div.drop-down > div.menu > div.scrollable > div:not(.web):hover > a, h2 > p.script ~ div.drop-down > div.menu > div.scrollable > div:not(.script):hover > a, h2 > p.wild ~ div.drop-down > div.menu > div.scrollable > div:hover > a {
+  header > p.app ~ div.drop-down > div.menu > div.scrollable > div:not(.app):hover > a, header > p.web ~ div.drop-down > div.menu > div.scrollable > div:not(.web):hover > a, header > p.script ~ div.drop-down > div.menu > div.scrollable > div:not(.script):hover > a, header > p.wild ~ div.drop-down > div.menu > div.scrollable > div:hover > a {
     background-color: var(--blurBgColor);
   }
 
-  h2 > p.app ~ div.drop-down > div.menu > div.scrollable > div.app:hover > a.app, h2 > p.web ~ div.drop-down > div.menu > div.scrollable > div.web:hover > a.web, h2 > p.script ~ div.drop-down > div.menu > div.scrollable > div.script:hover > a.script {
+  header > p.app ~ div.drop-down > div.menu > div.scrollable > div.app:hover > a.app, header > p.web ~ div.drop-down > div.menu > div.scrollable > div.web:hover > a.web, header > p.script ~ div.drop-down > div.menu > div.scrollable > div.script:hover > a.script {
     filter: brightness(0.8);
   }
 
@@ -824,7 +847,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     transform: scale(1.08);
   }
 
-  h3 a:hover {
+  footer a:hover, #greeting p a:hover {
     text-decoration: underline;
     filter: brightness(1.2);
   }
@@ -854,13 +877,13 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
 }
 
 @media only screen and (max-width: 1050px) {
-  #greeting h1 {
-    top: max(70px, calc(38% - 100px));
+  #greeting {
+    top: max(70px, calc(32% - 120px));
   }
 
   div.bottom {
-    top: max(105px, calc(45% - 6em));
-    min-height: calc(55% + 6em);
+    top: max(190px, calc(42% - 4em));
+    min-height: calc(58% + 4em);
   }
 
   div.blank {
@@ -880,14 +903,14 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     width: 95%;
   }
 
-  div.modal-view div.modal-area .modal-container {
-    width: 70%;
-  }
+  /*div.modal-view div.modal-area .modal-container {*/
+  /*  width: 70%;*/
+  /*}*/
 
-  .arrows {
-    left: 8%;
-    right: 8%;
-  }
+  /*.arrows {*/
+  /*  left: 8%;*/
+  /*  right: 8%;*/
+  /*}*/
 
   .arrows > span {
     font-size: 4.5em;
@@ -895,15 +918,15 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
 }
 
 @media only screen and (max-width: 850px) {
-  #greeting h1 {
-    top: max(70px, calc(35% - 110px));
+  #greeting {
+    top: max(70px, calc(30% - 130px));
     left: calc(50% - 250px);
     width: 500px;
   }
 
   div.bottom {
-    top: max(150px, calc(41% - 3.8em));
-    min-height: calc(59% + 3.8em);
+    top: max(230px, calc(42% - 3.5em));
+    min-height: calc(58% + 3.5em);
   }
 
   #card-container .card {
@@ -969,7 +992,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     height: calc(90px + var(--inset-bottom));
   }
 
-  #greeting h1 {
+  #greeting {
     left: max(70px, calc(50% - 150px));
     width: 300px;
     position: relative;
@@ -992,7 +1015,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     padding-bottom: 55%;
   }
 
-  h3 {
+  footer {
     text-align: center;
     left: 12px;
     right: 12px;
@@ -1039,43 +1062,43 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     font-size: 1.2em;
   }
 
-  #greeting h1 {
-    top: max(70px, calc(18% + 10px));
+  #greeting {
+    top: max(70px, calc(18% - 20px));
     left: calc(50% - 135px);
     width: 270px;
   }
 
-  h2 > span:first-of-type, h2 > p > span:first-of-type {
+  header > span:first-of-type, header > p > span:first-of-type {
     display: none;
   }
 
-  h2 div.drop-down div.menu {
+  header div.drop-down div.menu {
     width: 160px;
   }
 
-  h2 div.drop-down div.menu > div.scrollable > div:first-of-type {
+  header div.drop-down div.menu > div.scrollable > div:first-of-type {
     margin-top: 4px;
   }
 
-  h2 div.drop-down div.menu > div.scrollable > div:last-of-type {
+  header div.drop-down div.menu > div.scrollable > div:last-of-type {
     margin-bottom: 4px;
   }
 
-  h2 div.drop-down div.menu > div.scrollable > div {
+  header div.drop-down div.menu > div.scrollable > div {
     margin: 8px 0;
   }
 
-  h2 div.drop-down div.menu > div.scrollable > div > a {
+  header div.drop-down div.menu > div.scrollable > div > a {
     font-size: 0.7em;
     padding: 9px 0;
     margin: 0 11px;
   }
 
-  h3 span {
+  footer span {
     display: none;
   }
 
-  h3 br {
+  footer br {
     display: block;
   }
 
@@ -1110,6 +1133,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
 
   div.main-view div.projects .project-card p {
     margin-left: 20px;
+    margin-right: 13px;
     /* margin-top: 1px; */
     margin-bottom: 10px;
   }
@@ -1139,6 +1163,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.modal-view div.modal-area .actual-modal p.tags {
+    margin-right: 14px;
     margin-bottom: 14px;
   }
 
@@ -1177,32 +1202,32 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     font-size: 1.1em;
   }
 
-  #greeting h1 {
+  #greeting {
     left: 8%;
     width: 84%;
   }
 
-  h2 span {
+  header span {
     display: none;
   }
 
-  h2 div.drop-down div.menu {
+  header div.drop-down div.menu {
     width: 80px;
   }
 
-  h2 div.drop-down div.menu > div.scrollable > div:first-of-type {
+  header div.drop-down div.menu > div.scrollable > div:first-of-type {
     margin-top: 1.5px;
   }
 
-  h2 div.drop-down div.menu > div.scrollable > div:last-of-type {
+  header div.drop-down div.menu > div.scrollable > div:last-of-type {
     margin-bottom: 1.5px;
   }
 
-  h2 div.drop-down div.menu > div.scrollable > div {
+  header div.drop-down div.menu > div.scrollable > div {
     margin: 7px 0;
   }
 
-  h2 div.drop-down div.menu > div.scrollable > div > a {
+  header div.drop-down div.menu > div.scrollable > div > a {
     font-size: 0.65em;
     padding: 8px 0;
     margin: 0 8px;
@@ -1249,6 +1274,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
 
   div.main-view div.projects .project-card p {
     margin-left: 15px;
+    margin-right: 9px;
     margin-bottom: 7px;
   }
 
@@ -1279,6 +1305,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.modal-view div.modal-area .actual-modal p.tags {
+    margin-right: 15px;
     margin-bottom: 12px;
   }
 

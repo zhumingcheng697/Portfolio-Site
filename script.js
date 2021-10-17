@@ -1,7 +1,7 @@
 let isInDarkMode;
 let resizeIndex = 45;
 let resizeIntervalId;
-let tappableElements = document.querySelectorAll("#card-container .card, h2 > p ~ .drop-down > .menu > div.scrollable > div, .cancel-btn, .modal-view .modal-area .actual-modal p:not(.tags) > a, h3 a, .projects .project-card, .arrows > span");
+let tappableElements = document.querySelectorAll("#card-container .card, header > p ~ .drop-down > .menu > div.scrollable > div, .cancel-btn, .modal-view .modal-area .actual-modal p:not(.tags) > a, h3 a, .projects .project-card, .arrows > span, #greeting p a");
 isInDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 if (!document.body.classList.contains("app") && !document.body.classList.contains("web") && !document.body.classList.contains("script") && !document.body.classList.contains("wild")) {
@@ -11,7 +11,7 @@ if (!document.body.classList.contains("app") && !document.body.classList.contain
 
   setTimeout(() => {
     document.querySelector("#card-container").classList.remove("hide");
-    document.querySelector("h1").classList.remove("hide");
+    document.querySelector("#greeting").classList.remove("hide");
   }, 150);
 }
 
@@ -50,7 +50,7 @@ function switchFavicons() {
 
 function randomizeCard() {
   if (!document.body.classList.contains("app") && !document.body.classList.contains("web") && !document.body.classList.contains("script") && !document.body.classList.contains("wild")) {
-    document.querySelectorAll("#card-container a.card.wild").forEach(element => {
+    document.querySelectorAll("#card-container a.card.wild, #greeting a.wild").forEach(element => {
       switch (Math.floor(Math.random() * 3)) {
         case 0:
           element.setAttribute("href", "app/index.html?wild");
@@ -72,7 +72,7 @@ tappableElements.forEach(element => {
   });
 });
 
-document.querySelectorAll("#card-container .card.wild").forEach(element => {
+document.querySelectorAll("#card-container a.card.wild, #greeting a").forEach(element => {
   element.addEventListener("mouseenter", randomizeCard);
 });
 

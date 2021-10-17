@@ -33,7 +33,7 @@ function changeProject(direction) {
 
 function randomizeDropDown() {
   if (document.body.classList.contains("app")) {
-    document.querySelectorAll("h2 .drop-down .menu > div.scrollable > div.wild > a.wild").forEach(element => {
+    document.querySelectorAll("header .drop-down .menu > div.scrollable > div.wild > a.wild").forEach(element => {
       switch (Math.floor(Math.random() * 2)) {
         case 0:
           element.setAttribute("href", "../web/index.html?wild");
@@ -43,7 +43,7 @@ function randomizeDropDown() {
       }
     });
   } else if (document.body.classList.contains("web")) {
-    document.querySelectorAll("h2 .drop-down .menu > div.scrollable > div.wild > a.wild").forEach(element => {
+    document.querySelectorAll("header .drop-down .menu > div.scrollable > div.wild > a.wild").forEach(element => {
       switch (Math.floor(Math.random() * 2)) {
         case 0:
           element.setAttribute("href", "../app/index.html?wild")
@@ -53,7 +53,7 @@ function randomizeDropDown() {
       }
     });
   } else if (document.body.classList.contains("script")) {
-    document.querySelectorAll("h2 .drop-down .menu > div.scrollable > div.wild > a.wild").forEach(element => {
+    document.querySelectorAll("header .drop-down .menu > div.scrollable > div.wild > a.wild").forEach(element => {
       switch (Math.floor(Math.random() * 2)) {
         case 0:
           element.setAttribute("href", "../app/index.html?wild");
@@ -63,7 +63,7 @@ function randomizeDropDown() {
       }
     });
   } else if (document.body.classList.contains("wild")) {
-    document.querySelectorAll("h2 .drop-down .menu > div.scrollable > div.wild > a.wild").forEach(element => {
+    document.querySelectorAll("header .drop-down .menu > div.scrollable > div.wild > a.wild").forEach(element => {
       switch (Math.floor(Math.random() * 3)) {
         case 0:
           element.setAttribute("href", "../app/index.html?wild");
@@ -85,18 +85,18 @@ function showDropDown() {
 
   randomizeDropDown();
 
-  document.querySelector("h2 .drop-down").classList.remove("displayNone");
+  document.querySelector("header .drop-down").classList.remove("displayNone");
 
   setTimeout(() => {
-    document.querySelector("h2 .drop-down").classList.remove("hide");
-    document.querySelector("h2 strong strong").classList.add("turned");
+    document.querySelector("header .drop-down").classList.remove("hide");
+    document.querySelector("header strong strong").classList.add("turned");
   }, 10);
 }
 
 function hideDropDown() {
-  document.querySelector("h2 .drop-down").classList.add("hide");
-  document.querySelector("h2 strong strong").classList.remove("turned");
-  dropDownTimeoutIds.push(setTimeout(() => {document.querySelector("h2 .drop-down").classList.add("displayNone")}, 600));
+  document.querySelector("header .drop-down").classList.add("hide");
+  document.querySelector("header strong strong").classList.remove("turned");
+  dropDownTimeoutIds.push(setTimeout(() => {document.querySelector("header .drop-down").classList.add("displayNone")}, 600));
 }
 
 function showModal(cardId, switching = false) {
@@ -150,18 +150,18 @@ function hideModals(nextId = "") {
 }
 
 if (window.matchMedia("(hover: hover)").matches) {
-  document.querySelector("h2").addEventListener("mouseenter", () => {
-    if (window.getComputedStyle(document.querySelector("h2 .drop-down")).getPropertyValue("opacity") > 0) {
+  document.querySelector("header").addEventListener("mouseenter", () => {
+    if (window.getComputedStyle(document.querySelector("header .drop-down")).getPropertyValue("opacity") > 0) {
       showDropDown();
     }
   });
-  document.querySelector("h2 > p").addEventListener("mouseenter", showDropDown);
+  document.querySelector("header > p").addEventListener("mouseenter", showDropDown);
 }
 
-document.querySelector("h2").addEventListener("mouseleave", hideDropDown);
+document.querySelector("header").addEventListener("mouseleave", hideDropDown);
 
-document.querySelector("h2 > p").addEventListener("click", () => {
-  if (!document.querySelector("h2 .drop-down").classList.contains("hide")) {
+document.querySelector("header > p").addEventListener("click", () => {
+  if (!document.querySelector("header .drop-down").classList.contains("hide")) {
     hideDropDown();
   } else {
     showDropDown();
