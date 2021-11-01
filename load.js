@@ -1,5 +1,6 @@
-let projectsDiv = document.querySelector(".main-view .projects");
-let modalDiv = document.querySelector(".modal-view");
+const projectsDiv = document.querySelector(".main-view .projects");
+const modalDiv = document.querySelector(".modal-view");
+const domParser = new DOMParser();
 
 if (projectsDiv && modalDiv) {
     let projects;
@@ -107,7 +108,7 @@ function createProjectModal(project) {
     modalHTML += `</p>`;
 
     for (const line of project.descriptions) {
-        if (/^<(h[1-6]|[a-z]+)(?:\s+(?:[^\s\/<>]*|[^\s\/<>].+[^\/<>]))?(?:>(.*<\/\1>)?|\/>)$/.test(line)) {
+        if (!domParser.parseFromString(line, "text/xml").documentElement.querySelector("parsererror")) {
             modalHTML += line;
         } else {
             modalHTML += `<p>${ line }</p>`;
