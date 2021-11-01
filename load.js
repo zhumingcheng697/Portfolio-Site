@@ -107,7 +107,11 @@ function createProjectModal(project) {
     modalHTML += `</p>`;
 
     for (const line of project.descriptions) {
-        modalHTML += `<p>${ line }</p>`;
+        if (/^<(h[1-6]|[a-z]+)(?:\s+(?:[^\s\/<>]*|[^\s\/<>].+[^\/<>]))?(?:>(.*<\/\1>)?|\/>)$/.test(line)) {
+            modalHTML += line;
+        } else {
+            modalHTML += `<p>${ line }</p>`;
+        }
     }
 
     modalHTML += `<div class="cancel-btn unselectable">&#x2715;</div>`;
