@@ -28,18 +28,6 @@ const scriptProjects = [
     ]
   },
   {
-    title: "NYU Grade Checker",
-    year: "2021",
-    identifier: "nyu-grade-checker-2021",
-    tags: ["Node.js", "Headless Browser", "Web Scraping"],
-    bgImg: "nyu-grade-checker-2021/image.png",
-    descriptions: [
-      'This is a Node.js <a target="_blank" href="https://github.com/zhumingcheng697/NYU-Grade-Checker">script</a> that checks users&rsquo; grades.',
-      'It can automatically log onto <a target="_blank" href="https://m.albert.nyu.edu/app/dashboard/grades">NYU Albert Mobile</a> with the provided login credentials using the puppeteer headless browser, extract all the grades from the most recent semester, and print it nicely in the console.',
-      'I wrote this script in summer 2020 when I was busy checking my grades and I got tired of logging into Albert multiple times a day, scrolling to the correct page, only to see grades from the previous semester and get automatically logged out after 20 minutes.'
-    ]
-  },
-  {
     title: "NYU Housing Sublet Mailer",
     year: "2021",
     identifier: "nyu-housing-sublet-mailer-2021",
