@@ -579,9 +579,7 @@ div.modal-view div.modal-area .modal-container {
   justify-content: center;
   box-sizing: border-box;
   transition-duration: 0.6s;
-  width: 85%;
-  max-width: 960px;
-  margin: auto;
+  padding: 0 65px;
 }
 
 div.modal-view div.modal-area .modal-container .actual-modal {
@@ -596,6 +594,11 @@ div.modal-view div.modal-area .modal-container .actual-modal {
   position: relative;
 }
 
+div.modal-view div.modal-area .modal-container .actual-modal > section {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 div.modal-view div.modal-area .modal-container .actual-modal .image-video-container {
   position: relative;
   text-align: center;
@@ -604,10 +607,6 @@ div.modal-view div.modal-area .modal-container .actual-modal .image-video-contai
   width: 100%;
   height: 100%;
   -webkit-mask-image: -webkit-radial-gradient(black, black);
-}
-
-div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
-  height: calc(550px * var(--modal-width) / 1000);
 }
 
 div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn {
@@ -628,35 +627,39 @@ div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn {
   z-index: 50;
 }
 
-div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > p {
-  position: absolute;
-  left: 40%;
-  right: 40%;
-  /* display: inline-block; */
-  /* margin: auto; */
-  top: 40%;
-  bottom: 40%;
-  overflow: hidden;
-}
+/*div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > p {*/
+/*  position: absolute;*/
+/*  left: 40%;*/
+/*  right: 40%;*/
+/*  !* display: inline-block; *!*/
+/*  !* margin: auto; *!*/
+/*  top: 40%;*/
+/*  bottom: 40%;*/
+/*  overflow: hidden;*/
+/*}*/
 
-div.modal-view div.modal-area .modal-container .actual-modal img, div.modal-view div.modal-area .modal-container .actual-modal video {
+div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > img, div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > video {
   width: 100%;
   overflow: hidden;
-  max-height: calc(var(--full-height) - 70px - 10em);
-  min-height: 27vh;
+  max-height: calc(var(--full-height) - 70px - 3.1em - 42px);
+  min-height: 30vh;
   position: relative;
-  /* border-radius: 10px 10px 0 0; */
 }
 
-div.modal-view div.modal-area .modal-container .actual-modal iframe {
+div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe {
   width: 100%;
   overflow: hidden;
-  height: calc(var(--full-height) - 70px - 10em);
+  height: calc(var(--full-height) - 70px - 3.1em - 42px);
   position: relative;
   transition-duration: 0.6s;
 }
 
-div.modal-view div.modal-area .modal-container .actual-modal iframe[src*="openprocessing.org/sketch/"] {
+div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
+  overflow: auto;
+  height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 3.1em - 42px)), 30vh);
+}
+
+div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe[src*="openprocessing.org/sketch/"] {
   top: 0;
   left: 0;
   position: absolute;
@@ -665,10 +668,10 @@ div.modal-view div.modal-area .modal-container .actual-modal iframe[src*="openpr
   transform: translate(0, -50px);
 }
 
-div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal iframe[src*="openprocessing.org/sketch/"] {
+div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container > iframe[src*="openprocessing.org/sketch/"] {
   height: 600px;
   width: 1000px;
-  transform: scale(calc(var(--modal-width) / 1000)) translate(0, -50px);
+  transform: scale(max(calc(var(--modal-width) / 1000), 0.3)) translate(0, -50px);
 }
 
 div.modal-view div.modal-area .actual-modal h4 {
@@ -678,7 +681,6 @@ div.modal-view div.modal-area .actual-modal h4 {
   margin-right: 22px;
   margin-top: 10px;
   transition-duration: 0.6s;
-  line-height: 1em;
 }
 
 div.modal-view div.modal-area .actual-modal h4 span {
@@ -719,7 +721,6 @@ div.modal-view div.modal-area .actual-modal p.tags {
 
 div.modal-view div.modal-area .actual-modal p.tags span {
   white-space: nowrap;
-  /* line-height: 35px; */
   margin-bottom: 8px;
   background-color: var(--fourthTxtColor);
   color: white;
@@ -762,8 +763,8 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: max(2%, 48% - 545px);
-  right: max(2%, 48% - 545px);
+  left: 8px;
+  right: 8px;
   /* background: #0f02; */
   display: flex;
   justify-content: space-between;
@@ -774,7 +775,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
 .arrows > span {
   color: #fffb;
   font-size: 5em;
-  padding: 1%;
+  padding: 10px;
   padding-bottom: 0.2em;
   z-index: 20;
   cursor: pointer;
@@ -903,14 +904,14 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     width: 95%;
   }
 
-  /*div.modal-view div.modal-area .modal-container {*/
-  /*  width: 70%;*/
-  /*}*/
+  div.modal-view div.modal-area .modal-container {
+    padding: 0 60px;
+  }
 
-  /*.arrows {*/
-  /*  left: 8%;*/
-  /*  right: 8%;*/
-  /*}*/
+  .arrows {
+    left: 10px;
+    right: 10px;
+  }
 
   .arrows > span {
     font-size: 4.5em;
@@ -945,7 +946,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.modal-view div.modal-area .modal-container {
-    width: 80%;
+    padding: 0 50px;
   }
 
   div.modal-view div.modal-area .actual-modal h4 {
@@ -971,12 +972,24 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   .arrows {
-    left: 3%;
-    right: 3%;
+    left: 5px;
+    right: 5px;
   }
 
   .arrows > span {
     font-size: 3.5em;
+  }
+
+  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > img, div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > video {
+    max-height: calc(var(--full-height) - 70px - 2.9em - 38px);
+  }
+
+  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe {
+    height: calc(var(--full-height) - 70px - 2.9em - 38px);
+  }
+
+  div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
+    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.9em - 38px)), 30vh);
   }
 }
 
@@ -1027,7 +1040,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.modal-view div.modal-area .modal-container {
-    width: 86%;
+    padding: 0 40px;
   }
 
   div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn {
@@ -1040,8 +1053,8 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   .arrows {
-    left: 1%;
-    right: 1%;
+    left: 3px;
+    right: 3px;
   }
 
   .arrows > span {
@@ -1151,6 +1164,10 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     height: calc(65px + var(--inset-bottom));
   }
 
+  div.modal-view div.modal-area .modal-container {
+    padding: 0 35px;
+  }
+
   div.modal-view div.modal-area .actual-modal h4 {
     font-size: 1.8em;
     margin-top: 8px;
@@ -1186,6 +1203,23 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
 
   div.modal-view div.modal-area .modal-container .actual-modal iframe {
     height: calc(70vh - 70px);
+  }
+
+  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > img, div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > video {
+    max-height: calc(var(--full-height) - 70px - 2.7em - 35px);
+  }
+
+  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe {
+    height: calc(var(--full-height) - 70px - 2.7em - 35px);
+  }
+
+  div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
+    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.7em - 35px)), 30vh);
+  }
+
+  .arrows {
+    left: 2px;
+    right: 2px;
   }
 
   .arrows > span {
@@ -1288,10 +1322,16 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
 
   div.main-view div.projects {
     min-height: calc(var(--full-height) - 200px);
+    width: 100%;
+    padding: 0 15px;
   }
 
   div.detail-blank {
     height: calc(90px + var(--inset-bottom));
+  }
+
+  div.modal-view div.modal-area .modal-container {
+    padding: 0 20px;
   }
 
   div.modal-view div.modal-area .actual-modal h4 {
@@ -1310,7 +1350,6 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.modal-view div.modal-area .actual-modal p.tags span {
-    /* line-height: 28px; */
     margin-bottom: 5.5px;
     margin-right: 7px;
     font-size: 0.85em;
@@ -1329,9 +1368,16 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     height: calc(60vh - 70px);
   }
 
-  .arrows {
-    left: 0.5%;
-    right: 0.5%;
+  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > img, div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > video {
+    max-height: calc(var(--full-height) - 70px - 2.45em - 35px);
+  }
+
+  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe {
+    height: calc(var(--full-height) - 70px - 2.45em - 35px);
+  }
+
+  div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
+    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.45em - 35px)), 30vh);
   }
 
   .arrows > span {

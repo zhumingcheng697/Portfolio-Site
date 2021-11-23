@@ -99,7 +99,7 @@ function createProjectModal(project) {
             modalHTML += `<div class="image-video-container unselectable"><img alt="${ project.title }" src="${ project.imageUrl ? project.imageUrl : project.bgImg }"></div>`;
     }
 
-    modalHTML += `<h4>${ project.title }<span>(${ project.year })</span></h4>`;
+    modalHTML += `<section><h4>${ project.title }<span>(${ project.year })</span></h4>`;
 
     modalHTML += `<p class="tags">`;
     for (const tag of project.tags) {
@@ -107,12 +107,26 @@ function createProjectModal(project) {
     }
     modalHTML += `</p>`;
 
+    let closed = false;
+
     for (const line of project.descriptions) {
         if (!domParser.parseFromString(line, "text/xml").documentElement.querySelector("parsererror")) {
+            if (!closed) {
+                modalHTML += "</section>";
+                closed = true;
+            }
             modalHTML += line;
         } else {
+            if (closed) {
+                modalHTML += "<section>";
+                closed = false;
+            }
             modalHTML += `<p>${ line }</p>`;
         }
+    }
+
+    if (!closed) {
+        modalHTML += "</section>";
     }
 
     modalHTML += `<div class="cancel-btn unselectable">&#x2715;</div>`;

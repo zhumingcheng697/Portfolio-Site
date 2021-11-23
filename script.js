@@ -40,7 +40,7 @@ function resizeLoop() {
 function storeWidthHeight() {
   document.body.style.setProperty('--full-height', `${window.innerHeight}px`);
   if (document.querySelector(`.modal-container iframe[src^="https://www.openprocessing.org/sketch/"]`)) {
-    document.body.style.setProperty('--modal-width', `${document.querySelector(".modal-container").clientWidth}`);
+    document.body.style.setProperty('--modal-width', `${document.querySelector(".actual-modal").clientWidth}`);
   }
 }
 
