@@ -101,13 +101,33 @@ function createProjectModal(project) {
 
     modalHTML += `<section><h4>${ project.title }<span>(${ project.year })</span></h4>`;
 
-    modalHTML += `<p class="tags">`;
+    if (project.iframeUrl && !project.deployUrl) {
+        project.deployUrl = project.iframeUrl;
+    }
+
+    if (project.sourceUrl || project.deployUrl) {
+        modalHTML += `<nav>`
+    }
+
+    if (project.sourceUrl) {
+        modalHTML += `<a target="_blank" href="${project.sourceUrl}">Source Code</a>`;
+    }
+
+    if (project.deployUrl) {
+        modalHTML += `<a target="_blank" href="${project.deployUrl}">Deployment</a>`;
+    }
+
+    if (project.sourceUrl || project.deployUrl) {
+        modalHTML += `</nav>`
+    }
+
+    modalHTML += `</section><section><p class="tags">`;
     for (const tag of project.tags) {
         modalHTML += `<span>${ tag }</span>`;
     }
-    modalHTML += `</p>`;
+    modalHTML += `</p></section>`;
 
-    let closed = false;
+    let closed = true;
 
     for (const line of project.descriptions) {
         if (!domParser.parseFromString(line, "text/xml").documentElement.querySelector("parsererror")) {

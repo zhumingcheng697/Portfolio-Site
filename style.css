@@ -641,7 +641,7 @@ div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn {
 div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > img, div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > video {
   width: 100%;
   overflow: hidden;
-  max-height: calc(var(--full-height) - 70px - 3.1em - 42px);
+  max-height: calc(var(--full-height) - 70px - 3.1em - 45px);
   min-height: 30vh;
   position: relative;
 }
@@ -649,14 +649,14 @@ div.modal-view div.modal-area .modal-container .actual-modal .image-video-contai
 div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe {
   width: 100%;
   overflow: hidden;
-  height: calc(var(--full-height) - 70px - 3.1em - 42px);
+  height: calc(var(--full-height) - 70px - 3.1em - 45px);
   position: relative;
   transition-duration: 0.6s;
 }
 
 div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
   overflow: auto;
-  height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 3.1em - 42px)), 30vh);
+  height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 3.1em - 45px + 4px)), 30vh);
 }
 
 div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe[src*="openprocessing.org/sketch/"] {
@@ -674,12 +674,40 @@ div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image
   transform: scale(max(calc(var(--modal-width) / 1000), 0.3)) translate(0, -50px);
 }
 
+div.modal-view div.modal-area .actual-modal > section:first-of-type {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+div.modal-view div.modal-area .actual-modal > section:first-of-type > nav {
+  margin: 8px 22px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-size: 1.2em;
+}
+
+div.modal-view div.modal-area .actual-modal > section:first-of-type > nav > a {
+  transition-duration: 0.6s;
+  transition-property: color;
+}
+
+div.modal-view div.modal-area .actual-modal > section:first-of-type > nav > a:not(:last-child):after {
+  content: "|";
+  color: var(--firstTxtColor);
+  opacity: 0.2;
+  margin: 6px;
+  transition-duration: 0.6s;
+  transition-property: color;
+  font-weight: normal;
+}
+
 div.modal-view div.modal-area .actual-modal h4 {
   color: var(--firstTxtColor);
   font-size: 2em;
   margin-left: 22px;
-  margin-right: 22px;
-  margin-top: 10px;
   transition-duration: 0.6s;
 }
 
@@ -697,19 +725,14 @@ div.modal-view div.modal-area .actual-modal p:not(.tags):last-of-type {
 }
 
 div.modal-view div.modal-area .actual-modal p:not(.tags) {
-  margin-left: 22px;
-  margin-right: 22px;
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin: 12px 22px;
   transition-duration: 0.6s;
   font-size: 1.1em;
   color: var(--thirdTxtColor)
 }
 
-div.modal-view div.modal-area .actual-modal p:not(.tags) > a {
+div.modal-view div.modal-area .actual-modal a {
   font-weight: bold;
-  /* transition-duration: 0.6s;
-  transition-property: color; */
 }
 
 div.modal-view div.modal-area .actual-modal p.tags {
@@ -731,19 +754,19 @@ div.modal-view div.modal-area .actual-modal p.tags span {
   font-size: 1.1em;
 }
 
-body.app div.modal-view div.modal-area .actual-modal p:not(.tags) a {
+body.app div.modal-view div.modal-area .actual-modal a {
   color: var(--orangeCard);
 }
 
-body.web div.modal-view div.modal-area .actual-modal p:not(.tags) a {
+body.web div.modal-view div.modal-area .actual-modal a {
   color: var(--yellowCard);
 }
 
-body.script div.modal-view div.modal-area .actual-modal p:not(.tags) a {
+body.script div.modal-view div.modal-area .actual-modal a {
   color: var(--purpleCard);
 }
 
-body.wild div.modal-view div.modal-area .actual-modal p:not(.tags) a {
+body.wild div.modal-view div.modal-area .actual-modal a {
   color: var(--dropBlurBgColor);
 }
 
@@ -815,7 +838,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     color: var(--firstTxtColor);
   }
 
-  div.modal-view div.modal-area .actual-modal p:not(.tags) > a.tapped {
+  div.modal-view div.modal-area .actual-modal a.tapped {
     text-decoration: underline;
     filter: brightness(1.15);
   }
@@ -863,7 +886,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     color: var(--firstTxtColor);
   }
 
-  div.modal-view div.modal-area .actual-modal p:not(.tags) > a:hover {
+  div.modal-view div.modal-area .actual-modal a:hover {
     text-decoration: underline;
     filter: brightness(1.15);
   }
@@ -949,9 +972,16 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     padding: 0 50px;
   }
 
+  div.modal-view div.modal-area .actual-modal > section:first-of-type {
+    margin-top: 8px;
+  }
+
+  div.modal-view div.modal-area .actual-modal > section:first-of-type > nav {
+    font-size: 1.15em;
+  }
+
   div.modal-view div.modal-area .actual-modal h4 {
     font-size: 1.9em;
-    margin-top: 8px;
   }
 
   div.modal-view div.modal-area .actual-modal p:not(.tags) {
@@ -981,15 +1011,15 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > img, div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > video {
-    max-height: calc(var(--full-height) - 70px - 2.9em - 38px);
+    max-height: calc(var(--full-height) - 70px - 2.9em - 43px);
   }
 
   div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe {
-    height: calc(var(--full-height) - 70px - 2.9em - 38px);
+    height: calc(var(--full-height) - 70px - 2.9em - 43px);
   }
 
   div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
-    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.9em - 38px)), 30vh);
+    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.9em - 43px + 4px)), 30vh);
   }
 }
 
@@ -1168,9 +1198,14 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     padding: 0 35px;
   }
 
+  div.modal-view div.modal-area .actual-modal > section:first-of-type > nav {
+    font-size: 1.05em;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
   div.modal-view div.modal-area .actual-modal h4 {
     font-size: 1.8em;
-    margin-top: 8px;
   }
 
   div.modal-view div.modal-area .actual-modal p:not(.tags) {
@@ -1214,7 +1249,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
-    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.7em - 35px)), 30vh);
+    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.7em - 35px + 4px)), 30vh);
   }
 
   .arrows {
@@ -1334,6 +1369,12 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     padding: 0 20px;
   }
 
+  div.modal-view div.modal-area .actual-modal > section:first-of-type > nav {
+    font-size: 1em;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
   div.modal-view div.modal-area .actual-modal h4 {
     font-size: 1.6em;
   }
@@ -1377,7 +1418,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
-    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.45em - 35px)), 30vh);
+    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.45em - 35px  + 4px)), 30vh);
   }
 
   .arrows > span {

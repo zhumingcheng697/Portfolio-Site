@@ -24,6 +24,7 @@ const webProjects = [
     bgImg: "covid-headline-2020/image.png",
     detailViewType: "iframe",
     iframeUrl: "https://zhumingcheng697.github.io/dynamic-web-midterm/",
+    sourceUrl: "https://github.com/zhumingcheng697/dynamic-web-midterm",
     descriptions: [
       'COVID | Headline is the midterm project for my <i>Dynamic Web Applications</i> class that I built using React.',
       'The website displays the current COVID-19 statistics along side the top news headlines in a given country or region using two RESTful APIS.',
@@ -42,6 +43,7 @@ const webProjects = [
     bgImg: "rate-my-classes-2020/image.png",
     detailViewType: "iframe",
     iframeUrl: "https://rate-my-classes.netlify.app/",
+    sourceUrl: "https://github.com/zhumingcheng697/dynamic-web-final",
     descriptions: [
       'Rate My Classes is the <a target="_blank" href="https://github.com/zhumingcheng697/dynamic-web-final">final project</a> for my <i>Dynamic Web Applications</i> class that I built using Firebase, Express, React, and Node.js.',
       'The website allows students to post and review class information and ratings.',
@@ -58,8 +60,9 @@ const webProjects = [
     bgImg: "our-scheduler-2021/image.png",
     detailViewType: "iframe",
     iframeUrl: "https://ourscheduler.netlify.app/",
+    sourceUrl: "https://github.com/zhumingcheng697/OurScheduler",
     descriptions: [
-      'OurScheduler is a powerful <a target="_blank" href="https://github.com/zhumingcheng697/OurScheduler">course scheduler</a> for all college students built during <a target="_blank" href="https://pennapps-xxii.devpost.com">PennApps XXII</a> and was awarded the Best Education Hack and ranked Top 9.',
+      'OurScheduler is a powerful course scheduler for all college students built during <a target="_blank" href="https://pennapps-xxii.devpost.com">PennApps XXII</a> and was awarded the Best Education Hack and ranked Top 9.',
       'It allows college students across universities to choose a large amount of classes they are considering taking, lock some classes as &ldquo;must haves&rdquo;, choose the total number of credits and/or classes they want to take, and let the algorithm automatically generate multiple schedules for them that fit their needs.',
       'Different from traditional schedulers that force users to input the hours of the classes they want to take by hand or manually remove a class to add another a class that has a conflicting schedule, OurScheduler does everything automatically.',
       'Our website is built using MongoDB, Express, Vue, and Node.js. The puppeteer headless browser is also used as a web scraper to obtain the schedule of the courses, and the generated schedule is visualized using D3.js on the front end.',

@@ -8,6 +8,8 @@ const appProjects = [
     bgImg: "metro-archive-2020/image.png",
     detailViewType: "video",
     videoUrl: "metro-archive-2020/video.mp4",
+    sourceUrl: "https://github.com/zhumingcheng697/Metro-ARchive",
+    deployUrl: "https://testflight.apple.com/join/PCuRPU3x",
     descriptions: [
       'Metro ARchive is an Augmented Reality app <a target="_blank" href="https://linkedin.com/in/s-levin">Sammy Levin</a> and I developed in the first half of 2020 in collaboration with the <a target="_blank" href="https://rd.nytimes.com/projects/working-with-universities-to-experiment-with-spatial-computing">New York Times R&amp;D Team</a> and the <a target="_blank" href="https://www.nycmedialab.org/recent-projects/the-new-york-times-spatial-computing-for-news-challenge">NYC Media Lab</a> to explore the application of spatial computing technologies in journalism.',
       'The app allows users to see how a historic street corner in NYC looked like a century ago, with an in-person on-site experience and an at-home table-top experience, both using Augmented Reality.',
@@ -26,6 +28,8 @@ const appProjects = [
     bgImg: "guess-the-number-2020/image.png",
     detailViewType: "image",
     imageUrl: "guess-the-number-2020/hero.png",
+    sourceUrl: "https://github.com/zhumingcheng697/GuessTheNumber",
+    deployUrl: "https://apps.apple.com/app/id1513747066",
     descriptions: [
       'GuessTheNumber is a standalone watchOS app that allows the user to guess numbers with the &ldquo;AI&rdquo; in the app, or randomize a number, color, or boolean value.',
       'I developed it in summer 2020 to test out the capability of SwiftUI on the Watch and I took advantage of the latest technologies from Apple including SF Symbols, sound and haptic feedbacks, watchOS complications, and Siri watch face shortcuts. The core feature of the app was simple but I really put in the effort to improve all aspects of the user experience.',
