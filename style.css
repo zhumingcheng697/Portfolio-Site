@@ -822,12 +822,10 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   #card-container .card.tapped {
-    filter: brightness(1.1);
     transform: scale(1.05);
   }
 
   div.projects .project-card.tapped {
-    filter: brightness(1.1);
     transform: scale(1.05);
   }
 
@@ -866,12 +864,10 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   #card-container .card:hover {
-    filter: brightness(1.1);
     transform: scale(1.05);
   }
 
   div.projects .project-card:hover {
-    filter: brightness(1.1);
     transform: scale(1.05);
   }
 
@@ -1469,25 +1465,5 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
 
   div.projects .project-card {
     filter: brightness(0.9);
-  }
-
-  @media (hover: none) {
-    #card-container .card.tapped {
-      filter: brightness(1);
-    }
-
-    div.projects .project-card.tapped {
-      filter: brightness(1);
-    }
-  }
-
-  @media (hover: hover) {
-    #card-container .card:hover {
-      filter: brightness(1);
-    }
-
-    div.projects .project-card:hover {
-      filter: brightness(1);
-    }
   }
 }
