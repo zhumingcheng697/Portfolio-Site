@@ -55,7 +55,7 @@ const webProjects = [
     title: "OurScheduler",
     year: "2021",
     identifier: "our-scheduler-2021",
-    tags: ["HTML", "CSS", "JavaScript", "Node.js", "Vue.js", "Express.js", "D3.js", "REST API", "Web Scraping", "MongoDB"],
+    tags: ["HTML", "CSS", "JavaScript", "TypeScript", "Node.js", "Vue.js", "Express.js", "D3.js", "REST API", "Web Scraping", "MongoDB"],
     priority: 5,
     bgImg: "our-scheduler-2021/image.png",
     detailViewType: "iframe",
