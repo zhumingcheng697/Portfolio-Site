@@ -110,11 +110,11 @@ function createProjectModal(project) {
     }
 
     if (project.sourceUrl) {
-        modalHTML += `<a target="_blank" href="${project.sourceUrl}">Source Code</a>`;
+        modalHTML += `<a target="_blank" rel="noreferrer" href="${project.sourceUrl}">Source Code</a>`;
     }
 
     if (project.deployUrl) {
-        modalHTML += `<a target="_blank" href="${project.deployUrl}">Deployment</a>`;
+        modalHTML += `<a target="_blank" rel="noreferrer" href="${project.deployUrl}">Deployment</a>`;
     }
 
     if (project.sourceUrl || project.deployUrl) {

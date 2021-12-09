@@ -31,7 +31,7 @@ const webProjects = [
       'It will display the statistics and headlines in the estimated user location based on their IP address if they don&rsquo;t specify a location, or if no useful data can be found for the location they specified.',
       'It automatically loads more headlines when users scroll to the end of the page and automatically refreshes the COVID-19 statistics every 15 minutes in the background.',
       'I also optimized the website for devices with screen insets (also known as notches) and included support for light mode and dark mode.',
-      'Unfortunately, the headline API currently does not work on publicly deployed sites due to plan restrictions. Feel free to clone my <a target="_blank" href="https://github.com/zhumingcheng697/dynamic-web-midterm">GitHub repo</a> and run it locally on your device to try out the full experience!'
+      'Unfortunately, the headline API currently does not work on publicly deployed sites due to plan restrictions.'
     ]
   },
   {
@@ -45,10 +45,10 @@ const webProjects = [
     iframeUrl: "https://rate-my-classes.netlify.app/",
     sourceUrl: "https://github.com/zhumingcheng697/dynamic-web-final",
     descriptions: [
-      'Rate My Classes is the <a target="_blank" href="https://github.com/zhumingcheng697/dynamic-web-final">final project</a> for my <i>Dynamic Web Applications</i> class that I built using Firebase, Express, React, and Node.js.',
+      'Rate My Classes is the final project for my <i>Dynamic Web Applications</i> class that I built using Firebase, Express, React, and Node.js.',
       'The website allows students to post and review class information and ratings.',
       'It includes accounts and password authentication functionalities to allow users to keep track of all their reviews in one place and users can edit or remove their previous reviews with ease.',
-      'The puppeteer headless browser is also used in the <a target="_blank" href="https://stark-basin-35300.herokuapp.com/">back end</a> as a web scraper to obtain details of the classes such as department information, offered schedule, descriptions, and number of credits.'
+      'The puppeteer headless browser is also used in the <a target="_blank" rel="noreferrer" href="https://stark-basin-35300.herokuapp.com/">back end</a> as a web scraper to obtain details of the classes such as department information, offered schedule, descriptions, and number of credits.'
     ]
   },
   {
@@ -62,7 +62,7 @@ const webProjects = [
     iframeUrl: "https://ourscheduler.netlify.app/",
     sourceUrl: "https://github.com/zhumingcheng697/OurScheduler",
     descriptions: [
-      'OurScheduler is a powerful course scheduler for all college students built during <a target="_blank" href="https://pennapps-xxii.devpost.com">PennApps XXII</a> and was awarded the Best Education Hack and ranked Top 9.',
+      'OurScheduler is a powerful course scheduler for all college students built during <a target="_blank" rel="noreferrer" href="https://pennapps-xxii.devpost.com">PennApps XXII</a> and was awarded the Best Education Hack and ranked Top 9.',
       'It allows college students across universities to choose a large amount of classes they are considering taking, lock some classes as &ldquo;must haves&rdquo;, choose the total number of credits and/or classes they want to take, and let the algorithm automatically generate multiple schedules for them that fit their needs.',
       'Different from traditional schedulers that force users to input the hours of the classes they want to take by hand or manually remove a class to add another a class that has a conflicting schedule, OurScheduler does everything automatically.',
       'Our website is built using MongoDB, Express, Vue, and Node.js. The puppeteer headless browser is also used as a web scraper to obtain the schedule of the courses, and the generated schedule is visualized using D3.js on the front end.',
