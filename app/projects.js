@@ -5,9 +5,7 @@ const appProjects = [
     identifier: "metro-archive-2020",
     tags: ["ARKit", "iOS", "Xcode", "TestFlight"],
     priority: 5,
-    bgImg: "metro-archive-2020/image.png",
     detailViewType: "video",
-    videoUrl: "metro-archive-2020/video.mp4",
     sourceUrl: "https://github.com/zhumingcheng697/Metro-ARchive",
     deployUrl: "https://testflight.apple.com/join/PCuRPU3x",
     descriptions: [
@@ -25,15 +23,17 @@ const appProjects = [
     identifier: "guess-the-number-2020",
     tags: ["SwiftUI", "watchOS", "ClockKit", "Xcode", "App Store"],
     priority: 4,
-    bgImg: "guess-the-number-2020/image.png",
     detailViewType: "image",
     imageUrl: "guess-the-number-2020/hero.png",
     sourceUrl: "https://github.com/zhumingcheng697/GuessTheNumber",
     deployUrl: "https://apps.apple.com/app/id1513747066",
     descriptions: [
       'GuessTheNumber is a standalone watchOS app that allows the user to guess numbers with the &ldquo;AI&rdquo; in the app, or randomize a number, color, or boolean value.',
-      'I developed it in summer 2020 to test out the capability of SwiftUI on the Watch and I took advantage of the latest technologies from Apple including SF Symbols, sound and haptic feedbacks, watchOS complications, and Siri watch face shortcuts. The core feature of the app was simple but I really put in the effort to improve all aspects of the user experience.',
-      'I have also localized the app for English, Simplified Chinese, Traditional Chinese, Japanese, and Russian.'
+      'I developed it in summer 2020 to test out the capability of SwiftUI on the Watch and I took advantage of the latest technologies from Apple including SF Symbols, sound and haptic feedbacks, watchOS complications, and Siri watch face shortcuts.',
+      'The core feature of the app was quite simple but I really put in the effort to improve all aspects of the user experience.',
+      'Because I only have a 44mm Apple Watch, I ran the app on multiple simulators to make sure that the UI fits different display sizes nicely and the texts would not be truncated.',
+      'As I was developing the app, a newer version of watchOS was also in beta, so I made sure that the app would work with both the new and older operating systems perfectly.',
+      'I also localized the app for English, Simplified Chinese, Traditional Chinese, Japanese, and Russian.'
     ]
   }
 ];

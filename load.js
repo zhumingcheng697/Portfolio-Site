@@ -90,6 +90,9 @@ function createProjectModal(project) {
 
     switch (project.detailViewType) {
         case "video":
+            if (!project.videoUrl) {
+                project.videoUrl = project.identifier + "/video.mp4";
+            }
             modalHTML += `<div class="image-video-container unselectable"><video playsinline preload="metadata" src="${ project.videoUrl }" muted loop><img alt="${ project.title }" src="${ project.bgImg }"></video></div>`;
             break;
         case "iframe":
