@@ -23,7 +23,6 @@ const appProjects = [
     identifier: "guess-the-number-2020",
     tags: ["SwiftUI", "watchOS", "ClockKit", "Xcode", "App Store"],
     priority: 4,
-    detailViewType: "image",
     imageUrl: "guess-the-number-2020/hero.png",
     sourceUrl: "https://github.com/zhumingcheng697/GuessTheNumber",
     deployUrl: "https://apps.apple.com/app/id1513747066",

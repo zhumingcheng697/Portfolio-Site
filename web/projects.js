@@ -5,14 +5,14 @@ const webProjects = [
     identifier: "toolbox-2019",
     tags: ["p5.js", "CSS", "DOM", "API", "JSON", "Regex", "Geolocation"],
     priority: 3,
-    bgImg: "toolbox-2019/image.png",
     detailViewType: "iframe",
     iframeUrl: "https://www.openprocessing.org/sketch/794151/",
     descriptions: [
       'The Toolbox is my final project for my <i>Creative Coding</i> class and I built it using JavaScript and p5.js only.',
       'It allows users to search for weather forecast using city name, zip code, or their current location, or generate multifunctional QR codes to send SMS or emails.',
       'I used the OpenWeatherMap RESTful API to access the weather forecast, a QR code library to generate QR codes locally, and regular expressions to validate the country code or coordinate data users have typed in.',
-      'I localized it for English, Russian, and Japanese, optimized it for light mode and dark mode, and made it accessible using keyboard only.'
+      'I localized it for English, Russian, and Japanese, optimized it for light mode and dark mode, and made it accessible using keyboard only.',
+      'The tech stack of this project may seem a bit uncommon due to the nature of the class, but I was very glad how I was able to get all the details right and build a feature-rich application.'
     ]
   },
   {
@@ -21,7 +21,6 @@ const webProjects = [
     identifier: "covid-headline-2020",
     tags: ["HTML", "CSS", "JavaScript", "React.js", "REST API"],
     priority: 4.5,
-    bgImg: "covid-headline-2020/image.png",
     detailViewType: "iframe",
     iframeUrl: "https://zhumingcheng697.github.io/dynamic-web-midterm/",
     sourceUrl: "https://github.com/zhumingcheng697/dynamic-web-midterm",
@@ -40,7 +39,6 @@ const webProjects = [
     identifier: "rate-my-classes-2020",
     tags: ["HTML", "CSS", "JavaScript", "Node.js", "React.js", "Express.js", "REST API", "Web Scraping", "Firebase"],
     priority: 5,
-    bgImg: "rate-my-classes-2020/image.png",
     detailViewType: "iframe",
     iframeUrl: "https://rate-my-classes.netlify.app/",
     sourceUrl: "https://github.com/zhumingcheng697/dynamic-web-final",
@@ -57,17 +55,17 @@ const webProjects = [
     identifier: "our-scheduler-2021",
     tags: ["HTML", "CSS", "JavaScript", "TypeScript", "Node.js", "Vue.js", "Express.js", "D3.js", "REST API", "Web Scraping", "MongoDB"],
     priority: 5,
-    bgImg: "our-scheduler-2021/image.png",
     detailViewType: "iframe",
     iframeUrl: "https://ourscheduler.netlify.app/",
     sourceUrl: "https://github.com/zhumingcheng697/OurScheduler",
     descriptions: [
-      'OurScheduler is a powerful course scheduler for all college students built during <a target="_blank" rel="noreferrer" href="https://pennapps-xxii.devpost.com">PennApps XXII</a> and was awarded the Best Education Hack and ranked Top 9.',
+      'OurScheduler is a powerful college course scheduler that my team built during <a target="_blank" rel="noreferrer" href="https://pennapps-xxii.devpost.com">PennApps XXII</a> and was awarded the Best Education Hack and ranked Top 9.',
       'It allows college students across universities to choose a large amount of classes they are considering taking, lock some classes as &ldquo;must haves&rdquo;, choose the total number of credits and/or classes they want to take, and let the algorithm automatically generate multiple schedules for them that fit their needs.',
       'Different from traditional schedulers that force users to input the hours of the classes they want to take by hand or manually remove a class to add another a class that has a conflicting schedule, OurScheduler does everything automatically.',
-      'Our website is built using MongoDB, Express, Vue, and Node.js. The puppeteer headless browser is also used as a web scraper to obtain the schedule of the courses, and the generated schedule is visualized using D3.js on the front end.',
-      'Some of the technologies such as MongoDB or D3.js was pretty new to us so it took us some time to make everything working, but we were able to finish the project before the deadline.',
-      'After the hackathon was over, I still continued to work on this project. I added support for dark mode, improved the efficiency and reliability of the schedule generation algorithm by up to 5 times, redesigned the generated schedules, and allowed users to switch through different versions of a schedule.'
+      'The website is built using MongoDB, Express, Vue, Node.js, and TypeScript. The puppeteer headless browser is also used as a web scraper to obtain the schedule of the courses, and the generated schedule is visualized using D3.js on the front end.',
+      'At the hackathon, I was responsible for the entire Vue front end and I incorporated the database and schedule generation algorithms my teammates wrote into an Express back end with the scraper I built.',
+      'After the hackathon was over, I continued to work on this project. On the front end, I added support for dark mode, redesigned the visualization of the schedule, and allowed users to switch through all the tentative schedules generated by the algorithm, and I improved the efficiency and reliability of the schedule generation algorithm by up to 5 times on the back end.',
+      'A few months later, I also refactored both the front end and back end to TypeScript from JavaScript to improve code robustness, improved the accessibility to allow keyboard-only control on the front end, and modified the back end algorithm so that the scraper will automatically load new class information if what is in the database is outdated.'
     ]
   }
 ];
