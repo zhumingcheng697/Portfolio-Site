@@ -53,6 +53,10 @@ body {
   font-weight: 600;
 }
 
+.about-me h1 {
+  text-align: start;
+}
+
 img, video {
   object-fit: cover;
 }
