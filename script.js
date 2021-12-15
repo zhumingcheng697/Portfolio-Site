@@ -1,6 +1,4 @@
 let isInDarkMode;
-let resizeIndex = 45;
-let resizeIntervalId;
 let tappableElements = document.querySelectorAll("#card-container .card, header > p ~ .drop-down > .menu > div.scrollable > div, .cancel-btn, .modal-view .modal-area .actual-modal a, h3 a, .projects .project-card, .arrows > span, #greeting p a");
 isInDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
@@ -22,20 +20,6 @@ if (document.body.classList.contains("wild") && document.querySelector("div.abou
 storeWidthHeight();
 switchFavicons();
 randomizeCard();
-
-function resizeLoop() {
-  clearInterval(resizeIntervalId);
-  storeWidthHeight();
-  resizeIndex = 45;
-  resizeIntervalId = setInterval(() => {
-    if (resizeIndex >= 0) {
-      storeWidthHeight();
-      resizeIndex--;
-    } else {
-      clearInterval(resizeIntervalId);
-    }
-  }, 15);
-}
 
 function storeWidthHeight() {
   document.body.style.setProperty('--full-height', `${window.innerHeight}px`);
@@ -80,9 +64,9 @@ document.addEventListener("touchend", () => {
   tappableElements.forEach(element => {element.classList.remove("tapped")});
 });
 
-window.matchMedia("(prefers-color-scheme: dark)").addListener(match => {
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", match => {
   isInDarkMode = match.matches;
   switchFavicons();
 });
 
-window.addEventListener("resize", resizeLoop);
+window.addEventListener("resize", storeWidthHeight);

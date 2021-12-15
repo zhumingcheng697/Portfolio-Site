@@ -432,7 +432,7 @@ div.main-view div.projects {
   align-items: center;
   box-sizing: border-box;
   margin: auto;
-  transition-duration: 0.6s;
+  /*transition-duration: 0.6s;*/
 }
 
 div.main-view div.projects .project-card {
@@ -474,6 +474,7 @@ div.main-view div.projects .project-card h5 {
   margin-left: 22px;
   margin-top: 10px;
   transition-duration: 0.6s;
+  transition-property: color;
 }
 
 div.main-view div.projects .project-card h5 span {
@@ -487,7 +488,6 @@ div.main-view div.projects .project-card h5 span {
 
 div.main-view div.projects .project-card p {
   margin: 6px 13px 12px 22px;
-  transition-duration: 0.6s;
   display: flex;
   flex-wrap: wrap;
 }
@@ -501,6 +501,7 @@ div.main-view div.projects .project-card p span {
   margin-right: 9px;
   border-radius: 4px;
   transition-duration: 0.6s;
+  transition-property: background-color;
 }
 
 body.app div.main-view div.projects .project-card p span {
@@ -563,6 +564,7 @@ div.modal-view {
   height: 100%;
   z-index: 40;
   transition-duration: 0.6s;
+  transition-property: opacity, visibility;
 }
 
 div.modal-view div.mask {
@@ -570,6 +572,7 @@ div.modal-view div.mask {
   height: 100%;
   background-color: #000b;
   transition-duration: 0.6s;
+  transition-property: opacity, visibility, background-color;
 }
 
 div.modal-view div.modal-area {
@@ -578,21 +581,19 @@ div.modal-view div.modal-area {
   bottom: 0;
   left: 0;
   right: 0;
-  /* background-color: #fffb; */
   transition-duration: 0.6s;
+  transition-property: opacity, visibility;
 }
 
 div.modal-view div.modal-area .modal-container {
   position: relative;
   display: flex;
-  /* flex-wrap: wrap; */
-  /* flex-direction: row; */
   min-height: var(--full-height);
   align-items: center;
   align-content: center;
   justify-content: center;
   box-sizing: border-box;
-  transition-duration: 0.6s;
+  /*transition-duration: 0.6s;*/
   padding: 0 65px;
 }
 
@@ -604,6 +605,7 @@ div.modal-view div.modal-area .modal-container .actual-modal {
   background-color: var(--fourthTxtColor);
   border-radius: 12px 12px 10px 10px;
   transition-duration: 0.6s;
+  transition-property: background-color;
   text-align: left;
   position: relative;
 }
@@ -637,7 +639,8 @@ div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn {
   background-color: var(--blurBgColor);
   color: var(--thirdTxtColor);
   cursor: pointer;
-   transition-duration: 0.6s;
+  transition-duration: 0.6s;
+  transition-property: color, background-color;
   z-index: 50;
 }
 
@@ -659,12 +662,12 @@ div.modal-view div.modal-area .modal-container .actual-modal .image-video-contai
   height: calc(var(--full-height) - 70px - 3.1em - 53px);
   min-height: 200px;
   position: relative;
-  transition-duration: 0.6s;
+  /*transition-duration: 0.6s;*/
 }
 
 div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
   overflow: auto;
-  height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 3.1em - 53px + 4px)), 200px);
+  height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 3.1em - 53px + 4px)), 165px);
 }
 
 div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe[src*="openprocessing.org/sketch/"] {
@@ -750,7 +753,7 @@ div.modal-view div.modal-area .actual-modal p.tags {
   display: flex;
   flex-wrap: wrap;
   margin: 5px 12px 18px 22px;
-  transition-duration: 0.6s;
+  /*transition-duration: 0.6s;*/
 }
 
 div.modal-view div.modal-area .actual-modal p.tags span {
@@ -804,7 +807,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition-duration: 0.6s;
+  /*transition-duration: 0.6s;*/
 }
 
 .arrows > span {
@@ -814,7 +817,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   padding-bottom: 0.2em;
   z-index: 20;
   cursor: pointer;
-  transition: color 0s;
+  transition: color 0.6s;
 }
 
 @media (hover: none) {
@@ -856,6 +859,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
 
   .arrows > span.tapped {
     color: #fffe;
+    transition: color 0s;
   }
 }
 
@@ -904,10 +908,12 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
 
   .arrows > span:hover {
     color: #fffe;
+    transition: color 0s;
   }
 
   .arrows > span.tapped {
     color: #fffe;
+    transition: color 0s;
   }
 }
 
@@ -1029,7 +1035,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
-    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.9em - 48px + 4px)), 200px);
+    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.9em - 48px + 4px)), 165px);
   }
 }
 
@@ -1257,7 +1263,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
-    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.7em - 43px + 4px)), 200px);
+    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.7em - 43px + 4px)), 165px);
   }
 
   .arrows {
@@ -1425,7 +1431,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
-    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.45em - 43px  + 4px)), 200px);
+    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.45em - 43px  + 4px)), 165px);
   }
 
   .arrows > span {
