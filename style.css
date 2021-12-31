@@ -651,23 +651,25 @@ div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn span {
 div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > img, div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > video {
   width: 100%;
   overflow: hidden;
-  max-height: calc(var(--full-height) - 70px - 3.1em - 53px);
+  max-height: calc(var(--full-height) - 70px - 3.1em - 49px);
   min-height: 200px;
   position: relative;
+  display: block;
 }
 
 div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe {
   width: 100%;
   overflow: hidden;
-  height: calc(var(--full-height) - 70px - 3.1em - 53px);
+  height: calc(var(--full-height) - 70px - 3.1em - 49px);
   min-height: 200px;
   position: relative;
+  display: block;
   /*transition-duration: 0.6s;*/
 }
 
 div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
   overflow: auto;
-  height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 3.1em - 53px + 4px)), 165px);
+  height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 3.1em - 49px)), 165px);
 }
 
 div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe[src*="openprocessing.org/sketch/"] {
@@ -1027,15 +1029,15 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > img, div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > video {
-    max-height: calc(var(--full-height) - 70px - 2.9em - 48px);
+    max-height: calc(var(--full-height) - 70px - 2.9em - 44px);
   }
 
   div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe {
-    height: calc(var(--full-height) - 70px - 2.9em - 48px);
+    height: calc(var(--full-height) - 70px - 2.9em - 44px);
   }
 
   div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
-    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.9em - 48px + 4px)), 165px);
+    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.9em - 44px)), 165px);
   }
 }
 
@@ -1255,15 +1257,15 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > img, div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > video {
-    max-height: calc(var(--full-height) - 70px - 2.7em - 43px);
+    max-height: calc(var(--full-height) - 70px - 2.7em - 39px);
   }
 
   div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe {
-    height: calc(var(--full-height) - 70px - 2.7em - 43px);
+    height: calc(var(--full-height) - 70px - 2.7em - 39px);
   }
 
   div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
-    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.7em - 43px + 4px)), 165px);
+    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.7em - 39px)), 165px);
   }
 
   .arrows {
@@ -1423,15 +1425,15 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > img, div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > video {
-    max-height: calc(var(--full-height) - 70px - 2.45em - 43px);
+    max-height: calc(var(--full-height) - 70px - 2.45em - 39px);
   }
 
   div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe {
-    height: calc(var(--full-height) - 70px - 2.45em - 43px);
+    height: calc(var(--full-height) - 70px - 2.45em - 39px);
   }
 
   div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
-    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.45em - 43px  + 4px)), 165px);
+    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.45em - 39px)), 165px);
   }
 
   .arrows > span {
