@@ -111,9 +111,9 @@ function showModal(cardId, switching = false) {
   });
 
   if (!window.location.search) {
-    history.pushState(null, null, `${window.location.href}?${cardId}`);
+    history.pushState(null, null, `${window.location.pathname}?${cardId}`);
   } else if (window.location.search !== `?${cardId}`) {
-    history.replaceState(null, null, window.location.href.replace(window.location.search, `?${cardId}`));
+    history.replaceState(null, null, `${window.location.pathname}?${cardId}`);
   }
 
   for (const id of modalTimeoutIds) {
@@ -219,6 +219,8 @@ window.onpopstate = () => {
     let pCard = document.querySelector(`#${window.location.search.replace("?", "")}`);
     if (pCard) {
       showModal(pCard.id);
+    } else {
+      history.replaceState(null, null, window.location.pathname);
     }
   }
 };

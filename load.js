@@ -26,7 +26,7 @@ if (projectsDiv && modalDiv) {
 
     if (window.location.search) {
         let chosenId;
-        if (window.location.search.includes("?wild")) {
+        if (window.location.search === "?wild") {
             let projectCards = document.querySelectorAll(`.main-view .projects .project-card`);
             if (projectCards) {
                 chosenId = projectCards[Math.floor(Math.random() * Math.floor(projectCards.length))].id;
@@ -40,6 +40,8 @@ if (projectsDiv && modalDiv) {
 
         if (chosenId) {
             setTimeout(() => {showModal(chosenId);}, 450);
+        } else {
+            history.replaceState(null, null, window.location.pathname);
         }
     }
 }
