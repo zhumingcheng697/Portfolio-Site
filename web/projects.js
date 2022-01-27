@@ -30,7 +30,7 @@ const webProjects = [
       'It will display the statistics and headlines in the estimated user location based on their IP address if they don&rsquo;t specify a location, or if no useful data can be found for the location they specified.',
       'It automatically loads more headlines when users scroll to the end of the page and automatically refreshes the COVID-19 statistics every 15 minutes in the background.',
       'I also optimized the website for devices with screen insets (also known as notches) and included support for light mode and dark mode.',
-      'Unfortunately, the headline API currently does not work on publicly deployed sites due to plan restrictions.'
+      'The headline API would not work on publicly deployed sites due to API plan constraints, but I was able to deploy a simple back end in 2022 and circumvent the restriction.'
     ]
   },
   {
