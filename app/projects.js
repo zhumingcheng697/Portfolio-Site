@@ -34,5 +34,19 @@ const appProjects = [
       'As I was developing the app, a newer version of watchOS was also in beta, so I made sure that the app would work with both the new and older operating systems perfectly.',
       'I also localized the app for English, Simplified Chinese, Traditional Chinese, Japanese, and Russian.'
     ]
-  }
+  },
+  {
+    title: "Todo App",
+    year: "2022",
+    identifier: "todo-app-2022",
+    tags: ["React Native", "React Navigation", "Redux", "Async Storage", "Expo"],
+    priority: 4,
+    sourceUrl: "https://github.com/zhumingcheng697/Mobile-App-Dev-Todo",
+    deployUrl: "https://snack.expo.dev/@zhumingcheng697/todoapp-v3",
+    descriptions: [
+      'This is an exercise for my React Native class <i>Mobile Application Development</i>.',
+      'Users can add todos, set priority, remove each todo individually, or clear the entire todo list',
+      'Todos and settings are managed by Redux and stored on device using Async Storage.'
+    ]
+  },
 ];
