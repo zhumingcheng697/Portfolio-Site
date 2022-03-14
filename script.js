@@ -1,5 +1,4 @@
-let isInDarkMode;
-isInDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+let isInDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 if (!document.body.classList.contains("app") && !document.body.classList.contains("web") && !document.body.classList.contains("script") && !document.body.classList.contains("wild")) {
   Promise.all(
