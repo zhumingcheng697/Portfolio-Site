@@ -287,6 +287,10 @@ footer a, #greeting p a {
   transition-duration: 0.6s;
   transition-property: color;
 }
+footer a:hover, #greeting p a:hover {
+  text-decoration: underline;
+  filter: brightness(1.2);
+}
 
 div.title {
   position: fixed;
@@ -327,6 +331,9 @@ div.blank {
   transition-duration: 0.6s;
   box-shadow: 0 0 12px 0 var(--dropBlurBgColor);
   transition-property: color, background-color, transform, filter, box-shadow;
+}
+#card-container .card:hover {
+  transform: scale(1.05);
 }
 #card-container .card.app {
   background-color: var(--orangeCard);
@@ -407,6 +414,12 @@ div.main-view div.projects .project-card {
   transition-property: color, background-color, transform, filter, border-radius, box-shadow, opacity, visibility;
   height: min-content;
   cursor: pointer;
+}
+div.main-view div.projects .project-card:hover {
+  transform: scale(1.05);
+}
+div.main-view div.projects .project-card:hover .project-img {
+  transform: scale(1.08);
 }
 div.main-view div.projects .project-card .project-img-wrapper {
   width: 100%;
@@ -623,6 +636,11 @@ div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn {
   transition-property: color, background-color;
   z-index: 50;
 }
+div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn:hover {
+  background-color: var(--firstBgColor);
+  color: var(--firstTxtColor);
+  transition: none;
+}
 div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn span {
   margin-right: -0.05em;
 }
@@ -654,6 +672,10 @@ div.modal-view div.modal-area .modal-container .actual-modal p:not(.tags):last-o
 }
 div.modal-view div.modal-area .modal-container .actual-modal a {
   font-weight: bold;
+}
+div.modal-view div.modal-area .modal-container .actual-modal a:hover {
+  text-decoration: underline;
+  filter: brightness(1.15);
 }
 body.app div.modal-view div.modal-area .modal-container .actual-modal a {
   color: var(--orangeCard);
@@ -713,97 +735,24 @@ body.script div.modal-view div.modal-area .modal-container .actual-modal p.tags 
   cursor: pointer;
   transition: color 0.6s;
 }
-
-@media (hover: none) {
-  header > p.app ~ div.drop-down > div.menu > div.scrollable > div:not(.app).tapped > a,
-header > p.web ~ div.drop-down > div.menu > div.scrollable > div:not(.web).tapped > a,
-header > p.script ~ div.drop-down > div.menu > div.scrollable > div:not(.script).tapped > a,
-header > p.wild ~ div.drop-down > div.menu > div.scrollable > div.tapped > a {
-    background-color: var(--blurBgColor);
-  }
-
-  header > p.app ~ div.drop-down > div.menu > div.scrollable > div.app.tapped > a.app,
-header > p.web ~ div.drop-down > div.menu > div.scrollable > div.web.tapped > a.web,
-header > p.script ~ div.drop-down > div.menu > div.scrollable > div.script.tapped > a.script {
-    filter: brightness(0.8);
-  }
-
-  #card-container .card.tapped {
-    transform: scale(1.05);
-  }
-
-  div.projects .project-card.tapped {
-    transform: scale(1.05);
-  }
-  div.projects .project-card.tapped .project-img {
-    transform: scale(1.08);
-  }
-
-  footer a.tapped, #greeting p a.tapped {
-    text-decoration: underline;
-    filter: brightness(1.2);
-  }
-
-  div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn.tapped {
-    background-color: var(--firstBgColor);
-    color: var(--firstTxtColor);
-    transition: none;
-  }
-  div.modal-view div.modal-area .modal-container .actual-modal a.tapped {
-    text-decoration: underline;
-    filter: brightness(1.15);
-  }
-
-  .arrows > span.tapped {
-    color: #fffe;
-    transition: color 0s;
-  }
+.arrows > span:hover {
+  color: #fffe;
+  transition: color 0s;
 }
-@media (hover: hover) {
-  header > p.app ~ div.drop-down > div.menu > div.scrollable > div:not(.app):hover > a,
+
+header > p.app ~ div.drop-down > div.menu > div.scrollable > div:not(.app):hover > a,
 header > p.web ~ div.drop-down > div.menu > div.scrollable > div:not(.web):hover > a,
 header > p.script ~ div.drop-down > div.menu > div.scrollable > div:not(.script):hover > a,
 header > p.wild ~ div.drop-down > div.menu > div.scrollable > div:hover > a {
-    background-color: var(--blurBgColor);
-  }
+  background-color: var(--blurBgColor);
+}
 
-  header > p.app ~ div.drop-down > div.menu > div.scrollable > div.app:hover > a.app,
+header > p.app ~ div.drop-down > div.menu > div.scrollable > div.app:hover > a.app,
 header > p.web ~ div.drop-down > div.menu > div.scrollable > div.web:hover > a.web,
 header > p.script ~ div.drop-down > div.menu > div.scrollable > div.script:hover > a.script {
-    filter: brightness(0.8);
-  }
-
-  #card-container .card:hover {
-    transform: scale(1.05);
-  }
-
-  div.projects .project-card:hover {
-    transform: scale(1.05);
-  }
-  div.projects .project-card:hover .project-img {
-    transform: scale(1.08);
-  }
-
-  footer a:hover, #greeting p a:hover {
-    text-decoration: underline;
-    filter: brightness(1.2);
-  }
-
-  div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn:hover, div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn.tapped {
-    background-color: var(--firstBgColor);
-    color: var(--firstTxtColor);
-    transition: none;
-  }
-  div.modal-view div.modal-area .modal-container .actual-modal a:hover {
-    text-decoration: underline;
-    filter: brightness(1.15);
-  }
-
-  .arrows > span:hover, .arrows > span.tapped {
-    color: #fffe;
-    transition: color 0s;
-  }
+  filter: brightness(0.8);
 }
+
 @media only screen and (max-width: 1050px) {
   #greeting {
     top: max(70px, 32% - 120px);
