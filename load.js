@@ -1,49 +1,54 @@
 const projectsDiv = document.querySelector(".main-view .projects");
 const modalDiv = document.querySelector(".modal-view");
 const domParser = new DOMParser();
+let currentProjects;
 
 if (projectsDiv && modalDiv) {
-    let projects;
+    fetch("./projects.json")
+        .then((res) => res.json())
+        .then((projects) => {
+            if (projects) {
+                currentProjects = projects;
 
-    if (document.body.classList.contains("app") && typeof appProjects !== "undefined") {
-        projects = appProjects;
-    } else if (document.body.classList.contains("web") && typeof webProjects !== "undefined") {
-        projects = webProjects;
-    } else if (document.body.classList.contains("script") && typeof scriptProjects !== "undefined") {
-        projects = scriptProjects;
-    }
+                sortProjects(projects);
+                for (const project of projects) {
+                    if (!project.bgImg) {
+                        project.bgImg = project.identifier + "/image.png";
+                    }
+                    createProjectCard(project);
+                    createProjectModal(project);
+                }
 
-    if (projects) {
-        sortProjects(projects);
-        for (const project of projects) {
-            if (!project.bgImg) {
-                project.bgImg = project.identifier + "/image.png";
+                document.querySelectorAll(".main-view .projects .project-card").forEach(element => {
+                    element.addEventListener("click", () => {showModal(element.id)});
+                });
+
+                document.querySelectorAll(".modal-view .modal-area .cancel-btn").forEach(element => {
+                    element.addEventListener("click", () => hideModals());
+                });
             }
-            createProjectCard(project);
-            createProjectModal(project);
-        }
-    }
 
-    if (window.location.search) {
-        let chosenId;
-        if (window.location.search === "?wild") {
-            let projectCards = document.querySelectorAll(`.main-view .projects .project-card`);
-            if (projectCards) {
-                chosenId = projectCards[Math.floor(Math.random() * Math.floor(projectCards.length))].id;
+        if (window.location.search) {
+            let chosenId;
+            if (window.location.search === "?wild") {
+                let projectCards = document.querySelectorAll(`.main-view .projects .project-card`);
+                if (projectCards) {
+                    chosenId = projectCards[Math.floor(Math.random() * Math.floor(projectCards.length))].id;
+                }
+            } else {
+                let chosenCard = document.querySelector(`#${ window.location.search.replace("?", "") }`);
+                if (chosenCard) {
+                    chosenId = chosenCard.id;
+                }
             }
-        } else {
-            let chosenCard = document.querySelector(`#${ window.location.search.replace("?", "") }`);
-            if (chosenCard) {
-                chosenId = chosenCard.id;
-            }
-        }
 
-        if (chosenId) {
-            setTimeout(() => {showModal(chosenId);}, 450);
-        } else {
-            history.replaceState(null, null, window.location.pathname);
+            if (chosenId) {
+                setTimeout(() => {showModal(chosenId);}, 450);
+            } else {
+                history.replaceState(null, null, window.location.pathname);
+            }
         }
-    }
+    })
 }
 
 function sortProjects(projects) {
@@ -134,7 +139,7 @@ function createProjectModal(project) {
 
     let closed = true;
 
-    for (const line of project.descriptions) {
+    for (let line of project.descriptions) {
         if (!domParser.parseFromString(line, "text/xml").documentElement.querySelector("parsererror")) {
             if (!closed) {
                 modalHTML += "</section>";

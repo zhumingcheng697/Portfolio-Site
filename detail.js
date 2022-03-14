@@ -4,23 +4,14 @@ let modalTimeoutIds = [];
 randomizeDropDown();
 
 function changeProject(direction) {
-  let projects;
-  if (document.body.classList.contains("app") && typeof appProjects !== "undefined") {
-    projects = appProjects;
-  } else if (document.body.classList.contains("web") && typeof webProjects !== "undefined") {
-    projects = webProjects;
-  } else if (document.body.classList.contains("script") && typeof scriptProjects !== "undefined") {
-    projects = scriptProjects;
-  }
-
-  if (projects) {
-    let i = projects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
+  if (currentProjects) {
+    let i = currentProjects.findIndex(e => e.identifier === window.location.search.replace("?", ""));
     if (i !== -1) {
       let id;
       if (direction === -1) {
-        id = projects[i === 0 ? (projects.length - 1) : (i - 1)].identifier;
+        id = currentProjects[i === 0 ? (currentProjects.length - 1) : (i - 1)].identifier;
       } else if (direction === 1) {
-        id = projects[(i === projects.length - 1) ? 0 : (i + 1)].identifier;
+        id = currentProjects[(i === currentProjects.length - 1) ? 0 : (i + 1)].identifier;
       }
 
       if (id) {
@@ -166,14 +157,6 @@ document.querySelector("header > p").addEventListener("click", () => {
   } else {
     showDropDown();
   }
-});
-
-document.querySelectorAll(".main-view .projects .project-card").forEach(element => {
-  element.addEventListener("click", () => {showModal(element.id)});
-});
-
-document.querySelectorAll(".modal-view .modal-area .cancel-btn").forEach(element => {
-  element.addEventListener("click", () => hideModals());
 });
 
 document.addEventListener("click", click => {
