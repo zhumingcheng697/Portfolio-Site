@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600;1,800&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600;1,800&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 html {
   margin: 0;
   padding: 0;
@@ -19,22 +18,22 @@ body {
   --inset-left: env(safe-area-inset-left, 0);
   --inset-top: env(safe-area-inset-top, 0);
   --inset-bottom: env(safe-area-inset-bottom, 0);
-  --zeroBgColor: rgb(250,250,250);
-  --firstBgColor: rgb(240,240,240);
-  --blurBgColor: rgba(240,240,240,0.8);
+  --zeroBgColor: rgb(250, 250, 250);
+  --firstBgColor: rgb(240, 240, 240);
+  --blurBgColor: rgba(240, 240, 240, 0.8);
   --dropBlurBgColor: #4443;
   --firstTxtColor: #111;
   --secondTxtColor: #444;
   --thirdTxtColor: #777;
   --fourthTxtColor: #ddd;
   --linkColor: #19d;
-  --orangeCard: rgb(230,80,20);
-  --yellowCard: rgb(220,170,0);
-  --purpleCard: rgb(90,80,170);
+  --orangeCard: rgb(230, 80, 20);
+  --yellowCard: rgb(220, 170, 0);
+  --purpleCard: rgb(90, 80, 170);
   --blackCard: #111;
-  --orangeCardWithAlpha: rgba(230,80,20,0.15);
-  --yellowCardWithAlpha: rgba(220,170,0,0.15);
-  --purpleCardWithAlpha: rgba(90,80,170,0.15);
+  --orangeCardWithAlpha: rgba(230, 80, 20, 0.15);
+  --yellowCardWithAlpha: rgba(220, 170, 0, 0.15);
+  --purpleCardWithAlpha: rgba(90, 80, 170, 0.15);
   --blackCardWithAlpha: #2224;
   --bannerBgColor: #ff5;
   --bannerHeight: 0px;
@@ -76,16 +75,14 @@ h1 {
 
 #greeting {
   position: absolute;
-  top: max(calc(38% - 80px), 70px);
+  top: max(38% - 80px, 70px);
   width: 100%;
   transition-duration: 0.6s;
   transition-property: color, opacity, visibility;
 }
-
 #greeting > * {
   margin: 15px auto;
 }
-
 #greeting > p {
   font-size: 1.2em;
   color: var(--secondTxtColor);
@@ -101,7 +98,6 @@ h1 {
   transition-property: background-color;
   overflow: hidden;
 }
-
 .notice-banner > p {
   margin: auto;
   text-overflow: ellipsis;
@@ -111,10 +107,15 @@ h1 {
   transition-duration: 0.6s;
   transition-property: color;
 }
-
 .notice-banner > p::after {
   content: "*";
   margin-left: 2px;
+}
+
+.scrollable {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
 header {
@@ -130,13 +131,11 @@ header {
   user-select: none;
   text-align: left;
 }
-
 header strong {
   font-weight: 800;
   transition-duration: 0.6s;
   transition-property: color;
 }
-
 header strong strong {
   font-weight: 600;
   margin: 0 0 0 5px;
@@ -145,18 +144,33 @@ header strong strong {
   transform-origin: 40% 60%;
   transition-property: transform, color;
 }
-
+header strong strong.turned {
+  transform: rotate(0.25turn);
+}
+header strong.app, header a.app, header strong.app strong {
+  color: var(--orangeCard);
+}
+header strong.web, header a.web, header strong.web strong {
+  color: var(--yellowCard);
+}
+header strong.script, header a.script, header strong.script strong {
+  color: var(--purpleCard);
+}
+header strong.home, header a.home {
+  color: var(--firstTxtColor);
+}
+header strong.wild, header a.wild, header strong.wild strong {
+  color: var(--secondTxtColor);
+}
 header div.drop-down {
   transition-duration: 0.6s;
   transition-property: visibility, opacity;
   text-align: center;
 }
-
 header div.drop-down div.menu, header div.drop-down div.triangle-outline {
   transition-duration: 0.6s;
   filter: drop-shadow(0 0 8px var(--dropBlurBgColor));
 }
-
 header div.drop-down div.triangle {
   position: absolute;
   border-left: 16px solid transparent;
@@ -169,7 +183,6 @@ header div.drop-down div.triangle {
   top: 35px;
   left: 50%;
 }
-
 header div.drop-down div.triangle-outline {
   position: absolute;
   left: 50%;
@@ -181,21 +194,6 @@ header div.drop-down div.triangle-outline {
   width: 0;
   transition-duration: 0.6s;
 }
-
-.scrollable {
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-}
-
-img, video, .unselectable {
-  user-drag: none;
-  -webkit-user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-}
-
 header div.drop-down div.menu {
   width: 190px;
   background-color: var(--zeroBgColor);
@@ -208,25 +206,20 @@ header div.drop-down div.menu {
   flex-direction: column;
   padding: 6px 0;
 }
-
 header div.drop-down div.menu > div.scrollable {
   max-height: calc(var(--full-height) - 100px);
   min-height: 25px;
 }
-
 header div.drop-down div.menu > div.scrollable > div {
   margin: 10px 0;
   transition-duration: 0.6s;
 }
-
 header div.drop-down div.menu > div.scrollable > div:first-of-type {
   margin-top: 6px;
 }
-
 header div.drop-down div.menu > div.scrollable > div:last-of-type {
   margin-bottom: 6px;
 }
-
 header div.drop-down div.menu > div.scrollable > div > a {
   display: block;
   padding: 10px 0;
@@ -238,62 +231,43 @@ header div.drop-down div.menu > div.scrollable > div > a {
   font-size: 0.8em;
   font-weight: 600;
 }
-
-header strong.app, header a.app, header strong.app strong {
-  color: var(--orangeCard);
-}
-
-header strong.web, header a.web, header strong.web strong {
-  color: var(--yellowCard);
-}
-
-header strong.script, header a.script, header strong.script strong {
-  color: var(--purpleCard);
-}
-
-header strong.home, header a.home {
-  color: var(--firstTxtColor);
-}
-
-header strong.wild, header a.wild, header strong.wild strong {
-  color: var(--secondTxtColor);
-}
-
 header div.drop-down div.menu > div.scrollable > div > a.home {
   font-weight: 800;
 }
-
 header > p {
   white-space: nowrap;
   cursor: pointer;
 }
-
 header > p.app ~ div.drop-down > div.menu > div.scrollable > div.app > a.app {
   background-color: var(--orangeCardWithAlpha);
 }
-
 header > p.web ~ div.drop-down > div.menu > div.scrollable > div.web > a.web {
   background-color: var(--yellowCardWithAlpha);
 }
-
 header > p.script ~ div.drop-down > div.menu > div.scrollable > div.script > a.script {
   background-color: var(--purpleCardWithAlpha);
 }
-
 header > p.wild ~ div.drop-down > div.menu > div.scrollable > div.me > a.wild {
   background-color: var(--blurBgColor);
 }
 
+img, video, .unselectable {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
 
 div.bottom {
   position: absolute;
-  top: max(180px, calc(42% + 1em));
+  top: max(180px, 42% + 1em);
   min-height: calc(58% - 1em);
   width: 100%;
 }
 
 footer {
-  margin-top: calc(200px - 30px);
+  margin-top: 170px;
   position: absolute;
   left: calc(25px + var(--inset-left));
   bottom: calc(22px + var(--inset-bottom));
@@ -303,7 +277,6 @@ footer {
   transition-duration: 0.6s;
   transition-property: color;
 }
-
 footer br {
   display: none;
 }
@@ -328,7 +301,7 @@ div.title {
 
 div.blank {
   width: 100%;
-  height: max(calc(8vh + 30px + var(--inset-bottom)), calc(200px - 45px + var(--inset-bottom)));
+  height: max(8vh + 30px + var(--inset-bottom), 155px + var(--inset-bottom));
 }
 
 #card-container {
@@ -341,7 +314,6 @@ div.blank {
   transition-duration: 0.6s;
   transition-property: opacity, visibility;
 }
-
 #card-container .card {
   -webkit-user-select: none;
   user-select: none;
@@ -350,29 +322,24 @@ div.blank {
   width: 220px;
   height: 160px;
   text-align: left;
-  background-color: rgba(50,50,50,0.2);
+  background-color: rgba(50, 50, 50, 0.2);
   border-radius: 18px;
   transition-duration: 0.6s;
   box-shadow: 0 0 12px 0 var(--dropBlurBgColor);
   transition-property: color, background-color, transform, filter, box-shadow;
 }
-
 #card-container .card.app {
   background-color: var(--orangeCard);
 }
-
 #card-container .card.web {
   background-color: var(--yellowCard);
 }
-
 #card-container .card.script {
   background-color: var(--purpleCard);
 }
-
 #card-container .card.wild {
   background-color: var(--blackCard);
 }
-
 #card-container .card img {
   width: 50px;
   height: 50px;
@@ -380,7 +347,6 @@ div.blank {
   margin-top: 22px;
   object-fit: contain;
 }
-
 #card-container .card p:first-of-type {
   position: absolute;
   left: 20px;
@@ -389,24 +355,19 @@ div.blank {
   font-size: 1.2em;
   color: #fff;
 }
-
 #card-container .card p:last-of-type {
   position: absolute;
   left: 20px;
   min-width: calc(100% - 40px);
   bottom: 15px;
   font-size: 0.9em;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .hide {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-}
-
-header strong strong.turned {
-  transform: rotate(0.25turn);
 }
 
 .displayNone {
@@ -420,7 +381,6 @@ div.main-view {
   min-height: calc(var(--full-height) - 80px);
   transition-duration: 0.6s;
 }
-
 div.main-view div.projects {
   position: relative;
   width: 85%;
@@ -432,9 +392,7 @@ div.main-view div.projects {
   align-items: center;
   box-sizing: border-box;
   margin: auto;
-  /*transition-duration: 0.6s;*/
 }
-
 div.main-view div.projects .project-card {
   position: relative;
   overflow: hidden;
@@ -450,7 +408,6 @@ div.main-view div.projects .project-card {
   height: min-content;
   cursor: pointer;
 }
-
 div.main-view div.projects .project-card .project-img-wrapper {
   width: 100%;
   height: 0;
@@ -458,7 +415,6 @@ div.main-view div.projects .project-card .project-img-wrapper {
   overflow: hidden;
   transition-duration: 0.6s;
 }
-
 div.main-view div.projects .project-card .project-img {
   width: 100%;
   height: 0;
@@ -467,7 +423,6 @@ div.main-view div.projects .project-card .project-img {
   background-size: cover;
   transition-duration: 0.6s;
 }
-
 div.main-view div.projects .project-card h5 {
   color: var(--firstTxtColor);
   font-size: 1.5em;
@@ -476,7 +431,6 @@ div.main-view div.projects .project-card h5 {
   transition-duration: 0.6s;
   transition-property: color;
 }
-
 div.main-view div.projects .project-card h5 span {
   display: inline-block;
   color: var(--secondTxtColor);
@@ -485,13 +439,11 @@ div.main-view div.projects .project-card h5 span {
   transition-duration: 0.6s;
   transition-property: color;
 }
-
 div.main-view div.projects .project-card p {
   margin: 6px 13px 12px 22px;
   display: flex;
   flex-wrap: wrap;
 }
-
 div.main-view div.projects .project-card p span {
   white-space: nowrap;
   margin-bottom: 7px;
@@ -503,15 +455,12 @@ div.main-view div.projects .project-card p span {
   transition-duration: 0.6s;
   transition-property: background-color;
 }
-
 body.app div.main-view div.projects .project-card p span {
   background-color: var(--orangeCard);
 }
-
 body.web div.main-view div.projects .project-card p span {
   background-color: var(--yellowCard);
 }
-
 body.script div.main-view div.projects .project-card p span {
   background-color: var(--purpleCard);
 }
@@ -531,7 +480,6 @@ div.about-me {
   transition-duration: 0.6s;
   transition-property: color, opacity, visibility;
 }
-
 div.about-me > b {
   color: var(--secondTxtColor);
   font-size: 1.3em;
@@ -539,7 +487,6 @@ div.about-me > b {
   transition-duration: 0.6s;
   transition-property: color;
 }
-
 div.about-me > div {
   color: var(--thirdTxtColor);
   font-size: 1.2em;
@@ -549,7 +496,6 @@ div.about-me > div {
   transition-duration: 0.6s;
   transition-property: color;
 }
-
 div.about-me > div > p {
   margin: 10px 0;
 }
@@ -566,7 +512,6 @@ div.modal-view {
   transition-duration: 0.6s;
   transition-property: opacity, visibility;
 }
-
 div.modal-view div.mask {
   width: 100%;
   height: 100%;
@@ -574,7 +519,6 @@ div.modal-view div.mask {
   transition-duration: 0.6s;
   transition-property: opacity, visibility, background-color;
 }
-
 div.modal-view div.modal-area {
   position: absolute;
   top: 0;
@@ -584,7 +528,6 @@ div.modal-view div.modal-area {
   transition-duration: 0.6s;
   transition-property: opacity, visibility;
 }
-
 div.modal-view div.modal-area .modal-container {
   position: relative;
   display: flex;
@@ -593,10 +536,8 @@ div.modal-view div.modal-area .modal-container {
   align-content: center;
   justify-content: center;
   box-sizing: border-box;
-  /*transition-duration: 0.6s;*/
   padding: 0 65px;
 }
-
 div.modal-view div.modal-area .modal-container .actual-modal {
   margin-top: 70px;
   margin-bottom: 70px;
@@ -609,12 +550,36 @@ div.modal-view div.modal-area .modal-container .actual-modal {
   text-align: left;
   position: relative;
 }
-
 div.modal-view div.modal-area .modal-container .actual-modal > section {
   max-width: 960px;
   margin: 0 auto;
 }
-
+div.modal-view div.modal-area .modal-container .actual-modal > section:first-of-type {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+div.modal-view div.modal-area .modal-container .actual-modal > section:first-of-type > nav {
+  margin: 10px 22px 8px 22px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-size: 1.2em;
+}
+div.modal-view div.modal-area .modal-container .actual-modal > section:first-of-type > nav > a {
+  transition-duration: 0.6s;
+  transition-property: color;
+}
+div.modal-view div.modal-area .modal-container .actual-modal > section:first-of-type > nav > a:not(:last-child):after {
+  content: "|";
+  color: var(--firstTxtColor);
+  opacity: 0.2;
+  margin: 6px;
+  transition-duration: 0.6s;
+  transition-property: color;
+  font-weight: normal;
+}
 div.modal-view div.modal-area .modal-container .actual-modal .image-video-container {
   position: relative;
   text-align: center;
@@ -624,7 +589,22 @@ div.modal-view div.modal-area .modal-container .actual-modal .image-video-contai
   height: 100%;
   -webkit-mask-image: -webkit-radial-gradient(black, black);
 }
-
+div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > img, div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > video {
+  width: 100%;
+  overflow: hidden;
+  max-height: calc(var(--full-height) - 70px - 3.1em - 49px);
+  min-height: 200px;
+  position: relative;
+  display: block;
+}
+div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe {
+  width: 100%;
+  overflow: hidden;
+  height: calc(var(--full-height) - 70px - 3.1em - 49px);
+  min-height: 200px;
+  position: relative;
+  display: block;
+}
 div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn {
   position: absolute;
   right: 15px;
@@ -643,89 +623,17 @@ div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn {
   transition-property: color, background-color;
   z-index: 50;
 }
-
 div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn span {
   margin-right: -0.05em;
 }
-
-div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > img, div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > video {
-  width: 100%;
-  overflow: hidden;
-  max-height: calc(var(--full-height) - 70px - 3.1em - 49px);
-  min-height: 200px;
-  position: relative;
-  display: block;
-}
-
-div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe {
-  width: 100%;
-  overflow: hidden;
-  height: calc(var(--full-height) - 70px - 3.1em - 49px);
-  min-height: 200px;
-  position: relative;
-  display: block;
-  /*transition-duration: 0.6s;*/
-}
-
-div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
-  overflow: auto;
-  height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 3.1em - 49px)), 165px);
-}
-
-div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe[src*="openprocessing.org/sketch/"] {
-  top: 0;
-  left: 0;
-  position: absolute;
-  transform-origin: top left;
-  transition: none;
-  transform: translate(0, -50px);
-}
-
-div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container > iframe[src*="openprocessing.org/sketch/"] {
-  height: 600px;
-  width: 1000px;
-  transform: scale(max(calc(var(--modal-width) / 1000), 0.3)) translate(0, -50px);
-}
-
-div.modal-view div.modal-area .actual-modal > section:first-of-type {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
-}
-
-div.modal-view div.modal-area .actual-modal > section:first-of-type > nav {
-  margin: 10px 22px 8px 22px;
-  display: inline-flex;
-  flex-wrap: wrap;
-  font-size: 1.2em;
-}
-
-div.modal-view div.modal-area .actual-modal > section:first-of-type > nav > a {
-  transition-duration: 0.6s;
-  transition-property: color;
-}
-
-div.modal-view div.modal-area .actual-modal > section:first-of-type > nav > a:not(:last-child):after {
-  content: "|";
-  color: var(--firstTxtColor);
-  opacity: 0.2;
-  margin: 6px;
-  transition-duration: 0.6s;
-  transition-property: color;
-  font-weight: normal;
-}
-
-div.modal-view div.modal-area .actual-modal h4 {
+div.modal-view div.modal-area .modal-container .actual-modal h4 {
   color: var(--firstTxtColor);
   font-size: 2em;
   margin-left: 22px;
   transition-duration: 0.6s;
   transition-property: color;
 }
-
-div.modal-view div.modal-area .actual-modal h4 span {
+div.modal-view div.modal-area .modal-container .actual-modal h4 span {
   display: inline-block;
   color: var(--secondTxtColor);
   font-size: 0.82em;
@@ -733,12 +641,7 @@ div.modal-view div.modal-area .actual-modal h4 span {
   transition-duration: 0.6s;
   transition-property: color;
 }
-
-div.modal-view div.modal-area .actual-modal p:not(.tags):last-of-type {
-  margin-bottom: 20px;
-}
-
-div.modal-view div.modal-area .actual-modal p:not(.tags) {
+div.modal-view div.modal-area .modal-container .actual-modal p:not(.tags) {
   margin: 12px 22px;
   transition-duration: 0.6s;
   transition-property: color;
@@ -746,19 +649,30 @@ div.modal-view div.modal-area .actual-modal p:not(.tags) {
   color: var(--thirdTxtColor);
   line-height: 1.35em;
 }
-
-div.modal-view div.modal-area .actual-modal a {
+div.modal-view div.modal-area .modal-container .actual-modal p:not(.tags):last-of-type {
+  margin-bottom: 20px;
+}
+div.modal-view div.modal-area .modal-container .actual-modal a {
   font-weight: bold;
 }
-
-div.modal-view div.modal-area .actual-modal p.tags {
+body.app div.modal-view div.modal-area .modal-container .actual-modal a {
+  color: var(--orangeCard);
+}
+body.web div.modal-view div.modal-area .modal-container .actual-modal a {
+  color: var(--yellowCard);
+}
+body.script div.modal-view div.modal-area .modal-container .actual-modal a {
+  color: var(--purpleCard);
+}
+body.wild div.modal-view div.modal-area .modal-container .actual-modal a {
+  color: var(--dropBlurBgColor);
+}
+div.modal-view div.modal-area .modal-container .actual-modal p.tags {
   display: flex;
   flex-wrap: wrap;
   margin: 5px 12px 18px 22px;
-  /*transition-duration: 0.6s;*/
 }
-
-div.modal-view div.modal-area .actual-modal p.tags span {
+div.modal-view div.modal-area .modal-container .actual-modal p.tags span {
   white-space: nowrap;
   margin-bottom: 8px;
   background-color: var(--fourthTxtColor);
@@ -770,32 +684,13 @@ div.modal-view div.modal-area .actual-modal p.tags span {
   transition-property: color, background-color;
   font-size: 1.1em;
 }
-
-body.app div.modal-view div.modal-area .actual-modal a {
-  color: var(--orangeCard);
-}
-
-body.web div.modal-view div.modal-area .actual-modal a {
-  color: var(--yellowCard);
-}
-
-body.script div.modal-view div.modal-area .actual-modal a {
-  color: var(--purpleCard);
-}
-
-body.wild div.modal-view div.modal-area .actual-modal a {
-  color: var(--dropBlurBgColor);
-}
-
-body.app div.modal-view div.modal-area .actual-modal p.tags span {
+body.app div.modal-view div.modal-area .modal-container .actual-modal p.tags span {
   background-color: var(--orangeCard);
 }
-
-body.web div.modal-view div.modal-area .actual-modal p.tags span {
+body.web div.modal-view div.modal-area .modal-container .actual-modal p.tags span {
   background-color: var(--yellowCard);
 }
-
-body.script div.modal-view div.modal-area .actual-modal p.tags span {
+body.script div.modal-view div.modal-area .modal-container .actual-modal p.tags span {
   background-color: var(--purpleCard);
 }
 
@@ -805,13 +700,10 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   bottom: 0;
   left: 8px;
   right: 8px;
-  /* background: #0f02; */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /*transition-duration: 0.6s;*/
 }
-
 .arrows > span {
   color: #fffb;
   font-size: 5em;
@@ -823,11 +715,16 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
 }
 
 @media (hover: none) {
-  header > p.app ~ div.drop-down > div.menu > div.scrollable > div:not(.app).tapped > a, header > p.web ~ div.drop-down > div.menu > div.scrollable > div:not(.web).tapped > a, header > p.script ~ div.drop-down > div.menu > div.scrollable > div:not(.script).tapped > a, header > p.wild ~ div.drop-down > div.menu > div.scrollable > div.tapped > a {
+  header > p.app ~ div.drop-down > div.menu > div.scrollable > div:not(.app).tapped > a,
+header > p.web ~ div.drop-down > div.menu > div.scrollable > div:not(.web).tapped > a,
+header > p.script ~ div.drop-down > div.menu > div.scrollable > div:not(.script).tapped > a,
+header > p.wild ~ div.drop-down > div.menu > div.scrollable > div.tapped > a {
     background-color: var(--blurBgColor);
   }
 
-  header > p.app ~ div.drop-down > div.menu > div.scrollable > div.app.tapped > a.app, header > p.web ~ div.drop-down > div.menu > div.scrollable > div.web.tapped > a.web, header > p.script ~ div.drop-down > div.menu > div.scrollable > div.script.tapped > a.script {
+  header > p.app ~ div.drop-down > div.menu > div.scrollable > div.app.tapped > a.app,
+header > p.web ~ div.drop-down > div.menu > div.scrollable > div.web.tapped > a.web,
+header > p.script ~ div.drop-down > div.menu > div.scrollable > div.script.tapped > a.script {
     filter: brightness(0.8);
   }
 
@@ -838,7 +735,6 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   div.projects .project-card.tapped {
     transform: scale(1.05);
   }
-
   div.projects .project-card.tapped .project-img {
     transform: scale(1.08);
   }
@@ -853,8 +749,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     color: var(--firstTxtColor);
     transition: none;
   }
-
-  div.modal-view div.modal-area .actual-modal a.tapped {
+  div.modal-view div.modal-area .modal-container .actual-modal a.tapped {
     text-decoration: underline;
     filter: brightness(1.15);
   }
@@ -864,13 +759,17 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     transition: color 0s;
   }
 }
-
 @media (hover: hover) {
-  header > p.app ~ div.drop-down > div.menu > div.scrollable > div:not(.app):hover > a, header > p.web ~ div.drop-down > div.menu > div.scrollable > div:not(.web):hover > a, header > p.script ~ div.drop-down > div.menu > div.scrollable > div:not(.script):hover > a, header > p.wild ~ div.drop-down > div.menu > div.scrollable > div:hover > a {
+  header > p.app ~ div.drop-down > div.menu > div.scrollable > div:not(.app):hover > a,
+header > p.web ~ div.drop-down > div.menu > div.scrollable > div:not(.web):hover > a,
+header > p.script ~ div.drop-down > div.menu > div.scrollable > div:not(.script):hover > a,
+header > p.wild ~ div.drop-down > div.menu > div.scrollable > div:hover > a {
     background-color: var(--blurBgColor);
   }
 
-  header > p.app ~ div.drop-down > div.menu > div.scrollable > div.app:hover > a.app, header > p.web ~ div.drop-down > div.menu > div.scrollable > div.web:hover > a.web, header > p.script ~ div.drop-down > div.menu > div.scrollable > div.script:hover > a.script {
+  header > p.app ~ div.drop-down > div.menu > div.scrollable > div.app:hover > a.app,
+header > p.web ~ div.drop-down > div.menu > div.scrollable > div.web:hover > a.web,
+header > p.script ~ div.drop-down > div.menu > div.scrollable > div.script:hover > a.script {
     filter: brightness(0.8);
   }
 
@@ -881,7 +780,6 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   div.projects .project-card:hover {
     transform: scale(1.05);
   }
-
   div.projects .project-card:hover .project-img {
     transform: scale(1.08);
   }
@@ -891,41 +789,28 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     filter: brightness(1.2);
   }
 
-  div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn:hover {
+  div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn:hover, div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn.tapped {
     background-color: var(--firstBgColor);
     color: var(--firstTxtColor);
     transition: none;
   }
-
-  div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn.tapped {
-    background-color: var(--firstBgColor);
-    color: var(--firstTxtColor);
-    transition: none;
-  }
-
-  div.modal-view div.modal-area .actual-modal a:hover {
+  div.modal-view div.modal-area .modal-container .actual-modal a:hover {
     text-decoration: underline;
     filter: brightness(1.15);
   }
 
-  .arrows > span:hover {
-    color: #fffe;
-    transition: color 0s;
-  }
-
-  .arrows > span.tapped {
+  .arrows > span:hover, .arrows > span.tapped {
     color: #fffe;
     transition: color 0s;
   }
 }
-
 @media only screen and (max-width: 1050px) {
   #greeting {
-    top: max(70px, calc(32% - 120px));
+    top: max(70px, 32% - 120px);
   }
 
   div.bottom {
-    top: max(190px, calc(42% - 4em));
+    top: max(190px, 42% - 4em);
     min-height: calc(58% + 4em);
   }
 
@@ -937,7 +822,6 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     margin: 0 auto;
     width: 500px;
   }
-
   #card-container .card {
     margin: 10px 12px;
   }
@@ -954,21 +838,19 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     left: 10px;
     right: 10px;
   }
-
   .arrows > span {
     font-size: 4.5em;
   }
 }
-
 @media only screen and (max-width: 850px) {
   #greeting {
-    top: max(70px, calc(30% - 130px));
+    top: max(70px, 30% - 130px);
     left: calc(50% - 250px);
     width: 500px;
   }
 
   div.bottom {
-    top: max(230px, calc(42% - 3.5em));
+    top: max(230px, 42% - 3.5em);
     min-height: calc(58% + 3.5em);
   }
 
@@ -979,7 +861,6 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   div.main-view div.projects {
     width: 70%;
   }
-
   div.main-view div.projects .project-card {
     width: 100%;
     margin-top: 2%;
@@ -990,57 +871,43 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   div.modal-view div.modal-area .modal-container {
     padding: 0 50px;
   }
-
-  div.modal-view div.modal-area .actual-modal > section:first-of-type {
+  div.modal-view div.modal-area .modal-container .actual-modal > section:first-of-type {
     margin-top: 8px;
   }
-
-  div.modal-view div.modal-area .actual-modal > section:first-of-type > nav {
+  div.modal-view div.modal-area .modal-container .actual-modal > section:first-of-type > nav {
     font-size: 1.15em;
   }
-
-  div.modal-view div.modal-area .actual-modal h4 {
+  div.modal-view div.modal-area .modal-container .actual-modal h4 {
     font-size: 1.9em;
   }
-
-  div.modal-view div.modal-area .actual-modal p:not(.tags) {
+  div.modal-view div.modal-area .modal-container .actual-modal p:not(.tags) {
     margin-top: 12px;
     margin-bottom: 12px;
     font-size: 1em;
   }
-
-  div.modal-view div.modal-area .actual-modal p.tags {
+  div.modal-view div.modal-area .modal-container .actual-modal p.tags {
     margin-bottom: 16px;
   }
-
-  div.modal-view div.modal-area .actual-modal p.tags span {
+  div.modal-view div.modal-area .modal-container .actual-modal p.tags span {
     margin-bottom: 7px;
     padding: 5px 6px;
     font-size: 1em;
+  }
+  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > img, div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > video {
+    max-height: calc(var(--full-height) - 70px - 2.9em - 44px);
+  }
+  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe {
+    height: calc(var(--full-height) - 70px - 2.9em - 44px);
   }
 
   .arrows {
     left: 5px;
     right: 5px;
   }
-
   .arrows > span {
     font-size: 3.5em;
   }
-
-  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > img, div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > video {
-    max-height: calc(var(--full-height) - 70px - 2.9em - 44px);
-  }
-
-  div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe {
-    height: calc(var(--full-height) - 70px - 2.9em - 44px);
-  }
-
-  div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
-    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.9em - 44px)), 165px);
-  }
 }
-
 @media only screen and (max-width: 550px) {
   div.center {
     position: absolute;
@@ -1054,7 +921,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   #greeting {
-    left: max(70px, calc(50% - 150px));
+    left: max(70px, 50% - 150px);
     width: 300px;
     position: relative;
     margin-bottom: 10px;
@@ -1068,7 +935,6 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     margin: 0 auto;
     width: 65%;
   }
-
   #card-container .card {
     width: 100%;
     margin: calc(5% - 3px) 12px;
@@ -1090,7 +956,6 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   div.modal-view div.modal-area .modal-container {
     padding: 0 40px;
   }
-
   div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn {
     right: 12px;
     top: 12px;
@@ -1109,7 +974,6 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     font-size: 3em;
   }
 }
-
 @media only screen and (max-width: 425px) {
   div.center {
     top: calc(70px + var(--bannerHeight));
@@ -1124,7 +988,7 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   }
 
   #greeting {
-    top: max(70px, calc(18% - 20px));
+    top: max(70px, 18% - 20px);
     left: calc(50% - 135px);
     width: 270px;
   }
@@ -1136,19 +1000,15 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   header div.drop-down div.menu {
     width: 160px;
   }
-
-  header div.drop-down div.menu > div.scrollable > div:first-of-type {
-    margin-top: 4px;
-  }
-
-  header div.drop-down div.menu > div.scrollable > div:last-of-type {
-    margin-bottom: 4px;
-  }
-
   header div.drop-down div.menu > div.scrollable > div {
     margin: 8px 0;
   }
-
+  header div.drop-down div.menu > div.scrollable > div:first-of-type {
+    margin-top: 4px;
+  }
+  header div.drop-down div.menu > div.scrollable > div:last-of-type {
+    margin-bottom: 4px;
+  }
   header div.drop-down div.menu > div.scrollable > div > a {
     font-size: 0.7em;
     padding: 9px 0;
@@ -1158,7 +1018,6 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   footer span {
     display: none;
   }
-
   footer br {
     display: block;
   }
@@ -1166,7 +1025,6 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   #card-container {
     width: 85%;
   }
-
   #card-container .card {
     margin: 3% 12px;
   }
@@ -1175,30 +1033,24 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     min-height: calc(var(--full-height) - 180px);
     width: 90%;
   }
-
   div.main-view div.projects .project-card {
     margin-top: 1%;
     margin-bottom: 6%;
     border-radius: 20px;
   }
-
   div.main-view div.projects .project-card h5 {
     font-size: 1.3em;
     margin-left: 20px;
     margin-top: 8px;
   }
-
   div.main-view div.projects .project-card h5 span {
     margin-left: 7px;
   }
-
   div.main-view div.projects .project-card p {
     margin-left: 20px;
     margin-right: 13px;
-    /* margin-top: 1px; */
     margin-bottom: 10px;
   }
-
   div.main-view div.projects .project-card p span {
     margin-bottom: 5.5px;
     padding: 3px 4px;
@@ -1214,35 +1066,29 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   div.modal-view div.modal-area .modal-container {
     padding: 0 35px;
   }
-
-  div.modal-view div.modal-area .actual-modal > section:first-of-type > nav {
+  div.modal-view div.modal-area .modal-container .actual-modal > section:first-of-type > nav {
     font-size: 1.05em;
     margin-top: 6px;
     margin-bottom: 6px;
   }
-
-  div.modal-view div.modal-area .actual-modal h4 {
+  div.modal-view div.modal-area .modal-container .actual-modal h4 {
     font-size: 1.8em;
   }
-
-  div.modal-view div.modal-area .actual-modal p:not(.tags) {
+  div.modal-view div.modal-area .modal-container .actual-modal p:not(.tags) {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 0.9em;
   }
-
-  div.modal-view div.modal-area .actual-modal p.tags {
+  div.modal-view div.modal-area .modal-container .actual-modal p.tags {
     margin-right: 14px;
     margin-bottom: 14px;
   }
-
-  div.modal-view div.modal-area .actual-modal p.tags span {
+  div.modal-view div.modal-area .modal-container .actual-modal p.tags span {
     margin-bottom: 6px;
     padding: 4px 5px;
     margin-right: 8px;
     font-size: 0.9em;
   }
-
   div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn {
     right: 10px;
     top: 10px;
@@ -1251,33 +1097,24 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
     height: 30px;
     line-height: 30px;
   }
-
   div.modal-view div.modal-area .modal-container .actual-modal iframe {
     height: calc(70vh - 70px);
   }
-
   div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > img, div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > video {
     max-height: calc(var(--full-height) - 70px - 2.7em - 39px);
   }
-
   div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe {
     height: calc(var(--full-height) - 70px - 2.7em - 39px);
-  }
-
-  div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
-    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.7em - 39px)), 165px);
   }
 
   .arrows {
     left: 2px;
     right: 2px;
   }
-
   .arrows > span {
     font-size: 2.5em;
   }
 }
-
 @media only screen and (max-width: 300px) {
   h1 {
     font-size: 1.8em;
@@ -1299,19 +1136,15 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   header div.drop-down div.menu {
     width: 80px;
   }
-
-  header div.drop-down div.menu > div.scrollable > div:first-of-type {
-    margin-top: 1.5px;
-  }
-
-  header div.drop-down div.menu > div.scrollable > div:last-of-type {
-    margin-bottom: 1.5px;
-  }
-
   header div.drop-down div.menu > div.scrollable > div {
     margin: 7px 0;
   }
-
+  header div.drop-down div.menu > div.scrollable > div:first-of-type {
+    margin-top: 1.5px;
+  }
+  header div.drop-down div.menu > div.scrollable > div:last-of-type {
+    margin-bottom: 1.5px;
+  }
   header div.drop-down div.menu > div.scrollable > div > a {
     font-size: 0.65em;
     padding: 8px 0;
@@ -1321,59 +1154,50 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   #card-container {
     width: 92%;
   }
-
   #card-container .card {
     padding: 0;
     height: 145px;
     margin: 8px 12px;
   }
-
   #card-container .card p:first-of-type {
     font-size: 1.1em;
     bottom: 28px;
   }
-
   #card-container .card p:last-of-type {
     font-size: 0.8em;
     bottom: 12px;
   }
-
   #card-container .card img {
     width: 45px;
     height: 45px;
-  }
-
-  div.main-view div.projects .project-card {
-    border-radius: 15px;
-  }
-
-  div.main-view div.projects .project-card h5 {
-    font-size: 1.2em;
-    margin-left: 15px;
-    margin-top: 7px;
-  }
-
-  div.main-view div.projects .project-card h5 span {
-    margin-left: 6px;
-  }
-
-  div.main-view div.projects .project-card p {
-    margin-left: 15px;
-    margin-right: 9px;
-    margin-bottom: 7px;
-  }
-
-  div.main-view div.projects .project-card p span {
-    margin-bottom: 5px;
-    padding: 2.5px 4px;
-    margin-right: 6px;
-    font-size: 0.75em;
   }
 
   div.main-view div.projects {
     min-height: calc(var(--full-height) - 200px);
     width: 100%;
     padding: 0 15px;
+  }
+  div.main-view div.projects .project-card {
+    border-radius: 15px;
+  }
+  div.main-view div.projects .project-card h5 {
+    font-size: 1.2em;
+    margin-left: 15px;
+    margin-top: 7px;
+  }
+  div.main-view div.projects .project-card h5 span {
+    margin-left: 6px;
+  }
+  div.main-view div.projects .project-card p {
+    margin-left: 15px;
+    margin-right: 9px;
+    margin-bottom: 7px;
+  }
+  div.main-view div.projects .project-card p span {
+    margin-bottom: 5px;
+    padding: 2.5px 4px;
+    margin-right: 6px;
+    font-size: 0.75em;
   }
 
   div.detail-blank {
@@ -1383,91 +1207,75 @@ body.script div.modal-view div.modal-area .actual-modal p.tags span {
   div.modal-view div.modal-area .modal-container {
     padding: 0 20px;
   }
-
-  div.modal-view div.modal-area .actual-modal > section:first-of-type > nav {
+  div.modal-view div.modal-area .modal-container .actual-modal > section:first-of-type > nav {
     font-size: 1em;
     margin-top: 4px;
     margin-bottom: 4px;
   }
-
-  div.modal-view div.modal-area .actual-modal h4 {
+  div.modal-view div.modal-area .modal-container .actual-modal h4 {
     font-size: 1.6em;
   }
-
-  div.modal-view div.modal-area .actual-modal p:not(.tags) {
+  div.modal-view div.modal-area .modal-container .actual-modal p:not(.tags) {
     margin-top: 8px;
     margin-bottom: 8px;
     font-size: 0.85em;
   }
-
-  div.modal-view div.modal-area .actual-modal p.tags {
+  div.modal-view div.modal-area .modal-container .actual-modal p.tags {
     margin-right: 15px;
     margin-bottom: 12px;
   }
-
-  div.modal-view div.modal-area .actual-modal p.tags span {
+  div.modal-view div.modal-area .modal-container .actual-modal p.tags span {
     margin-bottom: 5.5px;
     margin-right: 7px;
     font-size: 0.85em;
   }
-
   div.modal-view div.modal-area .modal-container .actual-modal .cancel-btn {
     right: 8px;
     top: 8px;
-    font-size: 1.0em;
+    font-size: 1em;
     width: 28px;
     height: 28px;
     line-height: 28px;
   }
-
   div.modal-view div.modal-area .modal-container .actual-modal iframe {
     height: calc(60vh - 70px);
   }
-
   div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > img, div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > video {
     max-height: calc(var(--full-height) - 70px - 2.45em - 39px);
   }
-
   div.modal-view div.modal-area .modal-container .actual-modal .image-video-container > iframe {
     height: calc(var(--full-height) - 70px - 2.45em - 39px);
-  }
-
-  div.modal-view div.modal-area.toolbox-2019 .modal-container .actual-modal .image-video-container {
-    height: max(min(calc(550px * var(--modal-width) / 1000), calc(var(--full-height) - 70px - 2.45em - 39px)), 165px);
   }
 
   .arrows > span {
     font-size: 2em;
   }
-
   .arrows > span:first-of-type {
     padding-left: 0.5%;
     padding-right: 2%;
   }
-
   .arrows > span:last-of-type {
     padding-left: 2%;
     padding-right: 0.5%;
   }
 }
-
 @media (prefers-color-scheme: dark) {
   body {
-    --zeroBgColor: rgb(12,12,12);
-    --firstBgColor: rgb(30,35,45);
-    --blurBgColor: rgba(30,35,45,0.8);
+    --zeroBgColor: rgb(12, 12, 12);
+    --firstBgColor: rgb(30, 35, 45);
+    --blurBgColor: rgba(30, 35, 45, 0.8);
     --dropBlurBgColor: #111c;
-    --firstTxtColor: rgb(240,240,240);
+    --firstTxtColor: rgb(240, 240, 240);
     --secondTxtColor: #ccc;
     --thirdTxtColor: #aaa;
     --fourthTxtColor: #333;
     --linkColor: #7ce;
-    --orangeCard: rgb(220,80,30);
-    --yellowCard: rgb(220,170,20);
-    --purpleCard: rgb(90,90,160);
-    --orangeCardWithAlpha: rgba(220,80,30,0.15);
-    --yellowCardWithAlpha: rgba(220,170,20,0.15);
-    --purpleCardWithAlpha: rgba(90,90,160,0.15);
+    --orangeCard: rgb(220, 80, 30);
+    --yellowCard: rgb(220, 170, 20);
+    --purpleCard: rgb(90, 90, 160);
+    --orangeCardWithAlpha: rgba(220, 80, 30, 0.15);
+    --yellowCardWithAlpha: rgba(220, 170, 20, 0.15);
+    --purpleCardWithAlpha: rgba(90, 90, 160, 0.15);
     --blackCardWithAlpha: #ddd4;
     --bannerBgColor: #ee6;
   }

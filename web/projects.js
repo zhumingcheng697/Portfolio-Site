@@ -56,7 +56,7 @@ const webProjects = [
     title: "Chat Room Pro",
     year: "2022",
     identifier: "chat-room-pro-2022",
-    tags: ["HTML", "CSS", "JavaScript", "Node.js", "WebSocket", "Media Capture"],
+    tags: ["HTML", "CSS", "SCSS", "JavaScript", "Node.js", "WebSocket", "Media Capture"],
     priority: 5,
     detailViewType: "iframe",
     iframeUrl: "https://zhumingcheng697.github.io/Live-Web/chat-room-pro",
