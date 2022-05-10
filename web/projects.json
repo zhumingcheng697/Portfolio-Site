@@ -18,22 +18,6 @@
     ]
   },
   {
-    "title": "Rate My Classes",
-    "year": "2020",
-    "identifier": "rate-my-classes-2020",
-    "tags": ["HTML", "CSS", "JavaScript", "Node.js", "React.js", "Express.js", "REST API", "Web Scraping", "Firebase"],
-    "priority": 5,
-    "detailViewType": "iframe",
-    "iframeUrl": "https://rate-my-classes.netlify.app/",
-    "sourceUrl": "https://github.com/zhumingcheng697/dynamic-web-final",
-    "descriptions": [
-      "Rate My Classes is the final project for my <i>Dynamic Web Applications</i> class that I built using Firebase, Express, React, and Node.js.",
-      "The website allows students to post and review class information and ratings.",
-      "It includes accounts and password authentication functionalities to allow users to keep track of all their reviews in one place and users can edit or remove their previous reviews with ease.",
-      "The puppeteer headless browser is also used in the <a target=\"_blank\" rel=\"noreferrer\" href=\"https://stark-basin-35300.herokuapp.com/\">back end</a> as a web scraper to obtain details of the classes such as department information, offered schedule, descriptions, and number of credits."
-    ]
-  },
-  {
     "title": "OurScheduler",
     "year": "2021",
     "identifier": "our-scheduler-2021",
@@ -57,7 +41,7 @@
     "year": "2022",
     "identifier": "chat-room-pro-2022",
     "tags": ["HTML", "SCSS", "JavaScript", "Node.js", "WebSocket", "Media Capture"],
-    "priority": 5,
+    "priority": 5.1,
     "detailViewType": "iframe",
     "iframeUrl": "https://zhumingcheng697.github.io/Live-Web/chat-room-pro",
     "sourceUrl": "https://github.com/zhumingcheng697/Live-Web/tree/main/chat-room-pro",
@@ -68,6 +52,23 @@
       "Not only can users send regular text messages or take a picture using their camera of choice (if there are more than one camera available on the device), users can also unsend previous messages and report inappropriate messages.",
       "A robust system is implemented to prevent users from spamming or sending multiple inappropriate messages.",
       "Current status of all users is kept track of so users can easily know how many people there are in the room, when they last joined, and whether they are still active to estimate if or when they might hear back and also to prevent cyber stalking."
+    ]
+  },
+  {
+    "title": "Chat Plaza Ultra",
+    "year": "2022",
+    "identifier": "chat-plaza-ultra-2022",
+    "tags": ["HTML", "SCSS", "JavaScript", "Node.js", "WebSocket", "Media Capture", "WebRTC"],
+    "priority": 5,
+    "detailViewType": "iframe",
+    "iframeUrl": "https://zhumingcheng697.github.io/Live-Web/chat-plaza-ultra",
+    "sourceUrl": "https://github.com/zhumingcheng697/Live-Web/tree/main/chat-plaza-ultra",
+    "descriptions": [
+      "Chat Plaza Ultra is the final project for my <i>Live Web</i> class.",
+      "It is conceptually similar to Chat Room Pro, having the same username randomization and reporting functionalities, but using audio/video streaming instead of chatting with plain text and taking images.",
+      "Users can toggle on and off their audio and video and choose the camera and microphone to use.",
+      "Users with cameras and/or microphone on will be reordered to the front; the user who is speaking the loudest will be highlighted in green; and the current user will be highlighted in yellow",
+      "Users are now in a &lsquo;plaza&rsquo; when they join and they can freely start new rooms or request to join an existing room, and users already in the room can vote to decide whether they want to admit or reject the newcomers."
     ]
   }
 ]
