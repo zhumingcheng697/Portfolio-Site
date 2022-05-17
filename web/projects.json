@@ -70,5 +70,24 @@
       "Users with cameras and/or microphone on will be reordered to the front; the user who is speaking the loudest will be highlighted in green; and the current user will be highlighted in yellow",
       "Users are now in a &lsquo;plaza&rsquo; when they join and they can freely start new rooms or request to join an existing room, and users already in the room can vote to decide whether they want to admit or reject the newcomers."
     ]
+  },
+  {
+    "title": "Outlinify",
+    "year": "2022",
+    "identifier": "outlinify-2022",
+    "tags": ["HTML", "SCSS", "JavaScript", "Canvas", "Image Manipulation", "Web Worker", "FileReader", "Drag and Drop"],
+    "priority": 4.9,
+    "detailViewType": "iframe",
+    "iframeUrl": "https://zhumingcheng697.github.io/Live-Web/outlinify",
+    "sourceUrl": "https://github.com/zhumingcheng697/Live-Web/tree/main/outlinify",
+    "bgImg": "outlinify-2022/image.jpg",
+    "descriptions": [
+      "Outlinify is an interactive image manipulation tool that allows users to add an outline effect to pictures.",
+      "Users can upload images from their devices, style the images with customizable controls, and save the manipulated images.",
+      "Drag and drop is also supported for uploading images.",
+      "Whenever the user changes the filter settings, I always render a quick preview first and then render a full-resolution final image after the user has done changing the filter settings.",
+      "Rendering is always done through Web Workers (when supported) for better UI responsiveness, and rerendering is skipped until the previous render has completed to prevent rendering jobs from queuing up.",
+      "If the filter settings are modified while the full-resolution image is being rendered, the render is immediately terminated (when Web Worker is supported) to prevent unnecessary wait.,"
+    ]
   }
 ]
