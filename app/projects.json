@@ -36,17 +36,19 @@
     ]
   },
   {
-    "title": "Todo App",
+    "title": "Rate My Classes Pro",
     "year": "2022",
-    "identifier": "todo-app-2022",
-    "tags": ["React Native", "React Navigation", "Redux", "Async Storage", "Expo"],
-    "priority": 4,
-    "sourceUrl": "https://github.com/zhumingcheng697/Mobile-App-Dev-Todo",
-    "deployUrl": "https://snack.expo.dev/@zhumingcheng697/todoapp-v3",
+    "identifier": "rate-my-classes-pro-2022",
+    "tags": ["React Native", "React Navigation", "React Native Web", "Mac Catalyst", "Redux", "MongoDB", "NativeBase", "TypeScript", "Google Sign-In"],
+    "priority": 5,
+    "detailViewType": "iframe",
+    "iframeUrl": "https://rate-my-classes-pro.netlify.app/",
+    "sourceUrl": "https://github.com/zhumingcheng697/Rate-My-Classes-Pro",
     "descriptions": [
-      "This is an exercise for my React Native class <i>Mobile Application Development</i>.",
-      "Users can add todos, set priority, remove each todo individually, or clear the entire todo list",
-      "Todos and settings are managed by Redux and stored on device using Async Storage."
+      "Rate My Classes Pro is the final project for my React Native class <i>Mobile Application Development</i>.",
+      "It is a platform where NYU students can find class information, schedules, and reviews, similar to the original <a target=\"_blank\" rel=\"noreferrer\" href=\"https://github.com/zhumingcheng697/dynamic-web-final\">Rate My Classes</a>.",
+      "It now supports iOS and Android through React Native, web through React Native Web, and macOS through Mac Catalyst.",
+      "More features are planned to be added in Fall 2022 and hopefully it can be deployed onto App Store."
     ]
   }
 ]
