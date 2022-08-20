@@ -37,24 +37,6 @@
     ]
   },
   {
-    "title": "Chat Room Pro",
-    "year": "2022",
-    "identifier": "chat-room-pro-2022",
-    "tags": ["HTML", "SCSS", "JavaScript", "Node.js", "WebSocket", "Media Capture"],
-    "priority": 5.1,
-    "detailViewType": "iframe",
-    "iframeUrl": "https://zhumingcheng697.github.io/Live-Web/chat-room-pro",
-    "sourceUrl": "https://github.com/zhumingcheng697/Live-Web/tree/main/chat-room-pro",
-    "descriptions": [
-      "Chat Room Pro is the midterm project for my <i>Live Web</i> class.",
-      "It is a safe, powerful, and anonymous chat room for people to meet with others from all over the world.",
-      "Users can choose a randomized username before they join, but they can also come up with one themselves. No additional signup process is needed.",
-      "Not only can users send regular text messages or take a picture using their camera of choice (if there are more than one camera available on the device), users can also unsend previous messages and report inappropriate messages.",
-      "A robust system is implemented to prevent users from spamming or sending multiple inappropriate messages.",
-      "Current status of all users is kept track of so users can easily know how many people there are in the room, when they last joined, and whether they are still active to estimate if or when they might hear back and also to prevent cyber stalking."
-    ]
-  },
-  {
     "title": "Chat Plaza Ultra",
     "year": "2022",
     "identifier": "chat-plaza-ultra-2022",
