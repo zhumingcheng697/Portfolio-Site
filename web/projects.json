@@ -3,8 +3,8 @@
     "title": "COVID | Headline",
     "year": "2020",
     "identifier": "covid-headline-2020",
-    "tags": ["HTML", "CSS", "JavaScript", "React.js", "REST API"],
-    "priority": 4.5,
+    "tags": ["HTML", "CSS", "JavaScript", "React", "REST API"],
+    "priority": 4,
     "detailViewType": "iframe",
     "iframeUrl": "https://zhumingcheng697.github.io/dynamic-web-midterm/",
     "sourceUrl": "https://github.com/zhumingcheng697/dynamic-web-midterm",
@@ -21,7 +21,7 @@
     "title": "OurScheduler",
     "year": "2021",
     "identifier": "our-scheduler-2021",
-    "tags": ["HTML", "CSS", "JavaScript", "TypeScript", "Node.js", "Vue.js", "Express.js", "D3.js", "REST API", "Web Scraping", "MongoDB"],
+    "tags": ["HTML", "CSS", "JavaScript", "TypeScript", "Node.js", "Vue", "Express.js", "D3.js", "REST API", "Web Scraping", "MongoDB"],
     "priority": 5,
     "detailViewType": "iframe",
     "iframeUrl": "https://ourscheduler.netlify.app/",
@@ -41,23 +41,24 @@
     "year": "2022",
     "identifier": "chat-plaza-ultra-2022",
     "tags": ["HTML", "SCSS", "JavaScript", "Node.js", "WebSocket", "Media Capture", "WebRTC"],
-    "priority": 5,
+    "priority": 4.5,
     "detailViewType": "iframe",
     "iframeUrl": "https://zhumingcheng697.github.io/Live-Web/chat-plaza-ultra",
     "sourceUrl": "https://github.com/zhumingcheng697/Live-Web/tree/main/chat-plaza-ultra",
     "descriptions": [
       "Chat Plaza Ultra is the final project for my <i>Live Web</i> class.",
-      "It is conceptually similar to Chat Room Pro, having the same username randomization and reporting functionalities, but using audio/video streaming instead of chatting with plain text and taking images.",
+      "It is conceptually similar to <a target=\"_blank\" rel=\"noreferrer\" href=\"https://zhumingcheng697.github.io/Live-Web/chat-room-pro\">Chat Room Pro</a>, my midterm project for the class, which is a safe, powerful, and anonymous chat room for people to meet with others from all over the world, but using audio/video streaming now instead of chatting with plain text and taking images.",
+      "Just like in the original Chat Room Pro, users can choose a randomized username before they join or come up with one themselves, and a robust system is implemented to prevent users from streaming inappropriate content.",
       "Users can toggle on and off their audio and video and choose the camera and microphone to use.",
-      "Users with cameras and/or microphone on will be reordered to the front; the user who is speaking the loudest will be highlighted in green; and the current user will be highlighted in yellow",
-      "Users are now in a &lsquo;plaza&rsquo; when they join and they can freely start new rooms or request to join an existing room, and users already in the room can vote to decide whether they want to admit or reject the newcomers."
+      "Users with cameras and/or microphone on will be reordered to the front, the user who is speaking the loudest will be highlighted in green, and the current user will be highlighted in yellow.",
+      "Users are now in a &ldquo;plaza&rdquo; when they join and they can freely start new rooms or request to join an existing room, and users already in the room can vote to decide whether they want to admit or reject the newcomers."
     ]
   },
   {
     "title": "Outlinify",
     "year": "2022",
     "identifier": "outlinify-2022",
-    "tags": ["HTML", "SCSS", "JavaScript", "Canvas", "Image Manipulation", "Web Worker", "FileReader", "Drag and Drop"],
+    "tags": ["HTML", "SCSS", "JavaScript", "Canvas", "Image Manipulation", "Web Worker", "WebAssembly", "AssemblyScript", "Emscripten", "FileReader", "Drag and Drop"],
     "priority": 4.9,
     "detailViewType": "iframe",
     "iframeUrl": "https://zhumingcheng697.github.io/Live-Web/outlinify",
@@ -67,9 +68,11 @@
       "Outlinify is an interactive image manipulation tool that allows users to add an outline effect to pictures.",
       "Users can upload images from their devices, style the images with customizable controls, and save the manipulated images.",
       "Drag and drop is also supported for uploading images.",
-      "Whenever the user changes the filter settings, I always render a quick preview first and then render a full-resolution final image after the user has done changing the filter settings.",
-      "Rendering is always done through Web Workers (when supported) for better UI responsiveness, and rerendering is skipped until the previous render has completed to prevent rendering jobs from queuing up.",
-      "If the filter settings are modified while the full-resolution image is being rendered, the render is immediately terminated (when Web Worker is supported) to prevent unnecessary wait.,"
+      "Whenever the user changes the filter settings, a quick preview will always be rendered first and then a full-resolution final image will be rendered after the user has done changing the filter settings.",
+      "Rendering is always done through Web Workers (when supported) for better UI responsiveness, and re-rendering is skipped until the previous render has completed to prevent rendering jobs from queuing up.",
+      "If the filter settings are modified while the full-resolution image is being rendered, the render is immediately terminated (when Web Worker is supported) to prevent unnecessary wait time.",
+      "WebAssembly is also utilized (when supported) to yield more predictable performance and slightly lower the memory footprint of the web app.",
+      "Two versions of WebAssembly binaries are available for use: an AssemblyScript version compiled from source code in its TypeScript-like syntax that has a smaller file size (~1KB) but slightly slower, and an Emscripten version compiled from standard C++ source code that has a larger file (~4KB) size but slightly faster."
     ]
   }
 ]
