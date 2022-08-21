@@ -1,5 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+@mixin accent-color-for-body($class-name, $color, $on-bg: true) {
+    body.#{$class-name} & {
+        @if $on-bg {
+            background-color: $color;
+        } @else {
+            color: $color;
+        }
+    }
+}
+
+@mixin image-video-height($height) {
+    .image-video-container {
+        & > img, & > video {
+            max-height: $height;
+        }
+
+        & > iframe {
+            height: $height;
+        }
+    }
+}
+
 html {
     margin: 0;
     padding: 0;
@@ -47,7 +69,7 @@ body {
     transition-property: background-color;
 }
 
-.about-me h1, h4, h5, div.bottom .card > p:first-of-type, div.title {
+h1, h4, h5, div.bottom .card > p:first-of-type, div.title {
     font-family: "Playfair Display", "Palatino", serif;
     font-weight: 600;
 }
@@ -154,25 +176,17 @@ header {
         }
     }
 
-    strong.app, a.app, strong.app strong {
-        color: var(--orangeCard);
+    @mixin txt-accent-color($class-name, $color) {
+        strong.#{$class-name}, a.#{$class-name}, strong.#{$class-name} strong {
+            color: $color;
+        }
     }
 
-    strong.web, a.web, strong.web strong {
-        color: var(--yellowCard);
-    }
-
-    strong.script, a.script, strong.script strong {
-        color: var(--purpleCard);
-    }
-
-    strong.home, a.home {
-        color: var(--firstTxtColor);
-    }
-
-    strong.wild, a.wild, strong.wild strong {
-        color: var(--secondTxtColor);
-    }
+    @include txt-accent-color(app, var(--orangeCard));
+    @include txt-accent-color(web, var(--yellowCard));
+    @include txt-accent-color(script, var(--purpleCard));
+    @include txt-accent-color(home, var(--firstTxtColor));
+    @include txt-accent-color(wild, var(--secondTxtColor));
 
     div.drop-down {
         transition-duration: 0.6s;
@@ -269,25 +283,21 @@ header {
         white-space: nowrap;
         cursor: pointer;
 
-        & ~ div.drop-down > div.menu > div.scrollable > div:hover > a {
-            background-color: var(--blurBgColor);
+        @mixin bg-accent-color($base-selector: "", $div-selector: "", $a-selector: "", $color) {
+            &#{$base-selector} ~ div.drop-down > div.menu > div.scrollable > div#{$div-selector} > a#{$a-selector} {
+                background-color: $color;
+            }
         }
 
-        &.app ~ div.drop-down > div.menu > div.scrollable > div.app > a.app {
-            background-color: var(--orangeCardWithAlpha);
+        @mixin simple-bg-accent-color($base-class-name, $div-class-name, $color) {
+            @include bg-accent-color(".#{$base-class-name}", ".#{$div-class-name}", ".#{$base-class-name}", $color);
         }
 
-        &.web ~ div.drop-down > div.menu > div.scrollable > div.web > a.web {
-            background-color: var(--yellowCardWithAlpha);
-        }
-
-        &.script ~ div.drop-down > div.menu > div.scrollable > div.script > a.script {
-            background-color: var(--purpleCardWithAlpha);
-        }
-
-        &.wild ~ div.drop-down > div.menu > div.scrollable > div.me > a.wild {
-            background-color: var(--blurBgColor);
-        }
+        @include bg-accent-color($div-selector: ":hover", $color: var(--blurBgColor));
+        @include simple-bg-accent-color(app, app, var(--orangeCardWithAlpha));
+        @include simple-bg-accent-color(web, web, var(--yellowCardWithAlpha));
+        @include simple-bg-accent-color(script, script, var(--purpleCardWithAlpha));
+        @include simple-bg-accent-color(wild, me, var(--blurBgColor));
     }
 }
 
@@ -378,21 +388,16 @@ div.blank {
             transform: scale(1.05);
         }
 
-        &.app {
-            background-color: var(--orangeCard);
+        @mixin card-bg-color($class-name,$color) {
+            &.#{$class-name} {
+                background-color: $color;
+            }
         }
 
-        &.web {
-            background-color: var(--yellowCard);
-        }
-
-        &.script {
-            background-color: var(--purpleCard);
-        }
-
-        &.wild {
-            background-color: var(--blackCard);
-        }
+        @include card-bg-color(app, var(--orangeCard));
+        @include card-bg-color(web, var(--yellowCard));
+        @include card-bg-color(script, var(--purpleCard));
+        @include card-bg-color(wild, var(--blackCard));
 
         img {
             width: 50px;
@@ -525,17 +530,9 @@ div.main-view {
                     transition-duration: 0.6s;
                     transition-property: background-color;
 
-                    body.app & {
-                        background-color: var(--orangeCard);
-                    }
-
-                    body.web & {
-                        background-color: var(--yellowCard);
-                    }
-
-                    body.script & {
-                        background-color: var(--purpleCard);
-                    }
+                    @include accent-color-for-body(app, var(--orangeCard));
+                    @include accent-color-for-body(web, var(--yellowCard));
+                    @include accent-color-for-body(script, var(--purpleCard));
                 }
             }
         }
@@ -679,7 +676,6 @@ div.modal-view {
                     & > img, & > video {
                         width: 100%;
                         overflow: hidden;
-                        max-height: calc(var(--full-height) - 70px - 3.1em - 49px);
                         min-height: 200px;
                         position: relative;
                         display: block;
@@ -688,12 +684,13 @@ div.modal-view {
                     & > iframe {
                         width: 100%;
                         overflow: hidden;
-                        height: calc(var(--full-height) - 70px - 3.1em - 49px);
                         min-height: 200px;
                         position: relative;
                         display: block;
                     }
                 }
+
+                @include image-video-height(calc(var(--full-height) - 70px - 3.1em - 49px));
 
                 .cancel-btn {
                     position: absolute;
@@ -762,21 +759,10 @@ div.modal-view {
                         filter: brightness(1.15);
                     }
 
-                    body.app & {
-                        color: var(--orangeCard);
-                    }
-
-                    body.web & {
-                        color: var(--yellowCard);
-                    }
-
-                    body.script & {
-                        color: var(--purpleCard);
-                    }
-
-                    body.wild & {
-                        color: var(--dropBlurBgColor);
-                    }
+                    @include accent-color-for-body(app, var(--orangeCard), $on-bg: false);
+                    @include accent-color-for-body(web, var(--yellowCard), $on-bg: false);
+                    @include accent-color-for-body(script, var(--purpleCard), $on-bg: false);
+                    @include accent-color-for-body(wild, var(--dropBlurBgColor), $on-bg: false);
                 }
 
                 p.tags {
@@ -796,17 +782,9 @@ div.modal-view {
                         transition-property: color, background-color;
                         font-size: 1.1em;
 
-                        body.app & {
-                            background-color: var(--orangeCard);
-                        }
-
-                        body.web & {
-                            background-color: var(--yellowCard);
-                        }
-
-                        body.script & {
-                            background-color: var(--purpleCard);
-                        }
+                        @include accent-color-for-body(app, var(--orangeCard));
+                        @include accent-color-for-body(web, var(--yellowCard));
+                        @include accent-color-for-body(script, var(--purpleCard));
                     }
                 }
             }
@@ -943,15 +921,7 @@ div.modal-view {
                     }
                 }
 
-                .image-video-container {
-                    & > img, & > video {
-                        max-height: calc(var(--full-height) - 70px - 2.9em - 44px);
-                    }
-
-                    & > iframe {
-                        height: calc(var(--full-height) - 70px - 2.9em - 44px);
-                    }
-                }
+                @include image-video-height(calc(var(--full-height) - 70px - 2.9em - 44px));
             }
         }
     }
@@ -1187,15 +1157,7 @@ div.modal-view {
                     height: calc(70vh - 70px);
                 }
 
-                .image-video-container {
-                    & > img, & > video {
-                        max-height: calc(var(--full-height) - 70px - 2.7em - 39px);
-                    }
-
-                    & > iframe {
-                        height: calc(var(--full-height) - 70px - 2.7em - 39px);
-                    }
-                }
+                @include image-video-height(calc(var(--full-height) - 70px - 2.7em - 39px));
             }
         }
     }
@@ -1362,15 +1324,7 @@ div.modal-view {
                     height: calc(60vh - 70px);
                 }
 
-                .image-video-container {
-                    & > img, & > video {
-                        max-height: calc(var(--full-height) - 70px - 2.45em - 39px);
-                    }
-
-                    & > iframe {
-                        height: calc(var(--full-height) - 70px - 2.45em - 39px);
-                    }
-                }
+                @include image-video-height(calc(var(--full-height) - 70px - 2.45em - 39px));
             }
         }
     }
