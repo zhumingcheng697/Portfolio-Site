@@ -39,16 +39,17 @@
     "title": "Rate My Classes Pro",
     "year": "2022",
     "identifier": "rate-my-classes-pro-2022",
-    "tags": ["React Native", "React Navigation", "React Native Web", "Mac Catalyst", "Redux", "MongoDB", "NativeBase", "TypeScript", "Google Sign-In"],
+    "tags": ["React Native", "React Navigation", "React Native Web", "Swift", "SwiftUI", "Mac Catalyst", "Redux", "MongoDB", "NativeBase", "TypeScript", "Google Sign-In", "Sign in with Apple", "Universal Link", "Watch Connectivity", "Handoff"],
     "priority": 5,
     "detailViewType": "iframe",
     "iframeUrl": "https://rate-my-classes-pro.netlify.app/",
     "sourceUrl": "https://github.com/zhumingcheng697/Rate-My-Classes-Pro",
     "descriptions": [
-      "Rate My Classes Pro is the final project for my React Native class <i>Mobile Application Development</i>.",
+      "Rate My Classes Pro is the final project for my React Native class <i>Mobile Application Development</i> and it is also my senior project.",
       "It is a platform where NYU students can find class information, schedules, and reviews, similar to the original <a target=\"_blank\" rel=\"noreferrer\" href=\"https://github.com/zhumingcheng697/dynamic-web-final\">Rate My Classes</a>.",
-      "It now supports iOS and Android through React Native, web through React Native Web, and macOS through Mac Catalyst.",
-      "More features are planned to be added in Fall 2022 and hopefully it can be deployed onto App Store."
+      "Besides the basic functionalities, I have also implemented a lot of advanced features including universal link, profile auto-sync, auto-reload on reconnect, Sign in with Apple and Sign in with Google, NYU email verification, Handoff, Spotlight, Siri Shortcut suggestions, and Watch Connectivity.",
+      "The app supports iOS through React Native, web through React Native Web, and macOS through Mac Catalyst, and I have also build a watchOS version from scratch using SwiftUI.",
+      "The app is available for download on the <a target=\"_blank\" rel=\"noreferrer\" href=\"https://apple.co/3AduK8G\">App Store</a>."
     ]
   }
 ]
